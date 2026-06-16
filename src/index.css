@@ -1,0 +1,35 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0a0f1e;
+  --surface: #111827;
+  --surface2: #1a2234;
+  --border: #1e2d45;
+  --text: #e2e8f0;
+  --muted: #4a6080;
+  --green: #00e5aa;
+  --green-dim: #00e5aa15;
+  --red: #ff4d6d;
+  --red-dim: #ff4d6d15;
+  --yellow: #fbbf24;
+  --yellow-dim: #fbbf2415;
+  --blue: #60a5fa;
+  --blue-dim: #60a5fa15;
+  --mono: 'IBM Plex Mono', monospace;
+  --sans: 'IBM Plex Sans', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
