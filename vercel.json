@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/sigma.html",
+      "destination": "/risk.html",
+      "permanent": true
+    }
+  ]
+}
