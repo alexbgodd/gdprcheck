@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 eop_cache/
 data/cache.json
+!public/data/
+!public/data/top20.json
+!public/data/top20.json
