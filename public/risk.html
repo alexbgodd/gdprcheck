@@ -78,7 +78,8 @@
     .flags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
     .flag { background: #fff0f0; color: #c0392b; border: 1px solid #f5c6c6; font-size: 0.78rem; padding: 0.2rem 0.6rem; border-radius: 6px; }
     .flag.warning { background: #fffbeb; color: #92400e; border-color: #fde68a; }
-    .link { display: inline-block; margin-top: 0.6rem; font-size: 0.8rem; color: #2563eb; text-decoration: none; }
+    .links { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.6rem; }
+    .link { font-size: 0.8rem; color: #2563eb; text-decoration: none; }
     .link:hover { text-decoration: underline; }
     .legend { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; font-size: 0.8rem; }
     .legend-item { display: flex; align-items: center; gap: 0.4rem; }
@@ -246,10 +247,16 @@
       }).join('');
 
       const eaopLink = c.contractNumber
-        ? `<a class="link" href="https://app.eop.bg/today/contracts/${escapeHtml(c.contractNumber)}" target="_blank" rel="noopener">Виж в ЦАИС ЕОП →</a>`
+        ? `<a class="link" href="https://app.eop.bg/today/contracts/${escapeHtml(c.contractNumber)}" target="_blank" rel="noopener">Договор в ЦАИС →</a>`
+        : '';
+      const buyerLink = c.buyerRegistryNumber
+        ? `<a class="link" href="https://app.eop.bg/today/buyers/${escapeHtml(c.buyerRegistryNumber)}/contracts" target="_blank" rel="noopener">Всички поръчки на възложителя →</a>`
+        : '';
+      const supplierLink = c.supplierRegisterNumber
+        ? `<a class="link" href="https://portal.registryagency.bg/CR/reports/company?uic=${escapeHtml(c.supplierRegisterNumber)}" target="_blank" rel="noopener">Фирмата в Търговски регистър →</a>`
         : '';
       const linkHtml = c.linkToOjEu
-        ? `<a class="link" href="${escapeHtml(c.linkToOjEu)}" target="_blank" rel="noopener">Виж в TED →</a>`
+        ? `<a class="link" href="${escapeHtml(c.linkToOjEu)}" target="_blank" rel="noopener">Обявление в TED →</a>`
         : '';
 
       return `
@@ -263,7 +270,7 @@
           <div class="value">${formatMoney(c.contractValue, c.contractCurrency)}</div>
           <div class="supplier">${escapeHtml(c.tenderName || '')}</div>
           <div class="flags">${flagsHtml}</div>
-          ${eaopLink}${linkHtml}
+          <div class="links">${eaopLink}${buyerLink}${supplierLink}${linkHtml}</div>
         </div>
       `;
     }).join('');
