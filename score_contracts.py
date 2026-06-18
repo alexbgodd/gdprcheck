@@ -10,10 +10,12 @@ OUTPUT_FILE = Path("data") / "top20.json"
 
 EUR_TO_BGN = 1.95583
 
+
 def to_bgn(value, currency):
     if currency == "EUR":
         return value * EUR_TO_BGN
     return value
+
 
 def parse_value(raw):
     if not raw:
@@ -23,19 +25,24 @@ def parse_value(raw):
     except ValueError:
         return 0.0
 
+
 def load_exclusions():
     if not EXCLUSIONS_FILE.exists():
         return {}, {}
     data = json.loads(EXCLUSIONS_FILE.read_text(encoding="utf-8"))
     return data.get("state_entities", {}), data.get("monopolies", {})
 
+
 def compute_scores(contracts, state_entities, monopolies):
+    # Медианата се изчислява в BGN (EUR се конвертира)
     values_by_type = defaultdict(list)
     for c in contracts:
         v = parse_value(c.get("contractValue"))
+        currency = c.get("contractCurrency", "BGN")
+        v_bgn = to_bgn(v, currency)
         t = c.get("typeOfContract", "Друго")
-        if v > 0:
-            values_by_type[t].append(v)
+        if v_bgn > 0:
+            values_by_type[t].append(v_bgn)
 
     median_by_type = {
         t: statistics.median(vals)
@@ -55,7 +62,6 @@ def compute_scores(contracts, state_entities, monopolies):
         flags = []
         supplier_reg = c.get("supplierRegisterNumber") or ""
 
-        # Категория на доставчика
         if supplier_reg in state_entities:
             supplier_category = "state"
         elif supplier_reg in monopolies:
@@ -63,7 +69,6 @@ def compute_scores(contracts, state_entities, monopolies):
         else:
             supplier_category = "normal"
 
-        # Сигнал 1: единствена оферта
         try:
             offers_int = int(c.get("offersCount") or 0)
         except (TypeError, ValueError):
@@ -73,29 +78,31 @@ def compute_scores(contracts, state_entities, monopolies):
             score += 40
             flags.append("Единствена оферта")
 
-        # Сигнал 2: стойност над медианата
         value = parse_value(c.get("contractValue"))
+        currency = c.get("contractCurrency", "BGN")
+        value_bgn = to_bgn(value, currency)
         contract_type = c.get("typeOfContract", "Друго")
         median = median_by_type.get(contract_type, 0)
-        if value > 0 and median > 0 and value > median:
+        if value_bgn > 0 and median > 0 and value_bgn > median:
             score += 30
             flags.append(f"Стойност над медианата ({median:,.0f} лв.)")
 
-        # Сигнал 3: концентрация
         supplier = c.get("supplierRegisterNumber") or ""
         buyer = c.get("buyerRegistryNumber") or ""
         wins = pair_counts.get((supplier, buyer), 0)
-        if wins >= 5:
+        if wins >= 10:
             score += 30
             flags.append(f"Изпълнителят е спечелил {wins} поръчки от същия възложител")
+        elif wins >= 5:
+            score += 15
+            flags.append(f"Изпълнителят е спечелил {wins} поръчки от същия възложител")
 
-        # Намаление за монополни/държавни
         if supplier_category == "state":
             score = max(0, score - 30)
-            flags.append("⚠️ Публично/държавно дружество")
+            flags.append("Публично/държавно дружество")
         elif supplier_category == "monopoly":
             score = max(0, score - 20)
-            flags.append("⚠️ Монополен доставчик")
+            flags.append("Монополен доставчик")
 
         if score > 0:
             scored.append({
@@ -105,10 +112,13 @@ def compute_scores(contracts, state_entities, monopolies):
                 "contractNumber": c.get("contractNumber"),
                 "contractDate": c.get("contractDate"),
                 "contractValue": value,
-                "contractCurrency": c.get("contractCurrency", "BGN"),
+                "contractValueBgn": round(value_bgn, 2),
+                "contractCurrency": currency,
                 "tenderName": c.get("tenderName"),
                 "buyerName": c.get("buyerName"),
+                "buyerRegistryNumber": c.get("buyerRegistryNumber", ""),
                 "supplierName": c.get("supplierName"),
+                "supplierRegisterNumber": supplier_reg,
                 "procedureType": c.get("procedureType"),
                 "typeOfContract": contract_type,
                 "offersCount": offers_int,
@@ -116,8 +126,20 @@ def compute_scores(contracts, state_entities, monopolies):
                 "publicationDate": c.get("publicationDate", ""),
             })
 
-    scored.sort(key=lambda x: (x["score"], to_bgn(x["contractValue"], x["contractCurrency"])), reverse=True)
-    return scored[:50]  # Връщаме 50, филтрирането е в сайта
+    scored.sort(key=lambda x: (x["score"], x["contractValueBgn"]), reverse=True)
+
+    # Tier-базирана селекция: до 50 от всяко score ниво
+    PER_TIER = 50
+    by_score = defaultdict(list)
+    for item in scored:
+        by_score[item["score"]].append(item)
+    result = []
+    for score_val in sorted(by_score.keys(), reverse=True):
+        result.extend(by_score[score_val][:PER_TIER])
+        if len(result) >= 300:
+            break
+    return result
+
 
 def main():
     print(f"Зареждам {CACHE_FILE} ...")
@@ -128,19 +150,29 @@ def main():
     state_entities, monopolies = load_exclusions()
     print(f"Exclusions: {len(state_entities)} държавни, {len(monopolies)} монополни")
 
-    top50 = compute_scores(contracts, state_entities, monopolies)
+    results = compute_scores(contracts, state_entities, monopolies)
 
     OUTPUT_FILE.write_text(
-        json.dumps({"generatedAt": raw.get("lastDay"), "contracts": top50},
-                   ensure_ascii=False, indent=2),
-        encoding="utf-8"
+        json.dumps(
+            {"generatedAt": raw.get("lastDay"), "contracts": results},
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
     )
 
-    print(f"\nТоп 50 записани в {OUTPUT_FILE}\n")
-    for i, c in enumerate(top50[:10], 1):
-        print(f"{i:2}. [{c['score']:3}/100] {c['buyerName'][:45]}")
-        print(f"     {c['supplierName']} — {c['contractValue']:,.0f} {c['contractCurrency']}")
+    from collections import Counter
+    dist = Counter(c["score"] for c in results)
+    print(f"\nЗаписани {len(results)} записа в {OUTPUT_FILE}")
+    print("Score разпределение:")
+    for s, n in sorted(dist.items(), reverse=True):
+        print(f"  {s:3}/100 -> {n}")
+    print()
+    for i, c in enumerate(results[:10], 1):
+        print(f"{i:2}. [{c['score']:3}/100] {(c['buyerName'] or '')[:45]}")
+        print(f"     {c['supplierName']} -- {c['contractValue']:,.0f} {c['contractCurrency']}")
         print(f"     {', '.join(c['flags'])}")
+
 
 if __name__ == "__main__":
     main()

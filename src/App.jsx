@@ -19,6 +19,10 @@ export default function App() {
           <div style={styles.barFill} />
         </div>
 
+        <a href="/risk" style={styles.riskBtn}>
+          ⚠ Рискови обществени поръчки →
+        </a>
+
         <p style={styles.footer}>
           QA &amp; Дигитален специалист · София, България
         </p>
@@ -110,6 +114,21 @@ const styles = {
     borderRadius: '999px',
     background: 'var(--green)',
     animation: 'slide 1.8s ease-in-out infinite',
+  },
+  riskBtn: {
+    display: 'inline-block',
+    fontFamily: 'var(--mono)',
+    fontSize: '13px',
+    fontWeight: 600,
+    color: 'var(--green)',
+    background: 'var(--green-dim)',
+    border: '1px solid var(--green)',
+    borderRadius: '8px',
+    padding: '10px 20px',
+    marginBottom: '24px',
+    textDecoration: 'none',
+    letterSpacing: '0.02em',
+    transition: 'background 0.2s',
   },
   footer: {
     fontFamily: 'var(--mono)',

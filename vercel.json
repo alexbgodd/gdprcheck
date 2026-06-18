@@ -4,6 +4,17 @@
       "source": "/sigma.html",
       "destination": "/risk.html",
       "permanent": true
+    },
+    {
+      "source": "/risk.html",
+      "destination": "/risk",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/risk",
+      "destination": "/risk.html"
     }
   ]
 }
