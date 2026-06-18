@@ -245,8 +245,11 @@
         return `<span class="flag${isWarning ? ' warning' : ''}">${escapeHtml(f)}</span>`;
       }).join('');
 
+      const eaopLink = c.contractNumber
+        ? `<a class="link" href="https://app.eop.bg/today/contracts/${escapeHtml(c.contractNumber)}" target="_blank" rel="noopener">Виж в ЦАИС ЕОП →</a>`
+        : '';
       const linkHtml = c.linkToOjEu
-        ? `<a class="link" href="${escapeHtml(c.linkToOjEu)}" target="_blank" rel="noopener">Виж обявлението в TED →</a>`
+        ? `<a class="link" href="${escapeHtml(c.linkToOjEu)}" target="_blank" rel="noopener">Виж в TED →</a>`
         : '';
 
       return `
@@ -260,7 +263,7 @@
           <div class="value">${formatMoney(c.contractValue, c.contractCurrency)}</div>
           <div class="supplier">${escapeHtml(c.tenderName || '')}</div>
           <div class="flags">${flagsHtml}</div>
-          ${linkHtml}
+          ${eaopLink}${linkHtml}
         </div>
       `;
     }).join('');
