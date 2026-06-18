@@ -75,6 +75,45 @@
     footer a { color: #2563eb; }
     #loading { text-align: center; padding: 3rem; color: #666; }
     .hidden { display: none; }
+
+    /* Sticky info panel */
+    .info-panel {
+      display: none;
+      position: fixed;
+      top: 120px;
+      right: 24px;
+      width: 210px;
+      background: white;
+      border-radius: 10px;
+      padding: 1.2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+      border-top: 4px solid #1a1a2e;
+      font-size: 0.8rem;
+      color: #444;
+      line-height: 1.6;
+      z-index: 100;
+    }
+    .info-panel h3 {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #1a1a2e;
+      margin-bottom: 0.8rem;
+    }
+    .info-row { margin-bottom: 0.5rem; }
+    .info-label { color: #999; font-size: 0.72rem; display: block; }
+    .info-value { font-weight: 600; color: #1a1a2e; }
+    .info-note {
+      margin-top: 1rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid #eee;
+      font-size: 0.72rem;
+      color: #888;
+      line-height: 1.5;
+    }
+    @media (min-width: 1280px) {
+      .info-panel { display: block; }
+    }
   </style>
 </head>
 <body>
@@ -82,6 +121,29 @@
   <h1>⚠️ Рискови обществени поръчки <span class="badge">Създадено с AI</span></h1>
   <p>Автоматично изчислен риск скор върху официални данни</p>
 </header>
+<div class="info-panel" id="info-panel">
+  <h3>За данните</h3>
+  <div class="info-row">
+    <span class="info-label">Период</span>
+    <span class="info-value" id="ip-period">—</span>
+  </div>
+  <div class="info-row">
+    <span class="info-label">Анализирани договори</span>
+    <span class="info-value" id="ip-contracts">—</span>
+  </div>
+  <div class="info-row">
+    <span class="info-label">Анализирани анекси</span>
+    <span class="info-value" id="ip-annexes">—</span>
+  </div>
+  <div class="info-row">
+    <span class="info-label">Последен анализ</span>
+    <span class="info-value" id="ip-generated">—</span>
+  </div>
+  <div class="info-note">
+    Независим скрейп на официално публикувани данни. Скорът е автоматичен — не е обвинение.
+  </div>
+</div>
+
 <div class="filters" id="filters">
   <span class="filter-label">Филтър:</span>
   <button class="filter-btn active" data-filter-type="all" data-filter="all">Всички</button>
@@ -227,8 +289,14 @@
         const to   = (data.periodTo   || '').slice(0, 10);
         const nc   = (data.contractsAnalyzed || 0).toLocaleString('bg-BG');
         const na   = (data.annexesAnalyzed   || 0).toLocaleString('bg-BG');
+        const gen  = (data.generatedAt || '').slice(0, 10);
         document.getElementById('data-meta').innerHTML =
           `Период: ${from} – ${to} &nbsp;·&nbsp; Договори: ${nc} &nbsp;·&nbsp; Анекси: ${na}`;
+        // Sticky panel
+        document.getElementById('ip-period').textContent    = `${from} – ${to}`;
+        document.getElementById('ip-contracts').textContent = nc;
+        document.getElementById('ip-annexes').textContent   = na;
+        document.getElementById('ip-generated').textContent = gen || from;
       }
 
       document.getElementById('loading').classList.add('hidden');
