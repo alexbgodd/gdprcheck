@@ -249,9 +249,6 @@
       const eaopLink = c.contractNumber
         ? `<a class="link" href="https://app.eop.bg/today/contracts/${escapeHtml(c.contractNumber)}" target="_blank" rel="noopener">Договор в ЦАИС →</a>`
         : '';
-      const buyerLink = c.buyerRegistryNumber
-        ? `<a class="link" href="https://app.eop.bg/today/buyers/${escapeHtml(c.buyerRegistryNumber)}/contracts" target="_blank" rel="noopener">Всички поръчки на възложителя →</a>`
-        : '';
       const supplierLink = c.supplierRegisterNumber
         ? `<a class="link" href="https://portal.registryagency.bg/CR/reports/company?uic=${escapeHtml(c.supplierRegisterNumber)}" target="_blank" rel="noopener">Фирмата в Търговски регистър →</a>`
         : '';
@@ -270,7 +267,7 @@
           <div class="value">${formatMoney(c.contractValue, c.contractCurrency)}</div>
           <div class="supplier">${escapeHtml(c.tenderName || '')}</div>
           <div class="flags">${flagsHtml}</div>
-          <div class="links">${eaopLink}${buyerLink}${supplierLink}${linkHtml}</div>
+          <div class="links">${eaopLink}${supplierLink}${linkHtml}</div>
         </div>
       `;
     }).join('');
