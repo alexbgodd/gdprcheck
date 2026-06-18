@@ -26,6 +26,21 @@
       align-items: center;
     }
     .filter-label { font-size: 0.85rem; color: #555; font-weight: 600; }
+    .search-wrap {
+      max-width: 900px;
+      margin: 1rem auto 0;
+      padding: 0 1rem;
+    }
+    #search {
+      width: 100%;
+      padding: 0.6rem 1rem;
+      border-radius: 999px;
+      border: 2px solid #1a1a2e;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    #search:focus { border-color: #e63946; }
     .filter-btn {
       padding: 0.4rem 1rem;
       border-radius: 999px;
@@ -151,6 +166,9 @@
   <button class="filter-btn" data-filter-type="supplier" data-filter="state">Държавни</button>
   <button class="filter-btn" data-filter-type="supplier" data-filter="monopoly">Монополни</button>
 </div>
+<div class="search-wrap">
+  <input type="search" id="search" placeholder="Търси по възложител, изпълнител или поръчка…" />
+</div>
 <main>
   <div class="legend">
     <div class="legend-item"><span class="legend-dot dot-red"></span> Рисков доставчик</div>
@@ -198,11 +216,21 @@
     return n.toLocaleString('bg-BG', { maximumFractionDigits: 0 }) + ' ' + (currency || 'BGN');
   }
 
+  let searchQuery = '';
+
   function getFiltered() {
-    if (currentFilterType === 'all') return allContracts;
-    if (currentFilterType === 'supplier') return allContracts.filter(c => c.supplierCategory === currentFilterValue);
-    if (currentFilterType === 'cpv') return allContracts.filter(c => c.cpvCategory === currentFilterValue);
-    return allContracts;
+    let list = allContracts;
+    if (currentFilterType === 'supplier') list = list.filter(c => c.supplierCategory === currentFilterValue);
+    if (currentFilterType === 'cpv')      list = list.filter(c => c.cpvCategory === currentFilterValue);
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      list = list.filter(c =>
+        (c.buyerName    || '').toLowerCase().includes(q) ||
+        (c.supplierName || '').toLowerCase().includes(q) ||
+        (c.tenderName   || '').toLowerCase().includes(q)
+      );
+    }
+    return list;
   }
 
   function renderCards() {
@@ -260,6 +288,11 @@
 
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', handleFilter);
+  });
+
+  document.getElementById('search').addEventListener('input', function() {
+    searchQuery = this.value.trim();
+    renderCards();
   });
 
   fetch(DATA_URL)
