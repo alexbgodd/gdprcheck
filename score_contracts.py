@@ -52,14 +52,14 @@ def load_exclusions():
 
 def load_annex_inflation():
     """
-    Връща речник:  contract_number → максимален % увеличение от анекси.
+    Връща речник:  contractNumber → % увеличение от анекси.
 
-    Поддържа полета в camelCase и snake_case (двата формата се срещат в eop.bg):
-      contractNumber / contract_number
-      valueBefore / value_before
-      valueAfter  / value_after
-      deltaValue  / delta_value
-      currency
+    Полета в eop.bg annexes файл:
+      contractNumber         — номер на договора
+      lastContractValue      — стойност преди анекса
+      currentContractValue   — стойност след анекса
+      contractValueDifference — разликата
+      contractCurrency
     """
     if not ANNEXES_FILE.exists():
         return {}
@@ -67,33 +67,32 @@ def load_annex_inflation():
     raw = json.loads(ANNEXES_FILE.read_text(encoding="utf-8"))
     annexes = raw.get("annexes", raw) if isinstance(raw, dict) else raw
 
-    # Натрупваме delta_bgn по contractNumber
+    # За всеки договор: вземаме последното "before" и сумираме делтите
+    before_by_contract = {}
     deltas_by_contract = defaultdict(float)
-    before_by_contract = defaultdict(float)
-
-    def get(rec, *keys):
-        for k in keys:
-            v = rec.get(k)
-            if v is not None:
-                return v
-        return None
 
     for a in annexes:
         if not isinstance(a, dict):
             continue
-        cn = get(a, "contractNumber", "contract_number", "noticeId")
+        cn = str(a.get("contractNumber") or "").strip()
         if not cn:
             continue
 
-        currency = get(a, "currency", "Currency") or "BGN"
+        currency = (a.get("contractCurrency") or "BGN").strip()
 
-        before = parse_value(get(a, "valueBefore", "value_before", "ValueBefore"))
-        after  = parse_value(get(a, "valueAfter",  "value_after",  "ValueAfter"))
-        delta  = parse_value(get(a, "deltaValue",  "delta_value",  "DeltaValue"))
+        before = parse_value(a.get("lastContractValue"))
+        delta  = parse_value(a.get("contractValueDifference"))
 
-        # Предпочитаме директния delta; ако липсва — изчисляваме
-        if delta == 0 and after > before > 0:
-            delta = after - before
+        # Ако делтата е 0 — изчисляваме от before/current
+        if delta == 0:
+            current = parse_value(a.get("currentContractValue"))
+            if current > before > 0:
+                delta = current - before
+
+        # Записваме before ПРЕДИ да проверяваме delta
+        before_bgn = to_bgn(before, currency)
+        if before_bgn >= 1000:  # филтър за шум (мин. 1000 лв.)
+            before_by_contract.setdefault(cn, before_bgn)
 
         if delta <= 0:
             continue
@@ -101,20 +100,11 @@ def load_annex_inflation():
         delta_bgn = to_bgn(delta, currency)
         deltas_by_contract[cn] += delta_bgn
 
-        before_bgn = to_bgn(before, currency)
-        if before_bgn > 0:
-            before_by_contract[cn] = max(before_by_contract[cn], before_bgn)
-
-    # Изчисляваме максималния % увеличение
     inflation = {}
-    for cn, total_delta_bgn in deltas_by_contract.items():
+    for cn, total_delta in deltas_by_contract.items():
         before_bgn = before_by_contract.get(cn, 0)
         if before_bgn > 0:
-            pct = total_delta_bgn / before_bgn
-            inflation[cn] = pct
-        else:
-            # Нямаме "преди" — консервативно не добавяме сигнал
-            pass
+            inflation[cn] = total_delta / before_bgn
 
     return inflation
 
@@ -187,8 +177,8 @@ def compute_scores(contracts, state_entities, monopolies, annex_inflation):
             flags.append(f"Изпълнителят е спечелил {wins} поръчки от същия възложител")
 
         # --- Сигнал 4: раздута стойност чрез анекс ---
-        cn  = c.get("contractNumber") or c.get("noticeId") or ""
-        upn = c.get("uniqueProcurementNumber") or ""
+        cn  = str(c.get("contractNumber") or "").strip()
+        upn = str(c.get("uniqueProcurementNumber") or "").strip()
         inflation_pct = annex_inflation.get(cn) or annex_inflation.get(upn) or 0
         if inflation_pct > ANNEX_INFLATION_THRESHOLD:
             score += 30
