@@ -82,12 +82,12 @@
   <h1>⚠️ Рискови обществени поръчки <span class="badge">Създадено с AI</span></h1>
   <p>Автоматично изчислен риск скор върху официални данни</p>
 </header>
-<div class="filters">
+<div class="filters" id="filters">
   <span class="filter-label">Филтър:</span>
-  <button class="filter-btn active" data-filter="all">Всички</button>
-  <button class="filter-btn" data-filter="normal">Рискови</button>
-  <button class="filter-btn" data-filter="state">Държавни</button>
-  <button class="filter-btn" data-filter="monopoly">Монополни</button>
+  <button class="filter-btn active" data-filter-type="all" data-filter="all">Всички</button>
+  <button class="filter-btn" data-filter-type="supplier" data-filter="normal">Рискови</button>
+  <button class="filter-btn" data-filter-type="supplier" data-filter="state">Държавни</button>
+  <button class="filter-btn" data-filter-type="supplier" data-filter="monopoly">Монополни</button>
 </div>
 <main>
   <div class="legend">
@@ -114,6 +114,7 @@
       Данните се обновяват периодично, при ново пускане на анализа.
     </p>
   </section>
+  <p class="meta" id="data-meta"></p>
   <p class="meta" id="meta"></p>
   <div id="loading">Зареждане на данните…</div>
   <div id="cards" class="hidden"></div>
@@ -127,18 +128,24 @@
 <script>
   const DATA_URL = 'data/top20.json';
   let allContracts = [];
-  let currentFilter = 'all';
+  let currentFilterType = 'all';
+  let currentFilterValue = 'all';
 
   function formatMoney(value, currency) {
     const n = Number(value) || 0;
     return n.toLocaleString('bg-BG', { maximumFractionDigits: 0 }) + ' ' + (currency || 'BGN');
   }
 
+  function getFiltered() {
+    if (currentFilterType === 'all') return allContracts;
+    if (currentFilterType === 'supplier') return allContracts.filter(c => c.supplierCategory === currentFilterValue);
+    if (currentFilterType === 'cpv') return allContracts.filter(c => c.cpvCategory === currentFilterValue);
+    return allContracts;
+  }
+
   function renderCards() {
+    const filtered = getFiltered();
     const cardsEl = document.getElementById('cards');
-    const filtered = currentFilter === 'all'
-      ? allContracts
-      : allContracts.filter(c => c.supplierCategory === currentFilter);
 
     cardsEl.innerHTML = filtered.map((c, i) => {
       const category = c.supplierCategory || 'normal';
@@ -181,13 +188,16 @@
       .replace(/"/g, '&quot;');
   }
 
+  function handleFilter(e) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    e.currentTarget.classList.add('active');
+    currentFilterType = e.currentTarget.dataset.filterType;
+    currentFilterValue = e.currentTarget.dataset.filter;
+    renderCards();
+  }
+
   document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      currentFilter = btn.dataset.filter;
-      renderCards();
-    });
+    btn.addEventListener('click', handleFilter);
   });
 
   fetch(DATA_URL)
@@ -197,6 +207,30 @@
     })
     .then(data => {
       allContracts = data.contracts || [];
+
+      // Добавяме CPV категории от метаданните (self-describing JSON)
+      const categories = data.categories || [];
+      const filtersEl = document.getElementById('filters');
+      categories.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.className = 'filter-btn';
+        btn.dataset.filterType = 'cpv';
+        btn.dataset.filter = cat;
+        btn.textContent = cat;
+        btn.addEventListener('click', handleFilter);
+        filtersEl.appendChild(btn);
+      });
+
+      // Метаданни за периода
+      if (data.periodFrom || data.contractsAnalyzed) {
+        const from = (data.periodFrom || '').slice(0, 10);
+        const to   = (data.periodTo   || '').slice(0, 10);
+        const nc   = (data.contractsAnalyzed || 0).toLocaleString('bg-BG');
+        const na   = (data.annexesAnalyzed   || 0).toLocaleString('bg-BG');
+        document.getElementById('data-meta').innerHTML =
+          `Период: ${from} – ${to} &nbsp;·&nbsp; Договори: ${nc} &nbsp;·&nbsp; Анекси: ${na}`;
+      }
+
       document.getElementById('loading').classList.add('hidden');
       renderCards();
     })
