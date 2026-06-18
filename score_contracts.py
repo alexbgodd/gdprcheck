@@ -28,6 +28,25 @@ EUR_TO_BGN = 1.95583
 ANNEX_INFLATION_THRESHOLD = 0.50   # >50% увеличение = сигнал
 
 
+
+# CPV категории — редът има значение (първото съвпадение печели)
+CPV_CATEGORIES = [
+    ("Медицина",      ["33", "85", "504"]),
+    ("Пътища",        ["45200", "45233"]),
+    ("Строителство",  ["45", "71"]),
+    ("IT",            ["30", "48", "72"]),
+    ("Образование",   ["22", "80"]),
+    ("Енергия",       ["09", "65"]),
+    ("Транспорт",     ["60", "34"]),
+]
+
+def get_cpv_category(cpv_code):
+    code = str(cpv_code or "").strip()
+    for name, prefixes in CPV_CATEGORIES:
+        if any(code.startswith(p) for p in prefixes):
+            return name
+    return "Друго"
+
 def to_bgn(value, currency):
     if currency == "EUR":
         return value * EUR_TO_BGN
@@ -215,6 +234,8 @@ def compute_scores(contracts, state_entities, monopolies, annex_inflation):
                 "annexInflationPct":     round(inflation_pct * 100, 1) if inflation_pct else None,
                 "linkToOjEu":            c.get("linkToOjEu", ""),
                 "publicationDate":       c.get("publicationDate", ""),
+                "cpvCategory":           get_cpv_category(c.get("tenderMainCpv")),
+                "tenderMainCpv":         c.get("tenderMainCpv", ""),
             })
 
     scored.sort(key=lambda x: (x["score"], x["contractValueBgn"]), reverse=True)
@@ -249,14 +270,29 @@ def main():
 
     results = compute_scores(contracts, state_entities, monopolies, annex_inflation)
 
-    OUTPUT_FILE.write_text(
-        json.dumps(
-            {"generatedAt": raw.get("lastDay"), "contracts": results},
-            ensure_ascii=False,
-            indent=2,
-        ),
-        encoding="utf-8",
-    )
+    # Метаданни
+    annex_raw = {}
+    if ANNEXES_FILE.exists():
+        try:
+            annex_raw = json.loads(ANNEXES_FILE.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+
+    output = {
+        "generatedAt":       raw.get("lastDay"),
+        "periodFrom":        raw.get("firstDay"),
+        "periodTo":          raw.get("lastDay"),
+        "contractsAnalyzed": raw.get("recordCount", len(contracts)),
+        "annexesAnalyzed":   annex_raw.get("recordCount", 0),
+        "categories":        [name for name, _ in CPV_CATEGORIES] + ["Друго"],
+        "contracts":         results,
+    }
+
+    # Atomic write — никога не чупи live файла
+    import tempfile, os
+    tmp = OUTPUT_FILE.with_suffix(".tmp")
+    tmp.write_text(json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8")
+    os.replace(tmp, OUTPUT_FILE)
 
     from collections import Counter
     dist = Counter(c["score"] for c in results)

@@ -1,5 +1,19 @@
 {
   "generatedAt": "2026-06-17",
+  "periodFrom": "2025-06-16",
+  "periodTo": "2026-06-17",
+  "contractsAnalyzed": 52180,
+  "annexesAnalyzed": 7025,
+  "categories": [
+    "Медицина",
+    "Пътища",
+    "Строителство",
+    "IT",
+    "Образование",
+    "Енергия",
+    "Транспорт",
+    "Друго"
+  ],
   "contracts": [
     {
       "score": 115,
@@ -25,7 +39,9 @@
       "offersCount": 1,
       "annexInflationPct": 100.0,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:487738-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-25T09:55:40"
+      "publicationDate": "2025-07-25T09:55:40",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45233000"
     },
     {
       "score": 115,
@@ -51,7 +67,9 @@
       "offersCount": 1,
       "annexInflationPct": 100.0,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:488731-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-25T10:01:02"
+      "publicationDate": "2025-07-25T10:01:02",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45233000"
     },
     {
       "score": 115,
@@ -77,7 +95,9 @@
       "offersCount": 1,
       "annexInflationPct": 100.0,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:488009-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-25T10:01:22"
+      "publicationDate": "2025-07-25T10:01:22",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45233000"
     },
     {
       "score": 115,
@@ -103,7 +123,9 @@
       "offersCount": 1,
       "annexInflationPct": 100.0,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:489307-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-25T10:05:54"
+      "publicationDate": "2025-07-25T10:05:54",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45233000"
     },
     {
       "score": 115,
@@ -129,7 +151,9 @@
       "offersCount": 1,
       "annexInflationPct": 100.0,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:488127-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-25T09:52:45"
+      "publicationDate": "2025-07-25T09:52:45",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45233000"
     },
     {
       "score": 110,
@@ -156,7 +180,9 @@
       "offersCount": 1,
       "annexInflationPct": 340.6,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:574705-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-03T05:45:22"
+      "publicationDate": "2025-09-03T05:45:22",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 100,
@@ -181,7 +207,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:400018-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-06-11T05:21:10"
+      "publicationDate": "2026-06-11T05:21:10",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 100,
@@ -206,7 +234,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:395619-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-06-10T05:05:59"
+      "publicationDate": "2026-06-10T05:05:59",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 100,
@@ -231,7 +261,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:119775-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-19T05:19:58"
+      "publicationDate": "2026-02-19T05:19:58",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 100,
@@ -256,7 +288,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:401166-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-06-11T05:21:07"
+      "publicationDate": "2026-06-11T05:21:07",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 100,
@@ -281,7 +315,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:741973-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-10T06:02:08"
+      "publicationDate": "2025-11-10T06:02:08",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33100000"
     },
     {
       "score": 100,
@@ -306,7 +342,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:721875-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-10-31T05:45:07"
+      "publicationDate": "2025-10-31T05:45:07",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45231100"
     },
     {
       "score": 100,
@@ -331,7 +369,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:241457-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-04-09T05:21:37"
+      "publicationDate": "2026-04-09T05:21:37",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72320000"
     },
     {
       "score": 100,
@@ -356,7 +396,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:122282-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-20T05:06:12"
+      "publicationDate": "2026-02-20T05:06:12",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "31720000"
     },
     {
       "score": 100,
@@ -381,7 +423,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:38588-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-01-19T05:03:59"
+      "publicationDate": "2026-01-19T05:03:59",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 100,
@@ -406,7 +450,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:743164-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-10T06:02:13"
+      "publicationDate": "2025-11-10T06:02:13",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33100000"
     },
     {
       "score": 100,
@@ -431,7 +477,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:57210-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-01-26T05:18:14"
+      "publicationDate": "2026-01-26T05:18:14",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 100,
@@ -456,7 +504,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2025-12-11T09:51:42.6466667"
+      "publicationDate": "2025-12-11T09:51:42.6466667",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45215212"
     },
     {
       "score": 100,
@@ -481,7 +531,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:265910-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-04-20T05:16:45"
+      "publicationDate": "2026-04-20T05:16:45",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72268000"
     },
     {
       "score": 100,
@@ -506,7 +558,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:102088-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-12T05:21:02"
+      "publicationDate": "2026-02-12T05:21:02",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33100000"
     },
     {
       "score": 100,
@@ -531,7 +585,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:790135-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-28T05:46:05"
+      "publicationDate": "2025-11-28T05:46:05",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33100000"
     },
     {
       "score": 100,
@@ -556,7 +612,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:409981-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-06-25T10:49:02"
+      "publicationDate": "2025-06-25T10:49:02",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45210000"
     },
     {
       "score": 100,
@@ -581,7 +639,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:815714-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-09T06:07:25"
+      "publicationDate": "2025-12-09T06:07:25",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 100,
@@ -606,7 +666,9 @@
       "offersCount": 1,
       "annexInflationPct": 159.5,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:93217-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-09T05:01:09"
+      "publicationDate": "2026-02-09T05:01:09",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 100,
@@ -631,7 +693,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:233634-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-04-03T05:05:26"
+      "publicationDate": "2026-04-03T05:05:26",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 100,
@@ -656,7 +720,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:685164-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-10-17T05:52:36"
+      "publicationDate": "2025-10-17T05:52:36",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 100,
@@ -681,7 +747,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:122204-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-20T05:01:23"
+      "publicationDate": "2026-02-20T05:01:23",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 100,
@@ -706,7 +774,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:395619-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-06-10T05:05:59"
+      "publicationDate": "2026-06-10T05:05:59",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 100,
@@ -731,7 +801,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2026-06-16T15:22:53.6633333"
+      "publicationDate": "2026-06-16T15:22:53.6633333",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45259900"
     },
     {
       "score": 100,
@@ -756,7 +828,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:434053-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-04T10:40:02"
+      "publicationDate": "2025-07-04T10:40:02",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72300000"
     },
     {
       "score": 100,
@@ -781,7 +855,9 @@
       "offersCount": 1,
       "annexInflationPct": 100.0,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:664544-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-10-09T05:21:16"
+      "publicationDate": "2025-10-09T05:21:16",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45246000"
     },
     {
       "score": 100,
@@ -806,7 +882,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2026-05-13T15:57:15.5333333"
+      "publicationDate": "2026-05-13T15:57:15.5333333",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45233220"
     },
     {
       "score": 100,
@@ -831,7 +909,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:395619-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-06-10T05:05:59"
+      "publicationDate": "2026-06-10T05:05:59",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 100,
@@ -856,7 +936,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:196460-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-23T05:05:34"
+      "publicationDate": "2026-03-23T05:05:34",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33100000"
     },
     {
       "score": 100,
@@ -881,7 +963,9 @@
       "offersCount": 1,
       "annexInflationPct": 100.0,
       "linkToOjEu": null,
-      "publicationDate": "2025-08-05T10:47:09.4666667"
+      "publicationDate": "2025-08-05T10:47:09.4666667",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 100,
@@ -906,7 +990,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2026-04-06T14:21:20.32"
+      "publicationDate": "2026-04-06T14:21:20.32",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 100,
@@ -931,7 +1017,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:237146-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-04-08T05:19:07"
+      "publicationDate": "2026-04-08T05:19:07",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 100,
@@ -956,7 +1044,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2026-02-03T11:14:30.6566667"
+      "publicationDate": "2026-02-03T11:14:30.6566667",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45259900"
     },
     {
       "score": 100,
@@ -981,7 +1071,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:657711-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-10-08T05:48:20"
+      "publicationDate": "2025-10-08T05:48:20",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 100,
@@ -1006,7 +1098,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2026-02-19T14:10:13"
+      "publicationDate": "2026-02-19T14:10:13",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45259900"
     },
     {
       "score": 100,
@@ -1031,7 +1125,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:335510-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-05-18T05:23:04"
+      "publicationDate": "2026-05-18T05:23:04",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 100,
@@ -1056,7 +1152,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:474593-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-21T09:56:42"
+      "publicationDate": "2025-07-21T09:56:42",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33696100"
     },
     {
       "score": 100,
@@ -1081,7 +1179,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:280308-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-04-23T05:20:40"
+      "publicationDate": "2026-04-23T05:20:40",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33190000"
     },
     {
       "score": 100,
@@ -1106,7 +1206,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2026-04-06T15:09:02.3833333"
+      "publicationDate": "2026-04-06T15:09:02.3833333",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45233200"
     },
     {
       "score": 100,
@@ -1131,7 +1233,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:828672-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-12T06:50:12"
+      "publicationDate": "2025-12-12T06:50:12",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33141625"
     },
     {
       "score": 100,
@@ -1156,7 +1260,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:599921-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-15T05:43:41"
+      "publicationDate": "2025-09-15T05:43:41",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 100,
@@ -1181,7 +1287,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:102088-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-12T05:21:02"
+      "publicationDate": "2026-02-12T05:21:02",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33100000"
     },
     {
       "score": 100,
@@ -1206,7 +1314,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:664424-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-10-09T06:41:39"
+      "publicationDate": "2025-10-09T06:41:39",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 100,
@@ -1231,7 +1341,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2026-02-18T12:04:36.57"
+      "publicationDate": "2026-02-18T12:04:36.57",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 100,
@@ -1256,7 +1368,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:431751-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-03T10:41:59"
+      "publicationDate": "2025-07-03T10:41:59",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33141000"
     },
     {
       "score": 100,
@@ -1281,7 +1395,9 @@
       "offersCount": 1,
       "annexInflationPct": 99.9,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:742097-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-10T05:42:13"
+      "publicationDate": "2025-11-10T05:42:13",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 100,
@@ -1306,7 +1422,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2026-05-13T15:33:35.2333333"
+      "publicationDate": "2026-05-13T15:33:35.2333333",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45233220"
     },
     {
       "score": 100,
@@ -1331,7 +1449,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2025-06-17T17:51:44.65"
+      "publicationDate": "2025-06-17T17:51:44.65",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45200000"
     },
     {
       "score": 100,
@@ -1356,7 +1476,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:530478-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-08-13T06:05:30"
+      "publicationDate": "2025-08-13T06:05:30",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33100000"
     },
     {
       "score": 100,
@@ -1381,7 +1503,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:395273-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-06-10T05:05:21"
+      "publicationDate": "2026-06-10T05:05:21",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 100,
@@ -1406,7 +1530,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2025-11-19T14:42:50.37"
+      "publicationDate": "2025-11-19T14:42:50.37",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 95,
@@ -1433,7 +1559,9 @@
       "offersCount": 1,
       "annexInflationPct": 100.0,
       "linkToOjEu": null,
-      "publicationDate": "2026-01-26T11:54:06.2266667"
+      "publicationDate": "2026-01-26T11:54:06.2266667",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "71320000"
     },
     {
       "score": 95,
@@ -1460,7 +1588,9 @@
       "offersCount": 1,
       "annexInflationPct": 100.0,
       "linkToOjEu": null,
-      "publicationDate": "2026-01-26T11:54:06.2266667"
+      "publicationDate": "2026-01-26T11:54:06.2266667",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "71320000"
     },
     {
       "score": 95,
@@ -1487,7 +1617,9 @@
       "offersCount": 1,
       "annexInflationPct": 100.0,
       "linkToOjEu": null,
-      "publicationDate": "2026-01-26T11:54:06.2266667"
+      "publicationDate": "2026-01-26T11:54:06.2266667",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "71320000"
     },
     {
       "score": 90,
@@ -1512,7 +1644,9 @@
       "offersCount": 2,
       "annexInflationPct": 100.0,
       "linkToOjEu": null,
-      "publicationDate": "2025-07-03T15:19:54.8233333"
+      "publicationDate": "2025-07-03T15:19:54.8233333",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 90,
@@ -1537,7 +1671,9 @@
       "offersCount": 4,
       "annexInflationPct": 121.1,
       "linkToOjEu": null,
-      "publicationDate": "2025-06-25T16:13:55.6666667"
+      "publicationDate": "2025-06-25T16:13:55.6666667",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 90,
@@ -1562,7 +1698,9 @@
       "offersCount": 6,
       "annexInflationPct": 75.0,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:574859-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-03T05:43:47"
+      "publicationDate": "2025-09-03T05:43:47",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 85,
@@ -1587,7 +1725,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:214304-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-27T05:20:42"
+      "publicationDate": "2026-03-27T05:20:42",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 85,
@@ -1612,7 +1752,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:211737-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-27T05:19:34"
+      "publicationDate": "2026-03-27T05:19:34",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 85,
@@ -1637,7 +1779,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:130977-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-25T05:04:51"
+      "publicationDate": "2026-02-25T05:04:51",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 85,
@@ -1662,7 +1806,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:119495-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-19T05:17:53"
+      "publicationDate": "2026-02-19T05:17:53",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 85,
@@ -1687,7 +1833,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:457879-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-14T11:07:18"
+      "publicationDate": "2025-07-14T11:07:18",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 85,
@@ -1712,7 +1860,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:92677-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-09T05:05:07"
+      "publicationDate": "2026-02-09T05:05:07",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 85,
@@ -1737,7 +1887,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:129215-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-24T05:06:56"
+      "publicationDate": "2026-02-24T05:06:56",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 85,
@@ -1762,7 +1914,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:171355-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-12T05:05:59"
+      "publicationDate": "2026-03-12T05:05:59",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 85,
@@ -1787,7 +1941,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:214304-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-27T05:20:42"
+      "publicationDate": "2026-03-27T05:20:42",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 85,
@@ -1812,7 +1968,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:497344-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-30T05:26:31"
+      "publicationDate": "2025-07-30T05:26:31",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 85,
@@ -1837,7 +1995,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:233634-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-04-03T05:05:26"
+      "publicationDate": "2026-04-03T05:05:26",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33141300"
     },
     {
       "score": 85,
@@ -1862,7 +2022,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:574245-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-03T05:44:59"
+      "publicationDate": "2025-09-03T05:44:59",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "38421100"
     },
     {
       "score": 85,
@@ -1887,7 +2049,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:133858-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-25T05:05:55"
+      "publicationDate": "2026-02-25T05:05:55",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 85,
@@ -1912,7 +2076,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:497510-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-30T05:02:42"
+      "publicationDate": "2025-07-30T05:02:42",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "44162000"
     },
     {
       "score": 85,
@@ -1937,7 +2103,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:799032-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-02T06:35:35"
+      "publicationDate": "2025-12-02T06:35:35",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 85,
@@ -1962,7 +2130,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:754457-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-13T05:24:02"
+      "publicationDate": "2025-11-13T05:24:02",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45231300"
     },
     {
       "score": 85,
@@ -1987,7 +2157,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:130977-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-25T05:04:51"
+      "publicationDate": "2026-02-25T05:04:51",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 85,
@@ -2012,7 +2184,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:826292-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-12T06:37:23"
+      "publicationDate": "2025-12-12T06:37:23",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 85,
@@ -2037,7 +2211,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:579311-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-05T06:22:40"
+      "publicationDate": "2025-09-05T06:22:40",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 85,
@@ -2062,7 +2238,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:57210-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-01-26T05:18:14"
+      "publicationDate": "2026-01-26T05:18:14",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 85,
@@ -2087,7 +2265,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2026-05-22T10:43:27.2466667"
+      "publicationDate": "2026-05-22T10:43:27.2466667",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45233000"
     },
     {
       "score": 85,
@@ -2112,7 +2292,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:236979-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-04-08T05:22:19"
+      "publicationDate": "2026-04-08T05:22:19",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 85,
@@ -2137,7 +2319,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2025-11-04T16:09:23.3266667"
+      "publicationDate": "2025-11-04T16:09:23.3266667",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45231300"
     },
     {
       "score": 85,
@@ -2162,7 +2346,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:569395-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-01T05:51:56"
+      "publicationDate": "2025-09-01T05:51:56",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 85,
@@ -2187,7 +2373,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:299236-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-04-30T05:03:42"
+      "publicationDate": "2026-04-30T05:03:42",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 85,
@@ -2212,7 +2400,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:209211-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-26T05:18:30"
+      "publicationDate": "2026-03-26T05:18:30",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 85,
@@ -2237,7 +2427,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:233634-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-04-03T05:05:26"
+      "publicationDate": "2026-04-03T05:05:26",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33141110"
     },
     {
       "score": 85,
@@ -2262,7 +2454,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:213173-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-27T05:16:19"
+      "publicationDate": "2026-03-27T05:16:19",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 85,
@@ -2287,7 +2481,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:130977-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-25T05:04:51"
+      "publicationDate": "2026-02-25T05:04:51",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 85,
@@ -2312,7 +2508,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:105379-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-13T05:06:06"
+      "publicationDate": "2026-02-13T05:06:06",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 85,
@@ -2337,7 +2535,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:429663-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-03T09:49:59"
+      "publicationDate": "2025-07-03T09:49:59",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 85,
@@ -2362,7 +2562,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:20818-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-01-13T05:18:14"
+      "publicationDate": "2026-01-13T05:18:14",
+      "cpvCategory": "Транспорт",
+      "tenderMainCpv": "34121000"
     },
     {
       "score": 85,
@@ -2387,7 +2589,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:192227-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-19T05:03:38"
+      "publicationDate": "2026-03-19T05:03:38",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 85,
@@ -2412,7 +2616,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:787865-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-27T06:38:23"
+      "publicationDate": "2025-11-27T06:38:23",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 85,
@@ -2437,7 +2643,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:528486-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-08-12T05:27:22"
+      "publicationDate": "2025-08-12T05:27:22",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33100000"
     },
     {
       "score": 85,
@@ -2462,7 +2670,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:594543-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-11T06:28:26"
+      "publicationDate": "2025-09-11T06:28:26",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 85,
@@ -2487,7 +2697,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:395273-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-06-10T05:05:21"
+      "publicationDate": "2026-06-10T05:05:21",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 85,
@@ -2512,7 +2724,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:280308-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-04-23T05:20:40"
+      "publicationDate": "2026-04-23T05:20:40",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33190000"
     },
     {
       "score": 85,
@@ -2537,7 +2751,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:15485-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-01-12T05:06:35"
+      "publicationDate": "2026-01-12T05:06:35",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 85,
@@ -2562,7 +2778,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:105881-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-13T05:03:38"
+      "publicationDate": "2026-02-13T05:03:38",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33151200"
     },
     {
       "score": 85,
@@ -2587,7 +2805,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2026-02-17T11:32:17.26"
+      "publicationDate": "2026-02-17T11:32:17.26",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 85,
@@ -2612,7 +2832,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2025-06-30T16:08:41.7933333"
+      "publicationDate": "2025-06-30T16:08:41.7933333",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45233000"
     },
     {
       "score": 85,
@@ -2637,7 +2859,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:141799-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-02T05:17:23"
+      "publicationDate": "2026-03-02T05:17:23",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 85,
@@ -2662,7 +2886,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:453290-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-11T10:13:30"
+      "publicationDate": "2025-07-11T10:13:30",
+      "cpvCategory": "Транспорт",
+      "tenderMainCpv": "34121000"
     },
     {
       "score": 85,
@@ -2687,7 +2913,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2025-06-25T15:51:54.3666667"
+      "publicationDate": "2025-06-25T15:51:54.3666667",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45214100"
     },
     {
       "score": 85,
@@ -2712,7 +2940,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:600309-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-15T05:45:22"
+      "publicationDate": "2025-09-15T05:45:22",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 85,
@@ -2737,7 +2967,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:685164-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-10-17T05:52:36"
+      "publicationDate": "2025-10-17T05:52:36",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 85,
@@ -2762,7 +2994,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:528486-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-08-12T05:27:22"
+      "publicationDate": "2025-08-12T05:27:22",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33100000"
     },
     {
       "score": 85,
@@ -2787,7 +3021,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2025-10-28T22:32:43.8166667"
+      "publicationDate": "2025-10-28T22:32:43.8166667",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45262620"
     },
     {
       "score": 85,
@@ -2812,7 +3048,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:237628-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-04-08T05:20:22"
+      "publicationDate": "2026-04-08T05:20:22",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "15810000"
     },
     {
       "score": 80,
@@ -2838,7 +3076,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:678538-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-10-15T05:51:24"
+      "publicationDate": "2025-10-15T05:51:24",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -2864,7 +3104,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:396475-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-06-10T05:04:10"
+      "publicationDate": "2026-06-10T05:04:10",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -2890,7 +3132,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:659310-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-10-08T05:51:25"
+      "publicationDate": "2025-10-08T05:51:25",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -2916,7 +3160,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:120027-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-19T05:17:22"
+      "publicationDate": "2026-02-19T05:17:22",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -2942,7 +3188,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:123300-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-20T05:03:05"
+      "publicationDate": "2026-02-20T05:03:05",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "79811000"
     },
     {
       "score": 80,
@@ -2968,7 +3216,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:748356-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-12T05:47:34"
+      "publicationDate": "2025-11-12T05:47:34",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "71323100"
     },
     {
       "score": 80,
@@ -2994,7 +3244,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:807532-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-05T06:10:59"
+      "publicationDate": "2025-12-05T06:10:59",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "71323100"
     },
     {
       "score": 80,
@@ -3020,7 +3272,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:798316-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-02T06:39:11"
+      "publicationDate": "2025-12-02T06:39:11",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -3046,7 +3300,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:636742-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-30T05:22:27"
+      "publicationDate": "2025-09-30T05:22:27",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -3072,7 +3328,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:740010-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-07T06:49:44"
+      "publicationDate": "2025-11-07T06:49:44",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -3098,7 +3356,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:790745-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-28T06:09:18"
+      "publicationDate": "2025-11-28T06:09:18",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -3124,7 +3384,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:638459-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-30T05:38:49"
+      "publicationDate": "2025-09-30T05:38:49",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -3150,7 +3412,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:114768-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-18T08:05:53"
+      "publicationDate": "2026-02-18T08:05:53",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -3176,7 +3440,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:461723-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-15T10:03:05"
+      "publicationDate": "2025-07-15T10:03:05",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -3202,7 +3468,9 @@
       "offersCount": 1,
       "annexInflationPct": 30.1,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:529872-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-08-13T06:00:29"
+      "publicationDate": "2025-08-13T06:00:29",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -3228,7 +3496,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:114866-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-18T08:03:51"
+      "publicationDate": "2026-02-18T08:03:51",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -3254,7 +3524,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:460996-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-15T10:02:11"
+      "publicationDate": "2025-07-15T10:02:11",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -3280,7 +3552,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:739654-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-07T06:38:43"
+      "publicationDate": "2025-11-07T06:38:43",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -3306,7 +3580,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:784646-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-26T05:59:04"
+      "publicationDate": "2025-11-26T05:59:04",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -3332,7 +3608,9 @@
       "offersCount": 1,
       "annexInflationPct": 66.7,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:588915-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-10T06:10:29"
+      "publicationDate": "2025-09-10T06:10:29",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "15990000"
     },
     {
       "score": 80,
@@ -3358,7 +3636,9 @@
       "offersCount": 1,
       "annexInflationPct": 100.0,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:8502-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-01-08T05:04:23"
+      "publicationDate": "2026-01-08T05:04:23",
+      "cpvCategory": "Енергия",
+      "tenderMainCpv": "09123000"
     },
     {
       "score": 80,
@@ -3384,7 +3664,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:842828-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-18T05:17:21"
+      "publicationDate": "2025-12-18T05:17:21",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -3410,7 +3692,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:673430-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-10-14T05:08:21"
+      "publicationDate": "2025-10-14T05:08:21",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "48820000"
     },
     {
       "score": 80,
@@ -3436,7 +3720,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:208535-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-26T05:21:59"
+      "publicationDate": "2026-03-26T05:21:59",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72212000"
     },
     {
       "score": 80,
@@ -3462,7 +3748,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:396930-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-06-10T05:05:06"
+      "publicationDate": "2026-06-10T05:05:06",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72600000"
     },
     {
       "score": 80,
@@ -3488,7 +3776,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:81473-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-04T05:02:56"
+      "publicationDate": "2026-02-04T05:02:56",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -3514,7 +3804,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:184242-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-17T05:08:35"
+      "publicationDate": "2026-03-17T05:08:35",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "71323100"
     },
     {
       "score": 80,
@@ -3540,7 +3832,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:598135-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-12T06:04:16"
+      "publicationDate": "2025-09-12T06:04:16",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "71323100"
     },
     {
       "score": 80,
@@ -3566,7 +3860,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:851506-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-22T07:16:19"
+      "publicationDate": "2025-12-22T07:16:19",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "71323100"
     },
     {
       "score": 80,
@@ -3592,7 +3888,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:526565-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-08-12T05:17:33"
+      "publicationDate": "2025-08-12T05:17:33",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -3618,7 +3916,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:749379-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-12T05:33:36"
+      "publicationDate": "2025-11-12T05:33:36",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "71323100"
     },
     {
       "score": 80,
@@ -3644,7 +3944,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:378842-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-06-03T05:17:48"
+      "publicationDate": "2026-06-03T05:17:48",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 80,
@@ -3670,7 +3972,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:541444-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-08-19T05:34:29"
+      "publicationDate": "2025-08-19T05:34:29",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -3696,7 +4000,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:779838-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-25T05:48:03"
+      "publicationDate": "2025-11-25T05:48:03",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -3722,7 +4028,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:810407-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-05T06:53:42"
+      "publicationDate": "2025-12-05T06:53:42",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -3748,7 +4056,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:649754-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-10-03T05:53:59"
+      "publicationDate": "2025-10-03T05:53:59",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "71323100"
     },
     {
       "score": 80,
@@ -3774,7 +4084,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:653289-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-10-06T07:18:58"
+      "publicationDate": "2025-10-06T07:18:58",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "71323100"
     },
     {
       "score": 80,
@@ -3800,7 +4112,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:286792-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-04-27T05:18:57"
+      "publicationDate": "2026-04-27T05:18:57",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45200000"
     },
     {
       "score": 80,
@@ -3826,7 +4140,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:855800-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-23T07:41:11"
+      "publicationDate": "2025-12-23T07:41:11",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -3852,7 +4168,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:844359-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-18T05:57:56"
+      "publicationDate": "2025-12-18T05:57:56",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -3878,7 +4196,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:656462-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-10-07T05:52:57"
+      "publicationDate": "2025-10-07T05:52:57",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "48218000"
     },
     {
       "score": 80,
@@ -3904,7 +4224,9 @@
       "offersCount": 1,
       "annexInflationPct": 74.8,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:199681-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-23T05:07:01"
+      "publicationDate": "2026-03-23T05:07:01",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "50400000"
     },
     {
       "score": 80,
@@ -3930,7 +4252,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:284837-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-04-27T05:19:08"
+      "publicationDate": "2026-04-27T05:19:08",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45200000"
     },
     {
       "score": 80,
@@ -3956,7 +4280,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:118754-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-19T05:17:31"
+      "publicationDate": "2026-02-19T05:17:31",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -3982,7 +4308,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:548778-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-08-22T06:02:07"
+      "publicationDate": "2025-08-22T06:02:07",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "90620000"
     },
     {
       "score": 80,
@@ -4008,7 +4336,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:570912-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-02T06:32:56"
+      "publicationDate": "2025-09-02T06:32:56",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "90620000"
     },
     {
       "score": 80,
@@ -4034,7 +4364,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:579433-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-05T06:43:23"
+      "publicationDate": "2025-09-05T06:43:23",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "50100000"
     },
     {
       "score": 80,
@@ -4060,7 +4392,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:636730-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-30T05:38:33"
+      "publicationDate": "2025-09-30T05:38:33",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "72000000"
     },
     {
       "score": 80,
@@ -4086,7 +4420,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:173664-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-12T05:03:19"
+      "publicationDate": "2026-03-12T05:03:19",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 80,
@@ -4112,7 +4448,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:393820-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-06-09T05:17:15"
+      "publicationDate": "2026-06-09T05:17:15",
+      "cpvCategory": "Транспорт",
+      "tenderMainCpv": "34600000"
     },
     {
       "score": 75,
@@ -4137,7 +4475,9 @@
       "offersCount": 2,
       "annexInflationPct": 105.8,
       "linkToOjEu": null,
-      "publicationDate": "2025-11-17T16:08:26.5866667"
+      "publicationDate": "2025-11-17T16:08:26.5866667",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45233252"
     },
     {
       "score": 70,
@@ -4161,7 +4501,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:114483-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-18T08:02:18"
+      "publicationDate": "2026-02-18T08:02:18",
+      "cpvCategory": "Транспорт",
+      "tenderMainCpv": "60210000"
     },
     {
       "score": 70,
@@ -4185,7 +4527,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:396170-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-06-10T05:07:02"
+      "publicationDate": "2026-06-10T05:07:02",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "79713000"
     },
     {
       "score": 70,
@@ -4209,7 +4553,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:862526-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-24T07:27:51"
+      "publicationDate": "2025-12-24T07:27:51",
+      "cpvCategory": "Транспорт",
+      "tenderMainCpv": "34600000"
     },
     {
       "score": 70,
@@ -4233,7 +4579,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:108804-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-16T05:01:46"
+      "publicationDate": "2026-02-16T05:01:46",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45210000"
     },
     {
       "score": 70,
@@ -4257,7 +4605,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:21173-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-01-13T05:21:01"
+      "publicationDate": "2026-01-13T05:21:01",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "50312610"
     },
     {
       "score": 70,
@@ -4281,7 +4631,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:120212-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-19T05:17:48"
+      "publicationDate": "2026-02-19T05:17:48",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "42410000"
     },
     {
       "score": 70,
@@ -4305,7 +4657,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:195026-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-20T05:04:47"
+      "publicationDate": "2026-03-20T05:04:47",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 70,
@@ -4329,7 +4683,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:208950-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-26T05:18:26"
+      "publicationDate": "2026-03-26T05:18:26",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "79420000"
     },
     {
       "score": 70,
@@ -4353,7 +4709,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:829489-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-15T06:00:09"
+      "publicationDate": "2025-12-15T06:00:09",
+      "cpvCategory": "Енергия",
+      "tenderMainCpv": "09123000"
     },
     {
       "score": 70,
@@ -4377,7 +4735,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:519635-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-08-08T05:24:40"
+      "publicationDate": "2025-08-08T05:24:40",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "50000000"
     },
     {
       "score": 70,
@@ -4401,7 +4761,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:139690-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-27T05:05:11"
+      "publicationDate": "2026-02-27T05:05:11",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "44921300"
     },
     {
       "score": 70,
@@ -4425,7 +4787,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:139690-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-27T05:05:11"
+      "publicationDate": "2026-02-27T05:05:11",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "44921300"
     },
     {
       "score": 70,
@@ -4449,7 +4813,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:119511-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-19T05:17:16"
+      "publicationDate": "2026-02-19T05:17:16",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "42410000"
     },
     {
       "score": 70,
@@ -4473,7 +4839,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:263472-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-04-17T05:02:35"
+      "publicationDate": "2026-04-17T05:02:35",
+      "cpvCategory": "Транспорт",
+      "tenderMainCpv": "34622400"
     },
     {
       "score": 70,
@@ -4497,7 +4865,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:660541-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-10-08T05:30:11"
+      "publicationDate": "2025-10-08T05:30:11",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "66113000"
     },
     {
       "score": 70,
@@ -4521,7 +4891,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:615299-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-19T06:01:43"
+      "publicationDate": "2025-09-19T06:01:43",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "50410000"
     },
     {
       "score": 70,
@@ -4545,7 +4917,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:178979-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-16T05:07:10"
+      "publicationDate": "2026-03-16T05:07:10",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "90511000"
     },
     {
       "score": 70,
@@ -4569,7 +4943,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:762945-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-18T05:33:44"
+      "publicationDate": "2025-11-18T05:33:44",
+      "cpvCategory": "Транспорт",
+      "tenderMainCpv": "34962220"
     },
     {
       "score": 70,
@@ -4593,7 +4969,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:168093-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-11T05:03:47"
+      "publicationDate": "2026-03-11T05:03:47",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "92622000"
     },
     {
       "score": 70,
@@ -4617,7 +4995,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:290144-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-04-28T05:07:02"
+      "publicationDate": "2026-04-28T05:07:02",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45212225"
     },
     {
       "score": 70,
@@ -4641,7 +5021,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:141676-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-02T05:19:57"
+      "publicationDate": "2026-03-02T05:19:57",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "90510000"
     },
     {
       "score": 70,
@@ -4665,7 +5047,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:366336-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-05-28T05:01:38"
+      "publicationDate": "2026-05-28T05:01:38",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45231300"
     },
     {
       "score": 70,
@@ -4689,7 +5073,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:195026-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-20T05:04:47"
+      "publicationDate": "2026-03-20T05:04:47",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 70,
@@ -4713,7 +5099,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:102490-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-12T05:16:37"
+      "publicationDate": "2026-02-12T05:16:37",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 70,
@@ -4737,7 +5125,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:480557-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-23T09:59:42"
+      "publicationDate": "2025-07-23T09:59:42",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45230000"
     },
     {
       "score": 70,
@@ -4761,7 +5151,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:573685-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-03T05:59:40"
+      "publicationDate": "2025-09-03T05:59:40",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45247100"
     },
     {
       "score": 70,
@@ -4785,7 +5177,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:162837-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-09T05:02:21"
+      "publicationDate": "2026-03-09T05:02:21",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45231300"
     },
     {
       "score": 70,
@@ -4809,7 +5203,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:137222-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-26T05:18:00"
+      "publicationDate": "2026-02-26T05:18:00",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "42410000"
     },
     {
       "score": 70,
@@ -4833,7 +5229,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:4258-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-01-06T06:22:42"
+      "publicationDate": "2026-01-06T06:22:42",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 70,
@@ -4857,7 +5255,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:309331-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-05-06T05:16:33"
+      "publicationDate": "2026-05-06T05:16:33",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "03211100"
     },
     {
       "score": 70,
@@ -4881,7 +5281,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:146976-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-03T05:05:33"
+      "publicationDate": "2026-03-03T05:05:33",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 70,
@@ -4905,7 +5307,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:137222-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-26T05:18:00"
+      "publicationDate": "2026-02-26T05:18:00",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "42410000"
     },
     {
       "score": 70,
@@ -4929,7 +5333,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:638893-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-30T06:05:35"
+      "publicationDate": "2025-09-30T06:05:35",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "90530000"
     },
     {
       "score": 70,
@@ -4953,7 +5359,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:146976-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-03T05:05:33"
+      "publicationDate": "2026-03-03T05:05:33",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 70,
@@ -4977,7 +5385,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:838760-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-17T06:13:29"
+      "publicationDate": "2025-12-17T06:13:29",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33651690"
     },
     {
       "score": 70,
@@ -5001,7 +5411,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:377647-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-06-02T05:07:39"
+      "publicationDate": "2026-06-02T05:07:39",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "50640000"
     },
     {
       "score": 70,
@@ -5025,7 +5437,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:263406-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-04-17T05:06:50"
+      "publicationDate": "2026-04-17T05:06:50",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "66113000"
     },
     {
       "score": 70,
@@ -5049,7 +5463,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:92677-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-09T05:05:07"
+      "publicationDate": "2026-02-09T05:05:07",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 70,
@@ -5073,7 +5489,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:402635-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-06-11T05:21:06"
+      "publicationDate": "2026-06-11T05:21:06",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 70,
@@ -5097,7 +5515,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:797954-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-02T05:40:09"
+      "publicationDate": "2025-12-02T05:40:09",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33100000"
     },
     {
       "score": 70,
@@ -5121,7 +5541,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:736511-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-06T06:01:54"
+      "publicationDate": "2025-11-06T06:01:54",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "55243000"
     },
     {
       "score": 70,
@@ -5145,7 +5567,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:124541-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-23T05:20:37"
+      "publicationDate": "2026-02-23T05:20:37",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45255000"
     },
     {
       "score": 70,
@@ -5169,7 +5593,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:850702-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-22T06:28:46"
+      "publicationDate": "2025-12-22T06:28:46",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "32500000"
     },
     {
       "score": 70,
@@ -5193,7 +5619,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:214304-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-27T05:20:42"
+      "publicationDate": "2026-03-27T05:20:42",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 70,
@@ -5217,7 +5645,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:519039-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-08-07T05:33:25"
+      "publicationDate": "2025-08-07T05:33:25",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "50210000"
     },
     {
       "score": 70,
@@ -5241,7 +5671,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:308902-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-05-06T05:16:33"
+      "publicationDate": "2026-05-06T05:16:33",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "03211100"
     },
     {
       "score": 70,
@@ -5265,7 +5697,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:310934-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-05-06T05:16:38"
+      "publicationDate": "2026-05-06T05:16:38",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "03211100"
     },
     {
       "score": 70,
@@ -5289,7 +5723,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:762834-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-18T05:50:26"
+      "publicationDate": "2025-11-18T05:50:26",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 70,
@@ -5313,7 +5749,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:164122-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-10T05:05:25"
+      "publicationDate": "2026-03-10T05:05:25",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 70,
@@ -5337,7 +5775,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:6167-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-01-07T06:24:32"
+      "publicationDate": "2026-01-07T06:24:32",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "42113100"
     },
     {
       "score": 65,
@@ -5363,7 +5803,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:375969-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-06-02T05:06:15"
+      "publicationDate": "2026-06-02T05:06:15",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "35113210"
     },
     {
       "score": 65,
@@ -5389,7 +5831,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:554230-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-08-26T06:34:14"
+      "publicationDate": "2025-08-26T06:34:14",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "31120000"
     },
     {
       "score": 65,
@@ -5415,7 +5859,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:636660-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-30T05:49:12"
+      "publicationDate": "2025-09-30T05:49:12",
+      "cpvCategory": "Енергия",
+      "tenderMainCpv": "09134200"
     },
     {
       "score": 65,
@@ -5441,7 +5887,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:795235-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-01T06:33:42"
+      "publicationDate": "2025-12-01T06:33:42",
+      "cpvCategory": "Енергия",
+      "tenderMainCpv": "09134200"
     },
     {
       "score": 65,
@@ -5467,7 +5915,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:836027-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-16T07:28:36"
+      "publicationDate": "2025-12-16T07:28:36",
+      "cpvCategory": "Енергия",
+      "tenderMainCpv": "09134200"
     },
     {
       "score": 65,
@@ -5493,7 +5943,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:654895-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-10-07T07:12:12"
+      "publicationDate": "2025-10-07T07:12:12",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 65,
@@ -5519,7 +5971,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:171355-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-12T05:05:59"
+      "publicationDate": "2026-03-12T05:05:59",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 65,
@@ -5545,7 +5999,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:749010-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-12T05:09:07"
+      "publicationDate": "2025-11-12T05:09:07",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "85320000"
     },
     {
       "score": 65,
@@ -5571,7 +6027,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:718227-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-10-30T05:07:21"
+      "publicationDate": "2025-10-30T05:07:21",
+      "cpvCategory": "Енергия",
+      "tenderMainCpv": "09134200"
     },
     {
       "score": 65,
@@ -5597,7 +6055,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:571445-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-02T06:42:16"
+      "publicationDate": "2025-09-02T06:42:16",
+      "cpvCategory": "Енергия",
+      "tenderMainCpv": "09134200"
     },
     {
       "score": 65,
@@ -5623,7 +6083,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:770937-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-20T06:08:23"
+      "publicationDate": "2025-11-20T06:08:23",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "90511000"
     },
     {
       "score": 65,
@@ -5649,7 +6111,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:770546-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-20T05:37:05"
+      "publicationDate": "2025-11-20T05:37:05",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "90732000"
     },
     {
       "score": 65,
@@ -5675,7 +6139,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:770793-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-20T05:38:36"
+      "publicationDate": "2025-11-20T05:38:36",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "90611000"
     },
     {
       "score": 65,
@@ -5701,7 +6167,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:306891-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-05-05T05:19:53"
+      "publicationDate": "2026-05-05T05:19:53",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "42152000"
     },
     {
       "score": 65,
@@ -5727,7 +6195,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:828461-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-12T05:52:02"
+      "publicationDate": "2025-12-12T05:52:02",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45233000"
     },
     {
       "score": 65,
@@ -5753,7 +6223,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:571127-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-02T06:35:53"
+      "publicationDate": "2025-09-02T06:35:53",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45233000"
     },
     {
       "score": 65,
@@ -5779,7 +6251,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:212686-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-27T05:22:05"
+      "publicationDate": "2026-03-27T05:22:05",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45230000"
     },
     {
       "score": 65,
@@ -5805,7 +6279,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:326344-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-05-12T05:16:46"
+      "publicationDate": "2026-05-12T05:16:46",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 65,
@@ -5831,7 +6307,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:738286-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-07T06:05:32"
+      "publicationDate": "2025-11-07T06:05:32",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33100000"
     },
     {
       "score": 65,
@@ -5857,7 +6335,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:825047-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-12T06:12:52"
+      "publicationDate": "2025-12-12T06:12:52",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 65,
@@ -5883,7 +6363,9 @@
       "offersCount": 1,
       "annexInflationPct": 4.7,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:777034-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-24T06:12:23"
+      "publicationDate": "2025-11-24T06:12:23",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 65,
@@ -5909,7 +6391,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:31307-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-01-16T05:06:39"
+      "publicationDate": "2026-01-16T05:06:39",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45230000"
     },
     {
       "score": 65,
@@ -5935,7 +6419,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:73706-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-02T05:22:29"
+      "publicationDate": "2026-02-02T05:22:29",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "90620000"
     },
     {
       "score": 65,
@@ -5961,7 +6447,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2025-12-23T13:40:34.3166667"
+      "publicationDate": "2025-12-23T13:40:34.3166667",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 65,
@@ -5987,7 +6475,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:27218-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-01-15T05:03:22"
+      "publicationDate": "2026-01-15T05:03:22",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "44530000"
     },
     {
       "score": 65,
@@ -6013,7 +6503,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2026-05-29T11:51:00.0833333"
+      "publicationDate": "2026-05-29T11:51:00.0833333",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 65,
@@ -6039,7 +6531,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:642116-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-10-01T05:35:34"
+      "publicationDate": "2025-10-01T05:35:34",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 65,
@@ -6065,7 +6559,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2025-10-31T11:33:59.7633333"
+      "publicationDate": "2025-10-31T11:33:59.7633333",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45211360"
     },
     {
       "score": 65,
@@ -6091,7 +6587,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:830268-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-15T06:53:37"
+      "publicationDate": "2025-12-15T06:53:37",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 65,
@@ -6117,7 +6615,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2026-02-04T13:50:16.73"
+      "publicationDate": "2026-02-04T13:50:16.73",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45232150"
     },
     {
       "score": 65,
@@ -6143,7 +6643,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2026-04-06T14:11:13.0566667"
+      "publicationDate": "2026-04-06T14:11:13.0566667",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 65,
@@ -6169,7 +6671,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2026-03-31T15:11:02.2033333"
+      "publicationDate": "2026-03-31T15:11:02.2033333",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45233120"
     },
     {
       "score": 65,
@@ -6195,7 +6699,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2026-05-29T15:20:30.49"
+      "publicationDate": "2026-05-29T15:20:30.49",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 65,
@@ -6221,7 +6727,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2025-08-08T14:39:59.15"
+      "publicationDate": "2025-08-08T14:39:59.15",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 65,
@@ -6247,7 +6755,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:660323-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-10-08T06:14:30"
+      "publicationDate": "2025-10-08T06:14:30",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33140000"
     },
     {
       "score": 65,
@@ -6273,7 +6783,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2026-03-04T15:36:59.31"
+      "publicationDate": "2026-03-04T15:36:59.31",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45233252"
     },
     {
       "score": 65,
@@ -6299,7 +6811,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2025-10-17T16:00:05.75"
+      "publicationDate": "2025-10-17T16:00:05.75",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45233252"
     },
     {
       "score": 65,
@@ -6325,7 +6839,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2026-05-08T15:53:58.4866667"
+      "publicationDate": "2026-05-08T15:53:58.4866667",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 65,
@@ -6351,7 +6867,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:76597-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-03T05:21:21"
+      "publicationDate": "2026-02-03T05:21:21",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "77300000"
     },
     {
       "score": 65,
@@ -6377,7 +6895,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2026-04-01T11:56:29.7666667"
+      "publicationDate": "2026-04-01T11:56:29.7666667",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 65,
@@ -6403,7 +6923,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:261937-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-04-16T05:19:06"
+      "publicationDate": "2026-04-16T05:19:06",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33141000"
     },
     {
       "score": 65,
@@ -6429,7 +6951,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:466972-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-17T09:51:18"
+      "publicationDate": "2025-07-17T09:51:18",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "42961000"
     },
     {
       "score": 65,
@@ -6455,7 +6979,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2025-10-15T10:44:16.4466667"
+      "publicationDate": "2025-10-15T10:44:16.4466667",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45233000"
     },
     {
       "score": 65,
@@ -6481,7 +7007,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2025-12-23T13:37:24.61"
+      "publicationDate": "2025-12-23T13:37:24.61",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45200000"
     },
     {
       "score": 65,
@@ -6507,7 +7035,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2025-12-23T13:40:34.3166667"
+      "publicationDate": "2025-12-23T13:40:34.3166667",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 65,
@@ -6533,7 +7063,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2025-12-23T13:40:34.3166667"
+      "publicationDate": "2025-12-23T13:40:34.3166667",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 65,
@@ -6559,7 +7091,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2025-12-23T13:37:24.61"
+      "publicationDate": "2025-12-23T13:37:24.61",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45200000"
     },
     {
       "score": 65,
@@ -6585,7 +7119,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2026-05-13T13:44:34.5133333"
+      "publicationDate": "2026-05-13T13:44:34.5133333",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45233000"
     },
     {
       "score": 65,
@@ -6611,7 +7147,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2025-12-23T13:37:24.61"
+      "publicationDate": "2025-12-23T13:37:24.61",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45200000"
     },
     {
       "score": 65,
@@ -6637,7 +7175,9 @@
       "offersCount": 1,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2025-07-09T16:17:51.0166667"
+      "publicationDate": "2025-07-09T16:17:51.0166667",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 60,
@@ -6661,7 +7201,9 @@
       "offersCount": 5,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:489857-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-28T10:00:47"
+      "publicationDate": "2025-07-28T10:00:47",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -6685,7 +7227,9 @@
       "offersCount": 11,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:540971-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-08-19T05:33:57"
+      "publicationDate": "2025-08-19T05:33:57",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -6709,7 +7253,9 @@
       "offersCount": 11,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:615173-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-19T06:02:31"
+      "publicationDate": "2025-09-19T06:02:31",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -6733,7 +7279,9 @@
       "offersCount": 8,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:598980-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-15T06:22:59"
+      "publicationDate": "2025-09-15T06:22:59",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "31300000"
     },
     {
       "score": 60,
@@ -6757,7 +7305,9 @@
       "offersCount": 2,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:721875-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-10-31T05:45:07"
+      "publicationDate": "2025-10-31T05:45:07",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45231100"
     },
     {
       "score": 60,
@@ -6781,7 +7331,9 @@
       "offersCount": 7,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:629250-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-25T05:36:04"
+      "publicationDate": "2025-09-25T05:36:04",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "31300000"
     },
     {
       "score": 60,
@@ -6805,7 +7357,9 @@
       "offersCount": 6,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:223532-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-04-01T05:07:31"
+      "publicationDate": "2026-04-01T05:07:31",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -6829,7 +7383,9 @@
       "offersCount": 3,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:488212-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-25T09:54:22"
+      "publicationDate": "2025-07-25T09:54:22",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -6853,7 +7409,9 @@
       "offersCount": 2,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:593255-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-11T06:41:50"
+      "publicationDate": "2025-09-11T06:41:50",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -6877,7 +7435,9 @@
       "offersCount": 3,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:659972-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-10-08T05:21:54"
+      "publicationDate": "2025-10-08T05:21:54",
+      "cpvCategory": "IT",
+      "tenderMainCpv": "48820000"
     },
     {
       "score": 60,
@@ -6901,7 +7461,9 @@
       "offersCount": 5,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:492386-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-28T10:06:27"
+      "publicationDate": "2025-07-28T10:06:27",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -6925,7 +7487,9 @@
       "offersCount": 4,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:468700-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-17T10:12:00"
+      "publicationDate": "2025-07-17T10:12:00",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -6949,7 +7513,9 @@
       "offersCount": 3,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:468646-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-17T10:07:59"
+      "publicationDate": "2025-07-17T10:07:59",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -6973,7 +7539,9 @@
       "offersCount": 4,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:488674-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-25T09:56:06"
+      "publicationDate": "2025-07-25T09:56:06",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -6997,7 +7565,9 @@
       "offersCount": 2,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:491367-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-28T09:52:08"
+      "publicationDate": "2025-07-28T09:52:08",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33160000"
     },
     {
       "score": 60,
@@ -7021,7 +7591,9 @@
       "offersCount": 3,
       "annexInflationPct": 51.4,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:582680-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-08T05:56:21"
+      "publicationDate": "2025-09-08T05:56:21",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -7045,7 +7617,9 @@
       "offersCount": 17,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:28788-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-01-15T05:03:14"
+      "publicationDate": "2026-01-15T05:03:14",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "31170000"
     },
     {
       "score": 60,
@@ -7069,7 +7643,9 @@
       "offersCount": 3,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:520529-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-08-08T05:20:35"
+      "publicationDate": "2025-08-08T05:20:35",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -7093,7 +7669,9 @@
       "offersCount": 17,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:806180-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-04T05:48:35"
+      "publicationDate": "2025-12-04T05:48:35",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "31170000"
     },
     {
       "score": 60,
@@ -7117,7 +7695,9 @@
       "offersCount": 17,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:13783-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-01-09T05:05:18"
+      "publicationDate": "2026-01-09T05:05:18",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "31170000"
     },
     {
       "score": 60,
@@ -7141,7 +7721,9 @@
       "offersCount": 3,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:94371-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-10T05:19:41"
+      "publicationDate": "2026-02-10T05:19:41",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "32420000"
     },
     {
       "score": 60,
@@ -7165,7 +7747,9 @@
       "offersCount": 17,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:812801-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-08T06:23:48"
+      "publicationDate": "2025-12-08T06:23:48",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "31170000"
     },
     {
       "score": 60,
@@ -7189,7 +7773,9 @@
       "offersCount": 3,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:466853-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-17T10:00:42"
+      "publicationDate": "2025-07-17T10:00:42",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -7213,7 +7799,9 @@
       "offersCount": 3,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:469098-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-17T09:57:48"
+      "publicationDate": "2025-07-17T09:57:48",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -7237,7 +7825,9 @@
       "offersCount": 6,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:604578-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-16T06:05:36"
+      "publicationDate": "2025-09-16T06:05:36",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -7261,7 +7851,9 @@
       "offersCount": 4,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:197413-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-23T05:05:33"
+      "publicationDate": "2026-03-23T05:05:33",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33610000"
     },
     {
       "score": 60,
@@ -7285,7 +7877,9 @@
       "offersCount": 4,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:298072-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-04-30T05:08:02"
+      "publicationDate": "2026-04-30T05:08:02",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -7309,7 +7903,9 @@
       "offersCount": 7,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:579796-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-05T06:10:38"
+      "publicationDate": "2025-09-05T06:10:38",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -7333,7 +7929,9 @@
       "offersCount": 9,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:525461-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-08-11T05:37:51"
+      "publicationDate": "2025-08-11T05:37:51",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -7357,7 +7955,9 @@
       "offersCount": 3,
       "annexInflationPct": 111.2,
       "linkToOjEu": null,
-      "publicationDate": "2025-09-12T17:05:53.25"
+      "publicationDate": "2025-09-12T17:05:53.25",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45215200"
     },
     {
       "score": 60,
@@ -7381,7 +7981,9 @@
       "offersCount": 6,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:664363-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-10-09T07:02:23"
+      "publicationDate": "2025-10-09T07:02:23",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "31214500"
     },
     {
       "score": 60,
@@ -7405,7 +8007,9 @@
       "offersCount": 2,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:868175-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-12-30T05:47:23"
+      "publicationDate": "2025-12-30T05:47:23",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -7429,7 +8033,9 @@
       "offersCount": 2,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2025-07-10T14:24:04.2033333"
+      "publicationDate": "2025-07-10T14:24:04.2033333",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45233200"
     },
     {
       "score": 60,
@@ -7453,7 +8059,9 @@
       "offersCount": 9,
       "annexInflationPct": 100.0,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:755727-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-14T05:51:03"
+      "publicationDate": "2025-11-14T05:51:03",
+      "cpvCategory": "Енергия",
+      "tenderMainCpv": "09310000"
     },
     {
       "score": 60,
@@ -7477,7 +8085,9 @@
       "offersCount": 9,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:758062-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-14T05:02:59"
+      "publicationDate": "2025-11-14T05:02:59",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -7501,7 +8111,9 @@
       "offersCount": 3,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:470041-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-18T10:03:18"
+      "publicationDate": "2025-07-18T10:03:18",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -7525,7 +8137,9 @@
       "offersCount": 3,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:765287-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-18T05:23:02"
+      "publicationDate": "2025-11-18T05:23:02",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45233142"
     },
     {
       "score": 60,
@@ -7549,7 +8163,9 @@
       "offersCount": 6,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:603657-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-16T05:57:25"
+      "publicationDate": "2025-09-16T05:57:25",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -7573,7 +8189,9 @@
       "offersCount": 7,
       "annexInflationPct": 99.3,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:217780-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-30T05:05:29"
+      "publicationDate": "2026-03-30T05:05:29",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 60,
@@ -7597,7 +8215,9 @@
       "offersCount": 3,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:385335-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-06-04T05:18:40"
+      "publicationDate": "2026-06-04T05:18:40",
+      "cpvCategory": "Строителство",
+      "tenderMainCpv": "45000000"
     },
     {
       "score": 60,
@@ -7621,7 +8241,9 @@
       "offersCount": 2,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2025-08-13T16:08:45.2433333"
+      "publicationDate": "2025-08-13T16:08:45.2433333",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45200000"
     },
     {
       "score": 60,
@@ -7645,7 +8267,9 @@
       "offersCount": 3,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:265809-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-04-20T05:18:40"
+      "publicationDate": "2026-04-20T05:18:40",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -7669,7 +8293,9 @@
       "offersCount": 3,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:472525-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-18T10:09:46"
+      "publicationDate": "2025-07-18T10:09:46",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -7693,7 +8319,9 @@
       "offersCount": 9,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:569138-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-09-01T05:54:16"
+      "publicationDate": "2025-09-01T05:54:16",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -7717,7 +8345,9 @@
       "offersCount": 6,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:90631-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-02-09T05:07:10"
+      "publicationDate": "2026-02-09T05:07:10",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -7741,7 +8371,9 @@
       "offersCount": 2,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:752617-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-11-13T05:41:55"
+      "publicationDate": "2025-11-13T05:41:55",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "31214500"
     },
     {
       "score": 60,
@@ -7765,7 +8397,9 @@
       "offersCount": 4,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:686357-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-10-17T06:14:35"
+      "publicationDate": "2025-10-17T06:14:35",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     },
     {
       "score": 60,
@@ -7789,7 +8423,9 @@
       "offersCount": 2,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:205824-2026:TEXT:BG:HTML",
-      "publicationDate": "2026-03-25T05:03:26"
+      "publicationDate": "2026-03-25T05:03:26",
+      "cpvCategory": "Друго",
+      "tenderMainCpv": "31214500"
     },
     {
       "score": 60,
@@ -7813,7 +8449,9 @@
       "offersCount": 4,
       "annexInflationPct": null,
       "linkToOjEu": null,
-      "publicationDate": "2025-07-18T09:24:48.3666667"
+      "publicationDate": "2025-07-18T09:24:48.3666667",
+      "cpvCategory": "Пътища",
+      "tenderMainCpv": "45233252"
     },
     {
       "score": 60,
@@ -7837,7 +8475,9 @@
       "offersCount": 2,
       "annexInflationPct": null,
       "linkToOjEu": "https://ted.europa.eu/udl?uri=TED:NOTICE:468888-2025:TEXT:BG:HTML",
-      "publicationDate": "2025-07-17T10:08:25"
+      "publicationDate": "2025-07-17T10:08:25",
+      "cpvCategory": "Медицина",
+      "tenderMainCpv": "33600000"
     }
   ]
 }
