@@ -22,7 +22,7 @@ from collections import defaultdict
 CACHE_FILE      = Path("data") / "cache.json"
 ANNEXES_FILE    = Path("data") / "annexes_cache.json"
 EXCLUSIONS_FILE = Path("data") / "known_monopolies.json"
-OUTPUT_FILE     = Path("data") / "top20.json"
+OUTPUT_FILE     = Path("public") / "data" / "top20.json"
 
 EUR_TO_BGN = 1.95583
 ANNEX_INFLATION_THRESHOLD = 0.50   # >50% увеличение = сигнал
