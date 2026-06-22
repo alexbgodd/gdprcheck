@@ -142,6 +142,10 @@
       padding-top: 0.9rem; line-height: 1.5;
     }
     .flag.warning { background: #fffbeb; color: #92400e; border-color: #fde68a; }
+    .card-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.4rem 0; align-items: center; }
+    .proc { font-size: 0.74rem; color: #888; background: #f1f5f9; border-radius: 4px; padding: 0.15rem 0.5rem; }
+    .proc-direct { background: #fff0f0; color: #c0392b; font-weight: 600; }
+    .date { font-size: 0.74rem; color: #aaa; }
     .links { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.6rem; }
     .link { font-size: 0.8rem; color: #2563eb; text-decoration: none; }
     .link:hover { text-decoration: underline; }
@@ -234,7 +238,10 @@
   <button class="filter-btn" data-filter-type="supplier" data-filter="monopoly">Монополни</button>
 </div>
 <div class="search-wrap">
-  <input type="search" id="search" placeholder="Търси по възложител, изпълнител или поръчка…" />
+  <div style="display:flex;gap:0.6rem;align-items:center;">
+    <input type="search" id="search" placeholder="Търси по възложител, изпълнител или поръчка…" style="flex:1;" />
+    <button id="csv-btn" title="Свали текущия списък като CSV" style="white-space:nowrap;padding:0.55rem 1rem;border-radius:999px;border:2px solid #1a1a2e;background:white;color:#1a1a2e;font-size:0.82rem;cursor:pointer;font-family:inherit;font-weight:600;">⬇ CSV</button>
+  </div>
   <p style="font-size:0.78rem;color:#888;margin-top:0.4rem;padding-left:0.5rem;">Пишете директно — резултатите се филтрират веднага. Например: име на фирма, община или ключова дума от поръчката.</p>
 </div>
 <main>
@@ -341,7 +348,14 @@
       const supplierNewsLink = c.supplierName
         ? `<a class="link" href="https://www.google.com/search?q=${encodeURIComponent(c.supplierName)}" target="_blank" rel="noopener" title="Търси фирмата в Google">Изпълнител (Google) →</a>`
         : '';
-      const buyerNewsLink = '';
+
+      // Дата и процедура
+      const dateStr = c.contractDate ? c.contractDate.slice(0,10) : '';
+      const isPряко = (c.procedureType || '').toLowerCase().includes('пряко') ||
+                      (c.procedureType || '').toLowerCase().includes('negoti');
+      const procHtml = c.procedureType
+        ? `<span class="proc${isPряко ? ' proc-direct' : ''}" title="Вид процедура">${escapeHtml(c.procedureType)}</span>`
+        : '';
 
       return `
         <div class="card ${category}">
@@ -353,8 +367,9 @@
           <div class="supplier">Изпълнител: ${escapeHtml(c.supplierName || '—')}</div>
           <div class="value">${formatMoney(c.contractValue, c.contractCurrency)}</div>
           <div class="supplier">${escapeHtml(c.tenderName || '')}</div>
+          <div class="card-meta">${procHtml}${dateStr ? `<span class="date">${dateStr}</span>` : ''}</div>
           <div class="flags">${flagsHtml}</div>
-          <div class="links">${eaopLink}${linkHtml}${supplierNewsLink}${buyerNewsLink}</div>
+          <div class="links">${eaopLink}${linkHtml}${supplierNewsLink}</div>
         </div>
       `;
     }).join('');
@@ -388,6 +403,24 @@
   document.getElementById('search').addEventListener('input', function() {
     searchQuery = this.value.trim();
     renderCards();
+  });
+
+  document.getElementById('csv-btn').addEventListener('click', function() {
+    const filtered = getFiltered();
+    const cols = ['score','buyerName','supplierName','contractValue','contractCurrency',
+                  'contractDate','procedureType','tenderName','contractNumber','flags'];
+    const header = cols.join(',');
+    const rows = filtered.map(c => cols.map(k => {
+      let v = k === 'flags'
+        ? (c.flags || []).map(f => f.split('|')[0]).join('; ')
+        : (c[k] ?? '');
+      return '"' + String(v).replace(/"/g, '""') + '"';
+    }).join(','));
+    const csv = '﻿' + [header, ...rows].join('\r\n');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8;' }));
+    a.download = 'riskovi-poruchki.csv';
+    a.click();
   });
 
   fetch(DATA_URL)
