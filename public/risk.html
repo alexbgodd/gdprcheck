@@ -85,6 +85,7 @@
     .card.state .rank { color: #2563eb; }
     .card.monopoly .rank { color: #f59e0b; }
     .score-badge { background: #1a1a2e; color: white; font-size: 0.8rem; padding: 0.2rem 0.7rem; border-radius: 999px; }
+    .card-disclaimer { font-size: 0.72rem; color: #aaa; margin-top: 0.6rem; }
     .buyer { font-weight: 600; font-size: 1rem; margin-bottom: 0.2rem; }
     .supplier { color: #555; font-size: 0.9rem; margin-bottom: 0.4rem; }
     .filter-name { cursor: pointer; border-bottom: 1px dashed transparent; transition: border-color 0.15s, color 0.15s; }
@@ -402,6 +403,7 @@
           <div class="card-meta">${procHtml}${dateStr ? `<span class="date">${dateStr}</span>` : ''}</div>
           <div class="flags">${flagsHtml}</div>
           <div class="links">${eaopLink}${linkHtml}${supplierNewsLink}</div>
+          <div class="card-disclaimer">Скорът е автоматичен на база официални данни от ЦАИС ЕОП. Не представлява правно становище.</div>
         </div>
       `;
     }).join('');
