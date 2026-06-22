@@ -87,6 +87,19 @@
     .score-badge { background: #1a1a2e; color: white; font-size: 0.8rem; padding: 0.2rem 0.7rem; border-radius: 999px; }
     .buyer { font-weight: 600; font-size: 1rem; margin-bottom: 0.2rem; }
     .supplier { color: #555; font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .filter-name { cursor: pointer; border-bottom: 1px dashed transparent; transition: border-color 0.15s, color 0.15s; }
+    .filter-name:hover { color: #2563eb; border-bottom-color: #2563eb; }
+    #active-filter {
+      display: none; align-items: center; gap: 0.5rem;
+      background: #eff6ff; border: 1px solid #bfdbfe;
+      border-radius: 8px; padding: 0.5rem 0.9rem;
+      font-size: 0.82rem; color: #1e40af; margin-bottom: 0.8rem;
+    }
+    #active-filter button {
+      background: none; border: none; cursor: pointer;
+      color: #1e40af; font-size: 1rem; line-height: 1; padding: 0;
+    }
+    #active-filter button:hover { color: #e63946; }
     .value { font-size: 1.1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.4rem; }
     .flags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
     .flag { background: #fff0f0; color: #c0392b; border: 1px solid #f5c6c6; font-size: 0.78rem; padding: 0.2rem 0.6rem; border-radius: 6px; cursor: pointer; font-family: inherit; }
@@ -267,6 +280,7 @@
     </p>
   </section>
   <p class="meta" id="data-meta"></p>
+  <div id="active-filter"><span id="active-filter-text"></span><button id="clear-filter" title="Изчисти филтъра">✕</button></div>
   <p class="meta" id="meta"></p>
   <div id="loading">Зареждане на данните…</div>
   <div id="cards" class="hidden"></div>
@@ -304,11 +318,32 @@
   }
 
   let searchQuery = '';
+  let nameFilter  = null; // { field: 'buyerName'|'supplierName', value: string }
+
+  function setNameFilter(field, value) {
+    nameFilter = { field, value };
+    const label = field === 'buyerName' ? 'Възложител' : 'Изпълнител';
+    const el = document.getElementById('active-filter');
+    document.getElementById('active-filter-text').textContent = `${label}: ${value}`;
+    el.style.display = 'flex';
+    renderCards();
+  }
+
+  function clearNameFilter() {
+    nameFilter = null;
+    document.getElementById('active-filter').style.display = 'none';
+    renderCards();
+  }
+
+  document.getElementById('clear-filter').addEventListener('click', clearNameFilter);
 
   function getFiltered() {
     let list = allContracts;
     if (currentFilterType === 'supplier') list = list.filter(c => c.supplierCategory === currentFilterValue);
     if (currentFilterType === 'cpv')      list = list.filter(c => c.cpvCategory === currentFilterValue);
+    if (nameFilter) {
+      list = list.filter(c => (c[nameFilter.field] || '') === nameFilter.value);
+    }
     if (searchQuery) {
       const q = searchQuery.toLowerCase();
       list = list.filter(c =>
@@ -360,8 +395,8 @@
             <div class="rank">#${i + 1}</div>
             <div class="score-badge">${c.score}/100</div>
           </div>
-          <div class="buyer">${escapeHtml(c.buyerName || '—')}</div>
-          <div class="supplier">Изпълнител: ${escapeHtml(c.supplierName || '—')}</div>
+          <div class="buyer"><span class="filter-name" data-filter-field="buyerName" data-filter-value="${escapeHtml(c.buyerName || '')}" title="Филтрирай по възложител">${escapeHtml(c.buyerName || '—')}</span></div>
+          <div class="supplier">Изпълнител: <span class="filter-name" data-filter-field="supplierName" data-filter-value="${escapeHtml(c.supplierName || '')}" title="Филтрирай по изпълнител">${escapeHtml(c.supplierName || '—')}</span></div>
           <div class="value">${formatMoney(c.contractValue, c.contractCurrency)}</div>
           <div class="supplier">${escapeHtml(c.tenderName || '')}</div>
           <div class="card-meta">${procHtml}${dateStr ? `<span class="date">${dateStr}</span>` : ''}</div>
@@ -616,6 +651,15 @@
     bodyEl.innerHTML    = html;
     overlay.classList.add('open');
   }
+
+  // Делегиран listener за кликване върху купувач/доставчик
+  document.getElementById('cards').addEventListener('click', function(e) {
+    const span = e.target.closest('.filter-name');
+    if (!span) return;
+    const field = span.dataset.filterField;
+    const value = span.dataset.filterValue;
+    if (field && value) setNameFilter(field, value);
+  });
 
   // Делегиран listener за флагове (работи и след re-render)
   document.getElementById('cards').addEventListener('click', function(e) {
