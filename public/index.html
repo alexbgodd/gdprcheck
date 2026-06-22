@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GDPRcheck.bg — Рискови обществени поръчки и GDPR проверка</title>
+  <meta name="description" content="Безплатни инструменти за прозрачност: автоматичен риск-скор на обществени поръчки от ЦАИС ЕОП и GDPR проверка на сайт. Независим анализ на официални данни." />
+  <meta name="keywords" content="рискови обществени поръчки, GDPR проверка, ЦАИС ЕОП, корупция обществени поръчки, единствена оферта, обществени поръчки България, GDPR checker" />
+  <meta property="og:title" content="GDPRcheck.bg — Рискови обществени поръчки и GDPR проверка" />
+  <meta property="og:description" content="Автоматичен риск-скор на обществени поръчки от официални данни. Независим анализ без вход или регистрация." />
+  <meta property="og:url" content="https://gdprcheck.bg" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://gdprcheck.bg" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "GDPRcheck.bg",
+    "url": "https://gdprcheck.bg",
+    "description": "Инструменти за прозрачност: риск-скор на обществени поръчки и GDPR проверка на сайт.",
+    "inLanguage": "bg"
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #0d0f1a;
+      color: #e2e8f0;
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 2rem;
+      border-bottom: 1px solid #1e2440;
+    }
+    .nav-logo {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .nav-logo span { color: #22c55e; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #e2e8f0; }
+
+    /* HERO */
+    .hero {
+      max-width: 760px;
+      margin: 5rem auto 3rem;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #22c55e;
+      background: rgba(34,197,94,0.08);
+      border: 1px solid rgba(34,197,94,0.25);
+      border-radius: 999px;
+      padding: 0.35rem 1rem;
+      margin-bottom: 1.8rem;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      animation: pulse 1.8s ease-out infinite;
+    }
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+      70%  { box-shadow: 0 0 0 8px transparent; }
+      100% { box-shadow: 0 0 0 0 transparent; }
+    }
+    h1 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+      color: #f1f5f9;
+    }
+    h1 em { font-style: normal; color: #22c55e; }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: #94a3b8;
+      line-height: 1.7;
+      max-width: 580px;
+      margin: 0 auto 2.5rem;
+    }
+
+    /* TOOLS */
+    .tools {
+      max-width: 860px;
+      margin: 0 auto 4rem;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+    .tool-card {
+      background: #111827;
+      border: 1px solid #1e2d40;
+      border-radius: 14px;
+      padding: 2rem;
+      position: relative;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .tool-card:hover { border-color: #334155; transform: translateY(-2px); }
+    .tool-card.live { border-color: rgba(230,57,70,0.35); }
+    .tool-card.live:hover { border-color: #e63946; }
+    .tool-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 6px;
+      padding: 0.25rem 0.65rem;
+      margin-bottom: 1.2rem;
+    }
+    .tag-live { background: rgba(230,57,70,0.15); color: #e63946; border: 1px solid rgba(230,57,70,0.3); }
+    .tag-soon { background: rgba(148,163,184,0.1); color: #94a3b8; border: 1px solid rgba(148,163,184,0.2); }
+    .tool-card h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-bottom: 0.8rem;
+    }
+    .tool-card p {
+      font-size: 0.88rem;
+      color: #94a3b8;
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+    .tool-features {
+      list-style: none;
+      margin-bottom: 1.8rem;
+    }
+    .tool-features li {
+      font-size: 0.82rem;
+      color: #64748b;
+      padding: 0.3rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .tool-features li::before { content: '→'; color: #475569; }
+    .tool-features.live-features li { color: #94a3b8; }
+    .tool-features.live-features li::before { content: '✓'; color: #22c55e; }
+    .tool-btn {
+      display: inline-block;
+      padding: 0.65rem 1.4rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-live {
+      background: #e63946;
+      color: white;
+    }
+    .btn-live:hover { background: #c0303b; }
+    .btn-soon {
+      background: #1e2440;
+      color: #64748b;
+      cursor: default;
+    }
+
+    /* STATS */
+    .stats {
+      max-width: 860px;
+      margin: 0 auto 4rem;
+      padding: 0 1.5rem;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .stat {
+      text-align: center;
+      padding: 1.2rem 2rem;
+      background: #111827;
+      border: 1px solid #1e2d40;
+      border-radius: 10px;
+      flex: 1;
+      min-width: 160px;
+    }
+    .stat-num {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: #64748b;
+      margin-top: 0.3rem;
+    }
+
+    /* ABOUT */
+    .about {
+      max-width: 680px;
+      margin: 0 auto 5rem;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+    .about h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #f1f5f9;
+      margin-bottom: 1rem;
+    }
+    .about p {
+      font-size: 0.9rem;
+      color: #64748b;
+      line-height: 1.7;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid #1e2440;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: #475569;
+    }
+    footer a { color: #475569; text-decoration: none; }
+    footer a:hover { color: #94a3b8; }
+
+    @media (max-width: 600px) {
+      .tools { grid-template-columns: 1fr; }
+      .stats { gap: 1rem; }
+      nav { padding: 1rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/"><span>GDPR</span>check.bg</a>
+  <div class="nav-links">
+    <a href="/risk">Рискови поръчки</a>
+    <a href="mailto:alexbgodd@gmail.com">Контакт</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">Независим анализ · Официални данни</div>
+  <h1>Прозрачност в публичните<br>разходи на <em>България</em></h1>
+  <p class="hero-sub">
+    Безплатни инструменти за граждани, журналисти и НПО. Анализираме официално публикувани данни
+    и показваме статистически отклонения — без вход, без регистрация.
+  </p>
+</section>
+
+<div class="tools">
+  <div class="tool-card live">
+    <span class="tool-tag tag-live">Работи сега</span>
+    <h2>Рискови обществени поръчки</h2>
+    <p>
+      Автоматичен риск-скор на договори от официалната open-data емисия на ЦАИС ЕОП.
+      76 000+ договора, анализирани по три сигнала за риск.
+    </p>
+    <ul class="tool-features live-features">
+      <li>Единствена оферта (липса на конкуренция)</li>
+      <li>Необичайно висока стойност за вида договор</li>
+      <li>Концентрация при един възложител</li>
+      <li>Раздута стойност чрез анекс след подписване</li>
+    </ul>
+    <a href="/risk" class="tool-btn btn-live">Виж рисковите поръчки →</a>
+  </div>
+
+  <div class="tool-card">
+    <span class="tool-tag tag-soon">Очаквайте скоро</span>
+    <h2>GDPR проверка на сайт</h2>
+    <p>
+      Въведете URL и получете автоматична проверка дали сайтът отговаря
+      на изискванията на GDPR — cookie съгласие, политика за поверителност, тракери.
+    </p>
+    <ul class="tool-features">
+      <li>HTTPS и сигурност</li>
+      <li>Cookie consent банер</li>
+      <li>Политика за поверителност</li>
+      <li>Известни рекламни тракери</li>
+    </ul>
+    <span class="tool-btn btn-soon">Очаквайте скоро</span>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat">
+    <span class="stat-num">76 000+</span>
+    <span class="stat-label">Анализирани договора</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">310</span>
+    <span class="stat-label">Договора с висок риск</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">539</span>
+    <span class="stat-label">Дни назад</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">0 лв.</span>
+    <span class="stat-label">Цена за достъп</span>
+  </div>
+</div>
+
+<div class="about">
+  <h2>Как работи</h2>
+  <p>
+    Данните идват директно от официалната open-data емисия на ЦАИС ЕОП —
+    системата за управление на обществени поръчки в България.
+    Алгоритъмът изчислява риск-скор на база статистически отклонения.
+    Висок скор означава "заслужава внимание", не "тук има нарушение".
+    Скорът е автоматичен и не представлява правно становище.
+  </p>
+</div>
+
+<footer>
+  <a href="/risk">Рискови обществени поръчки</a> &nbsp;·&nbsp;
+  <a href="https://gdprcheck.bg">GDPRcheck.bg</a> &nbsp;·&nbsp;
+  Независим проект · България
+</footer>
+
+</body>
+</html>
