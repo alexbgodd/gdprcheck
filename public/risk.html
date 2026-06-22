@@ -328,6 +328,9 @@
       const linkHtml = c.linkToOjEu
         ? `<a class="link" href="${escapeHtml(c.linkToOjEu)}" target="_blank" rel="noopener">Обявление в TED →</a>`
         : '';
+      const supplierRegLink = c.supplierRegisterNumber
+        ? `<a class="link" href="https://portal.registryagency.bg/CR/reports/company?uic=${escapeHtml(c.supplierRegisterNumber)}" target="_blank" rel="noopener" title="Профил на изпълнителя в Търговски регистър">Изпълнител в ТР →</a>`
+        : '';
 
       return `
         <div class="card ${category}">
@@ -340,7 +343,7 @@
           <div class="value">${formatMoney(c.contractValue, c.contractCurrency)}</div>
           <div class="supplier">${escapeHtml(c.tenderName || '')}</div>
           <div class="flags">${flagsHtml}</div>
-          <div class="links">${eaopLink}${linkHtml}</div>
+          <div class="links">${eaopLink}${linkHtml}${supplierRegLink}</div>
         </div>
       `;
     }).join('');
