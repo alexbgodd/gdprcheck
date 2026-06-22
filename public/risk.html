@@ -268,6 +268,15 @@
   <div id="cards" class="hidden"></div>
 </main>
 <footer>
+  <div style="margin-bottom:1rem;font-size:0.82rem;color:#666;">
+    <strong style="color:#1a1a2e;display:block;margin-bottom:0.5rem;">Полезни ресурси за журналисти</strong>
+    <a href="https://app.eop.bg" target="_blank" rel="noopener">ЦАИС ЕОП</a> &nbsp;·&nbsp;
+    <a href="https://www.aop.bg" target="_blank" rel="noopener">АОП</a> &nbsp;·&nbsp;
+    <a href="https://ted.europa.eu" target="_blank" rel="noopener">TED (ЕС)</a> &nbsp;·&nbsp;
+    <a href="https://www.konpi.bg" target="_blank" rel="noopener">КПКОНПИ</a> &nbsp;·&nbsp;
+    <a href="https://www.bulnao.government.bg" target="_blank" rel="noopener">Сметна палата</a> &nbsp;·&nbsp;
+    <a href="https://www.aip-bg.org/publicaccess/" target="_blank" rel="noopener">Заявка по ЗДОИ (ПДИ)</a>
+  </div>
   Данните се базират на официалната <a href="https://op.government.bg" target="_blank" rel="noopener">open-data емисия на ЦАИС ЕОП</a>.
   Скорът е автоматичен и не представлява обвинение в нарушение.<br>
   <a href="https://gdprcheck.bg" target="_blank" rel="noopener">GDPRcheck.bg</a>
@@ -329,8 +338,11 @@
       const linkHtml = c.linkToOjEu
         ? `<a class="link" href="${escapeHtml(c.linkToOjEu)}" target="_blank" rel="noopener">Обявление в TED →</a>`
         : '';
-      const supplierRegLink = c.supplierRegisterNumber
-        ? `<a class="link" href="https://www.google.com/search?q=${escapeHtml(c.supplierRegisterNumber)}+%D1%82%D1%8A%D1%80%D0%B3%D0%BE%D0%B2%D1%81%D0%BA%D0%B8+%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%8A%D1%80" target="_blank" rel="noopener" title="Търси фирмата в Google">Изпълнител (Търси) →</a>`
+      const supplierNewsLink = c.supplierName
+        ? `<a class="link" href="https://news.google.com/search?q=${encodeURIComponent(c.supplierName)}&hl=bg&gl=BG&ceid=BG:bg" target="_blank" rel="noopener" title="Търси изпълнителя в Google News">Изпълнител в медиите →</a>`
+        : '';
+      const buyerNewsLink = c.buyerName
+        ? `<a class="link" href="https://news.google.com/search?q=${encodeURIComponent(c.buyerName)}&hl=bg&gl=BG&ceid=BG:bg" target="_blank" rel="noopener" title="Търси възложителя в Google News">Възложител в медиите →</a>`
         : '';
 
       return `
@@ -344,7 +356,7 @@
           <div class="value">${formatMoney(c.contractValue, c.contractCurrency)}</div>
           <div class="supplier">${escapeHtml(c.tenderName || '')}</div>
           <div class="flags">${flagsHtml}</div>
-          <div class="links">${eaopLink}${linkHtml}${supplierRegLink}</div>
+          <div class="links">${eaopLink}${linkHtml}${supplierNewsLink}${buyerNewsLink}</div>
         </div>
       `;
     }).join('');
