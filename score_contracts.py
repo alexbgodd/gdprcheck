@@ -193,7 +193,7 @@ def compute_scores(contracts, state_entities, monopolies, annex_inflation):
         p75           = p75_by_type.get(contract_type, 0)
         if value_bgn > 0 and p75 > 0 and value_bgn > p75:
             score += 30
-            flags.append(f"Стойността е в горния квартил за вида договор ({p75:,.0f} лв. праг)")
+            flags.append(f"Необичайно висока стойност — сред най-скъпите 25% за вида договор (над {p75:,.0f} лв.)")
 
         # --- Сигнал 3: концентрация на поръчки ---
         supplier = c.get("supplierRegisterNumber") or ""
