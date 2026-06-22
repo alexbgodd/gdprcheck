@@ -124,6 +124,9 @@
       padding: 2rem;
       position: relative;
       transition: border-color 0.2s, transform 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
     }
     .tool-card:hover { border-color: #334155; transform: translateY(-2px); }
     .tool-card.live { border-color: rgba(230,57,70,0.35); }
@@ -277,12 +280,12 @@
 </section>
 
 <div class="tools">
-  <div class="tool-card live">
+  <a href="/risk" class="tool-card live">
     <span class="tool-tag tag-live">Работи сега</span>
     <h2>Рискови обществени поръчки</h2>
     <p>
-      Автоматичен риск-скор на договори от официалната open-data емисия на ЦАИС ЕОП.
-      76 000+ договора, анализирани по три сигнала за риск.
+      Автоматичен риск-рейтинг на договори от официалната open-data емисия на ЦАИС ЕОП.
+      76 000+ договора, оценени по четири белега за риск.
     </p>
     <ul class="tool-features live-features">
       <li>Единствена оферта (липса на конкуренция)</li>
@@ -290,8 +293,8 @@
       <li>Концентрация при един възложител</li>
       <li>Раздута стойност чрез анекс след подписване</li>
     </ul>
-    <a href="/risk" class="tool-btn btn-live">Виж рисковите поръчки →</a>
-  </div>
+    <span class="tool-btn btn-live">Виж рисковите поръчки →</span>
+  </a>
 
   <div class="tool-card">
     <span class="tool-tag tag-soon">Очаквайте скоро</span>
