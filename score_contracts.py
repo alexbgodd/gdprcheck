@@ -6,9 +6,9 @@ score_contracts.py
 
 Сигнали:
   +40  Единствена оферта
-  +30  Стойност над медианата за типа поръчка (BGN)
-  +15  Изпълнителят е спечелил 5-9 поръчки от същия възложител
-  +30  Изпълнителят е спечелил 10+ поръчки от същия възложител
+  +30  Стойността е в горния квартил (75-ти перцентил) за вида договор
+  +15  Тази поръчка е една от 5-9 спечелени от изпълнителя при същия възложител за периода
+  +30  Тази поръчка е една от 10+ спечелени от изпълнителя при същия възложител за периода
   +30  Стойността е нараснала >50% чрез анекс след подписване
   -30  Публично/държавно дружество
   -20  Монополен доставчик
@@ -128,8 +128,19 @@ def load_annex_inflation():
     return inflation
 
 
+def percentile_75(vals):
+    """Връща 75-ти перцентил (горен квартил) на списък от числа."""
+    s = sorted(vals)
+    n = len(s)
+    if n == 0:
+        return 0
+    idx = int(n * 0.75)
+    return s[min(idx, n - 1)]
+
 def compute_scores(contracts, state_entities, monopolies, annex_inflation):
-    # Медианата се изчислява в BGN (EUR се конвертира)
+    # Праг: горен квартил (75-ти перцентил) по вид договор в BGN
+    # 50% от всички договори са над медианата по дефиниция — сигналът е безсмислен.
+    # 75-ти перцентил означава реален outlier: само 25% от договорите го достигат.
     values_by_type = defaultdict(list)
     for c in contracts:
         v = parse_value(c.get("contractValue"))
@@ -139,8 +150,8 @@ def compute_scores(contracts, state_entities, monopolies, annex_inflation):
         if v_bgn > 0:
             values_by_type[t].append(v_bgn)
 
-    median_by_type = {
-        t: statistics.median(vals)
+    p75_by_type = {
+        t: percentile_75(vals)
         for t, vals in values_by_type.items() if vals
     }
 
@@ -174,15 +185,15 @@ def compute_scores(contracts, state_entities, monopolies, annex_inflation):
             score += 40
             flags.append("Единствена оферта")
 
-        # --- Сигнал 2: стойност над медианата ---
+        # --- Сигнал 2: стойност в горния квартил (75-ти перцентил по вид договор) ---
         value         = parse_value(c.get("contractValue"))
         currency      = c.get("contractCurrency", "BGN")
         value_bgn     = to_bgn(value, currency)
         contract_type = c.get("typeOfContract", "Друго")
-        median        = median_by_type.get(contract_type, 0)
-        if value_bgn > 0 and median > 0 and value_bgn > median:
+        p75           = p75_by_type.get(contract_type, 0)
+        if value_bgn > 0 and p75 > 0 and value_bgn > p75:
             score += 30
-            flags.append(f"Стойност над медианата ({median:,.0f} лв.)")
+            flags.append(f"Стойността е в горния квартил за вида договор ({p75:,.0f} лв. праг)")
 
         # --- Сигнал 3: концентрация на поръчки ---
         supplier = c.get("supplierRegisterNumber") or ""
@@ -190,10 +201,10 @@ def compute_scores(contracts, state_entities, monopolies, annex_inflation):
         wins     = pair_counts.get((supplier, buyer), 0)
         if wins >= 10:
             score += 30
-            flags.append(f"Изпълнителят е спечелил {wins} поръчки от същия възложител")
+            flags.append(f"Тази поръчка е една от {wins} спечелени от изпълнителя при същия възложител за периода")
         elif wins >= 5:
             score += 15
-            flags.append(f"Изпълнителят е спечелил {wins} поръчки от същия възложител")
+            flags.append(f"Тази поръчка е една от {wins} спечелени от изпълнителя при същия възложител за периода")
 
         # --- Сигнал 4: раздута стойност чрез анекс ---
         cn  = str(c.get("contractNumber") or "").strip()
