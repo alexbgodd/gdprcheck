@@ -154,6 +154,10 @@ def compute_scores(contracts, state_entities, monopolies, annex_inflation):
         t: percentile_75(vals)
         for t, vals in values_by_type.items() if vals
     }
+    median_by_type = {
+        t: statistics.median(vals)
+        for t, vals in values_by_type.items() if vals
+    }
 
     pair_counts = defaultdict(int)
     for c in contracts:
@@ -183,7 +187,7 @@ def compute_scores(contracts, state_entities, monopolies, annex_inflation):
 
         if offers_int == 1:
             score += 40
-            flags.append("Единствена оферта")
+            flags.append("Единствена оферта|SINGLE_OFFER")
 
         # --- Сигнал 2: стойност в горния квартил (75-ти перцентил по вид договор) ---
         value         = parse_value(c.get("contractValue"))
@@ -191,9 +195,10 @@ def compute_scores(contracts, state_entities, monopolies, annex_inflation):
         value_bgn     = to_bgn(value, currency)
         contract_type = c.get("typeOfContract", "Друго")
         p75           = p75_by_type.get(contract_type, 0)
+        median_val    = median_by_type.get(contract_type, 0)
         if value_bgn > 0 and p75 > 0 and value_bgn > p75:
             score += 30
-            flags.append(f"Необичайно висока стойност — сред най-скъпите 25% за вида договор (над {p75:,.0f} лв.)")
+            flags.append(f"Необичайно висока стойност|VALUE_HIGH|{contract_type}|{p75:.0f}|{median_val:.0f}")
 
         # --- Сигнал 3: концентрация на поръчки ---
         supplier = c.get("supplierRegisterNumber") or ""
@@ -201,10 +206,10 @@ def compute_scores(contracts, state_entities, monopolies, annex_inflation):
         wins     = pair_counts.get((supplier, buyer), 0)
         if wins >= 10:
             score += 30
-            flags.append(f"Тази поръчка е една от {wins} спечелени от изпълнителя при същия възложител за периода")
+            flags.append(f"Тази поръчка е една от {wins} при същия възложител|CONCENTRATION|{wins}")
         elif wins >= 5:
             score += 15
-            flags.append(f"Тази поръчка е една от {wins} спечелени от изпълнителя при същия възложител за периода")
+            flags.append(f"Тази поръчка е една от {wins} при същия възложител|CONCENTRATION|{wins}")
 
         # --- Сигнал 4: раздута стойност чрез анекс ---
         cn  = str(c.get("contractNumber") or "").strip()
@@ -213,7 +218,7 @@ def compute_scores(contracts, state_entities, monopolies, annex_inflation):
         if inflation_pct > ANNEX_INFLATION_THRESHOLD:
             score += 30
             flags.append(
-                f"Стойността е нараснала с {inflation_pct*100:.0f}% чрез анекс"
+                f"Стойността е нараснала с {inflation_pct*100:.0f}% чрез анекс|ANNEX|{inflation_pct*100:.0f}"
             )
 
         # --- Корекции за монополни/държавни ---

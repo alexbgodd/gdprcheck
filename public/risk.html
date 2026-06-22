@@ -88,7 +88,58 @@
     .supplier { color: #555; font-size: 0.9rem; margin-bottom: 0.4rem; }
     .value { font-size: 1.1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.4rem; }
     .flags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
-    .flag { background: #fff0f0; color: #c0392b; border: 1px solid #f5c6c6; font-size: 0.78rem; padding: 0.2rem 0.6rem; border-radius: 6px; }
+    .flag { background: #fff0f0; color: #c0392b; border: 1px solid #f5c6c6; font-size: 0.78rem; padding: 0.2rem 0.6rem; border-radius: 6px; cursor: pointer; font-family: inherit; }
+    .flag:hover { background: #ffe0e0; text-decoration: underline dotted; }
+    .flag.no-modal { cursor: default; }
+    .flag.no-modal:hover { background: #fff0f0; text-decoration: none; }
+
+    /* Modal */
+    #flag-modal-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.45); z-index: 1000;
+      align-items: center; justify-content: center;
+      padding: 1rem;
+    }
+    #flag-modal-overlay.open { display: flex; }
+    #flag-modal {
+      background: white; border-radius: 14px;
+      max-width: 520px; width: 100%;
+      max-height: 90vh; overflow-y: auto;
+      padding: 1.8rem;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+      position: relative;
+    }
+    #flag-modal-close {
+      position: absolute; top: 1rem; right: 1rem;
+      background: none; border: none; font-size: 1.4rem;
+      cursor: pointer; color: #666; line-height: 1;
+    }
+    #flag-modal-close:hover { color: #e63946; }
+    .modal-title { font-size: 1.1rem; font-weight: 700; color: #e63946; margin-bottom: 1.2rem; padding-right: 2rem; }
+    .modal-section { margin-bottom: 1.2rem; }
+    .modal-section-label {
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em;
+      color: #999; font-weight: 600; margin-bottom: 0.4rem;
+    }
+    .modal-section p { font-size: 0.88rem; color: #333; line-height: 1.6; }
+    .modal-numbers {
+      background: #f8f9fa; border-radius: 8px;
+      padding: 0.9rem 1rem; font-size: 0.85rem;
+    }
+    .modal-numbers table { width: 100%; border-collapse: collapse; }
+    .modal-numbers td { padding: 0.3rem 0; vertical-align: top; }
+    .modal-numbers td:first-child { color: #666; width: 55%; }
+    .modal-numbers td:last-child { font-weight: 600; color: #1a1a2e; text-align: right; }
+    .modal-comparison {
+      background: #f0fdf4; border: 1px solid #bbf7d0;
+      border-radius: 8px; padding: 0.9rem 1rem;
+      font-size: 0.85rem; color: #166534; line-height: 1.6;
+    }
+    .modal-comparison strong { display: block; margin-bottom: 0.3rem; color: #15803d; }
+    .modal-disclaimer {
+      font-size: 0.78rem; color: #888; border-top: 1px solid #eee;
+      padding-top: 0.9rem; line-height: 1.5;
+    }
     .flag.warning { background: #fffbeb; color: #92400e; border-color: #fde68a; }
     .links { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.6rem; }
     .link { font-size: 0.8rem; color: #2563eb; text-decoration: none; }
@@ -263,7 +314,12 @@
       const category = c.supplierCategory || 'normal';
       const flagsHtml = (c.flags || []).map(f => {
         const isWarning = f.indexOf('⚠️') !== -1;
-        return `<span class="flag${isWarning ? ' warning' : ''}">${escapeHtml(f)}</span>`;
+        const parts     = f.split('|');
+        const label     = parts[0];
+        const flagType  = parts[1] || '';
+        const hasModal  = ['SINGLE_OFFER','VALUE_HIGH','CONCENTRATION','ANNEX'].includes(flagType);
+        const dataAttr  = parts.slice(1).map((p,i) => `data-p${i}="${escapeHtml(p)}"`).join(' ');
+        return `<button class="flag${isWarning ? ' warning' : ''}${hasModal ? '' : ' no-modal'}" ${dataAttr} data-contract-idx="${i}">${escapeHtml(label)}</button>`;
       }).join('');
 
       const eaopLink = c.contractNumber
@@ -363,6 +419,172 @@
     .catch(err => {
       document.getElementById('loading').textContent = 'Грешка при зареждане на данните: ' + err.message;
     });
+  // --- Модал за флагове ---
+  const overlay = document.createElement('div');
+  overlay.id = 'flag-modal-overlay';
+  overlay.innerHTML = `
+    <div id="flag-modal">
+      <button id="flag-modal-close" title="Затвори">✕</button>
+      <div class="modal-title" id="modal-title"></div>
+      <div id="modal-body"></div>
+    </div>`;
+  document.body.appendChild(overlay);
+
+  document.getElementById('flag-modal-close').addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+
+  function closeModal() { overlay.classList.remove('open'); }
+
+  function fmt(n) {
+    return Number(n).toLocaleString('bg-BG', { maximumFractionDigits: 0 }) + ' лв.';
+  }
+
+  function openModal(flagType, parts, contract) {
+    const titleEl = document.getElementById('modal-title');
+    const bodyEl  = document.getElementById('modal-body');
+    let title = '', html = '';
+
+    if (flagType === 'SINGLE_OFFER') {
+      title = '⚠️ Единствена оферта';
+      const offers = contract.offersCount || 1;
+      html = `
+        <div class="modal-section">
+          <div class="modal-section-label">Какво означава</div>
+          <p>За тази поръчка е подадена само <strong>1 оферта</strong>. При нормална конкуренция подобни поръчки обикновено привличат 3 или повече участника. Когато има само един кандидат, той сам определя цената — без натиск от конкуренцията.</p>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-label">Как се изчислява</div>
+          <p>Алгоритъмът чете полето <em>offersCount</em> от официалните данни на ЦАИС ЕОП. Ако стойността е точно 1 — се добавят <strong>+40 точки</strong> към риск-скора.</p>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-label">За тази конкретна поръчка</div>
+          <div class="modal-numbers"><table>
+            <tr><td>Брой получени оферти</td><td>${offers}</td></tr>
+            <tr><td>Възложител</td><td>${escapeHtml(contract.buyerName || '—')}</td></tr>
+            <tr><td>Изпълнител</td><td>${escapeHtml(contract.supplierName || '—')}</td></tr>
+          </table></div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-label">Как изглежда договор без този сигнал</div>
+          <div class="modal-comparison">
+            <strong>✅ Пример — нисък риск</strong>
+            Идентична поръчка за вида „${escapeHtml(contract.typeOfContract || 'договор')}" с 3 или повече оферти не получава нито една точка за конкуренция. Наличието на реален избор намалява риска от завишена цена.
+          </div>
+        </div>`;
+
+    } else if (flagType === 'VALUE_HIGH') {
+      const contractType = parts[2] || '—';
+      const p75          = Number(parts[3]) || 0;
+      const median       = Number(parts[4]) || 0;
+      const valBgn       = Number(contract.contractValueBgn) || Number(contract.contractValue) || 0;
+      const xAbove       = p75 > 0 ? (valBgn / p75).toFixed(1) : '?';
+      title = '⚠️ Необичайно висока стойност';
+      html = `
+        <div class="modal-section">
+          <div class="modal-section-label">Какво означава</div>
+          <p>Стойността на тази поръчка е <strong>сред най-скъпите 25%</strong> от всички договори за <em>${escapeHtml(contractType)}</em> в анализирания период. Не означава нарушение — може да отразява обем или сложност — но e статистически отклонение, което заслужава внимание.</p>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-label">Как се изчислява</div>
+          <p>Взимаме всички договори от тип <strong>${escapeHtml(contractType)}</strong> (${(52180).toLocaleString('bg-BG')} общо за периода) и изчисляваме 75-ти перцентил. Договори над този праг получават <strong>+30 точки</strong>.</p>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-label">За тази конкретна поръчка</div>
+          <div class="modal-numbers"><table>
+            <tr><td>Вид договор</td><td>${escapeHtml(contractType)}</td></tr>
+            ${median > 0 ? `<tr><td>Типична стойност (медиана)</td><td>${fmt(median)}</td></tr>` : ''}
+            <tr><td>Праг (топ 25%)</td><td>${fmt(p75)}</td></tr>
+            <tr><td>Стойност на поръчката</td><td>${fmt(valBgn)}</td></tr>
+            ${p75 > 0 ? `<tr><td>Над прага с</td><td>${xAbove}×</td></tr>` : ''}
+          </table></div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-label">Как изглежда договор без този сигнал</div>
+          <div class="modal-comparison">
+            <strong>✅ Пример — нисък риск</strong>
+            75% от договорите за „${escapeHtml(contractType)}" са под <strong>${fmt(p75)}</strong>. Договор с подобен предмет, но стойност под тази граница, не получава точки за висока стойност.
+            ${median > 0 ? `Типичният (медианен) договор за ${escapeHtml(contractType)} струва ${fmt(median)}.` : ''}
+          </div>
+        </div>`;
+
+    } else if (flagType === 'CONCENTRATION') {
+      const wins = Number(parts[2]) || 0;
+      title = '⚠️ Концентрация на поръчки';
+      html = `
+        <div class="modal-section">
+          <div class="modal-section-label">Какво означава</div>
+          <p>Изпълнителят е спечелил <strong>${wins} поръчки от един и същ възложител</strong> за анализирания период. Това не е незаконно, но може да означава изградена зависимост или предпочитание — ситуация, в която конкуренцията на практика отсъства.</p>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-label">Как се изчислява</div>
+          <p>Алгоритъмът брои всички договори между <strong>едни и същи ЕИК на изпълнител и ЕИК на възложител</strong> в целия анализиран период. При 5–9 поръчки: <strong>+15 точки</strong>. При 10+: <strong>+30 точки</strong>.</p>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-label">За тази конкретна поръчка</div>
+          <div class="modal-numbers"><table>
+            <tr><td>Изпълнител</td><td>${escapeHtml(contract.supplierName || '—')}</td></tr>
+            <tr><td>Възложител</td><td>${escapeHtml(contract.buyerName || '—')}</td></tr>
+            <tr><td>Поръчки между тях за периода</td><td>${wins}</td></tr>
+          </table></div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-label">Как изглежда договор без този сигнал</div>
+          <div class="modal-comparison">
+            <strong>✅ Пример — нисък риск</strong>
+            Ако изпълнителят спечели 1–4 поръчки от същия възложител за периода, алгоритъмът не засича концентрация и не добавя точки. Това е нормалната картина при здрава конкуренция.
+          </div>
+        </div>`;
+
+    } else if (flagType === 'ANNEX') {
+      const pct = Number(parts[2]) || 0;
+      title = '⚠️ Стойност нараснала чрез анекс';
+      html = `
+        <div class="modal-section">
+          <div class="modal-section-label">Какво означава</div>
+          <p>След подписване на договора е сключен анекс (допълнително споразумение), с което стойността е <strong>нараснала с ${pct}%</strong>. Анексите са законни, но увеличение над 50% повдига въпроса дали първоначалната цена е занижена умишлено, за да спечели конкурса.</p>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-label">Как се изчислява</div>
+          <p>Алгоритъмът сравнява стойността на договора <em>преди</em> и <em>след</em> всички анекси от официалните данни на ЦАИС ЕОП. Увеличение над 50% добавя <strong>+30 точки</strong>.</p>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-label">За тази конкретна поръчка</div>
+          <div class="modal-numbers"><table>
+            <tr><td>Увеличение чрез анекс</td><td>${pct}%</td></tr>
+            <tr><td>Изпълнител</td><td>${escapeHtml(contract.supplierName || '—')}</td></tr>
+            <tr><td>Възложител</td><td>${escapeHtml(contract.buyerName || '—')}</td></tr>
+          </table></div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-label">Как изглежда договор без този сигнал</div>
+          <div class="modal-comparison">
+            <strong>✅ Пример — нисък риск</strong>
+            Договор без анекс или с увеличение под 50% не получава точки за раздуване. Нормалните анекси покриват малки корекции в обем или цена, без да удвояват стойността.
+          </div>
+        </div>`;
+    }
+
+    html += `<p class="modal-disclaimer">Висок скор означава „тази поръчка заслужава по-внимателен поглед", не „тук има нарушение". Алгоритъмът не познава контекста и не прави извод за виновност — само показва статистически отклонения на база официално публикувани данни от ЦАИС ЕОП.</p>`;
+
+    titleEl.textContent = title;
+    bodyEl.innerHTML    = html;
+    overlay.classList.add('open');
+  }
+
+  // Делегиран listener за флагове (работи и след re-render)
+  document.getElementById('cards').addEventListener('click', function(e) {
+    const btn = e.target.closest('.flag');
+    if (!btn || btn.classList.contains('no-modal')) return;
+    const flagType = btn.dataset.p0 || '';
+    const parts    = [];
+    for (let i = 0; btn.dataset['p' + i] !== undefined; i++) parts.push(btn.dataset['p' + i]);
+    const idx      = parseInt(btn.dataset.contractIdx, 10);
+    const filtered = getFiltered();
+    const contract = filtered[idx] || {};
+    openModal(flagType, [''].concat(parts), contract);
+  });
+
 </script>
 </body>
 </html>
