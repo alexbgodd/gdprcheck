@@ -339,11 +339,9 @@
         ? `<a class="link" href="${escapeHtml(c.linkToOjEu)}" target="_blank" rel="noopener">Обявление в TED →</a>`
         : '';
       const supplierNewsLink = c.supplierName
-        ? `<a class="link" href="https://news.google.com/search?q=${encodeURIComponent(c.supplierName)}&hl=bg&gl=BG&ceid=BG:bg" target="_blank" rel="noopener" title="Търси изпълнителя в Google News">Изпълнител в медиите →</a>`
+        ? `<a class="link" href="https://www.google.com/search?q=${encodeURIComponent(c.supplierName)}" target="_blank" rel="noopener" title="Търси фирмата в Google">Изпълнител (Google) →</a>`
         : '';
-      const buyerNewsLink = c.buyerName
-        ? `<a class="link" href="https://news.google.com/search?q=${encodeURIComponent(c.buyerName)}&hl=bg&gl=BG&ceid=BG:bg" target="_blank" rel="noopener" title="Търси възложителя в Google News">Възложител в медиите →</a>`
-        : '';
+      const buyerNewsLink = '';
 
       return `
         <div class="card ${category}">
