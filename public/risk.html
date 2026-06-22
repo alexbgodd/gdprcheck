@@ -238,10 +238,7 @@
   <button class="filter-btn" data-filter-type="supplier" data-filter="monopoly">Монополни</button>
 </div>
 <div class="search-wrap">
-  <div style="display:flex;gap:0.6rem;align-items:center;">
-    <input type="search" id="search" placeholder="Търси по възложител, изпълнител или поръчка…" style="flex:1;" />
-    <button id="csv-btn" title="Свали текущия списък като CSV" style="white-space:nowrap;padding:0.55rem 1rem;border-radius:999px;border:2px solid #1a1a2e;background:white;color:#1a1a2e;font-size:0.82rem;cursor:pointer;font-family:inherit;font-weight:600;">⬇ CSV</button>
-  </div>
+  <input type="search" id="search" placeholder="Търси по възложител, изпълнител или поръчка…" />
   <p style="font-size:0.78rem;color:#888;margin-top:0.4rem;padding-left:0.5rem;">Пишете директно — резултатите се филтрират веднага. Например: име на фирма, община или ключова дума от поръчката.</p>
 </div>
 <main>
@@ -377,7 +374,7 @@
     cardsEl.classList.remove('hidden');
 
     const metaEl = document.getElementById('meta');
-    metaEl.innerHTML = `Показани <span class="count">${filtered.length}</span> от общо ${allContracts.length} поръчки`;
+    metaEl.innerHTML = `Показани <span class="count">${filtered.length}</span> от общо ${allContracts.length} поръчки &nbsp;·&nbsp; <button id="csv-btn" style="background:none;border:none;color:#2563eb;cursor:pointer;font-size:0.85rem;padding:0;font-family:inherit;">⬇ Свали като CSV</button>`;
   }
 
   function escapeHtml(str) {
@@ -405,7 +402,8 @@
     renderCards();
   });
 
-  document.getElementById('csv-btn').addEventListener('click', function() {
+  document.getElementById('meta').addEventListener('click', function(e) {
+    if (e.target.id !== 'csv-btn') return;
     const filtered = getFiltered();
     const cols = ['score','buyerName','supplierName','contractValue','contractCurrency',
                   'contractDate','procedureType','tenderName','contractNumber','flags'];
