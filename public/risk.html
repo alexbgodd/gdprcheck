@@ -329,7 +329,7 @@
         ? `<a class="link" href="${escapeHtml(c.linkToOjEu)}" target="_blank" rel="noopener">Обявление в TED →</a>`
         : '';
       const supplierRegLink = c.supplierRegisterNumber
-        ? `<a class="link" href="https://portal.registryagency.bg/CR/reports/company?uic=${escapeHtml(c.supplierRegisterNumber)}" target="_blank" rel="noopener" title="Профил на изпълнителя в Търговски регистър">Изпълнител в ТР →</a>`
+        ? `<a class="link" href="https://papagal.bg/company/${escapeHtml(c.supplierRegisterNumber)}" target="_blank" rel="noopener" title="Профил на изпълнителя в Папагал">Изпълнител (Папагал) →</a>`
         : '';
 
       return `
