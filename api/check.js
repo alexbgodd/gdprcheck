@@ -73,6 +73,7 @@ const PRIVACY_KEYWORDS = [
   'поверителност', 'privacy-policy', 'gdpr', 'защита на данни',
   'защита на личните данни', 'обработване на данни', 'декларация за поверителност',
   'декларация за защита', 'правила за поверителност',
+  'privacy statement', 'privacy notice', 'data protection', 'cookie policy',
 ];
 
 const SECURITY_HEADERS = [
