@@ -342,6 +342,11 @@
   function render(d) {
     const results = document.getElementById('results');
 
+    const botBlockedHtml = d.botBlocked
+      ? `<div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.3);border-radius:8px;padding:0.7rem 1rem;margin-bottom:1rem;font-size:0.8rem;color:#a5b4fc;line-height:1.5;">
+          ⚠️ Сайтът изглежда ограничава автоматични заявки — резултатите може да са непълни. Реалното съдържание се зарежда от браузър.
+        </div>` : '';
+
     const httpsOk = d.https;
     const consentOk = d.hasConsentBanner;
     const privacyOk = d.hasPrivacyPolicy;
@@ -384,6 +389,7 @@
     `).join('');
 
     results.innerHTML = `
+      ${botBlockedHtml}
       <div class="score-card">
         <div class="score-label">Общ резултат</div>
         <div class="score-number ${scoreClass(d.score)}">${d.score}<span style="font-size:1.5rem;color:#475569">/100</span></div>

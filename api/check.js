@@ -137,6 +137,9 @@ export default async function handler(req, res) {
 
   const htmlLower = html.toLowerCase();
 
+  // Detect bot-blocking (suspiciously small or script-less response)
+  const botBlocked = !fetchError && html.length < 5000 && !htmlLower.includes('<script');
+
   // GTM
   const hasGTM = GTM_PATTERNS.some(p => htmlLower.includes(p.toLowerCase()));
 
@@ -184,6 +187,7 @@ export default async function handler(req, res) {
     url: finalUrl,
     checkedAt: new Date().toISOString(),
     fetchError,
+    botBlocked,
     https: isHttps,
     trackers: foundTrackers.map(t => t.name),
     trackersByCategory,
