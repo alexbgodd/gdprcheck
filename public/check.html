@@ -145,16 +145,27 @@
       margin-bottom: 1.2rem;
     }
     .trackers-title { font-size: 0.85rem; font-weight: 600; color: #f1f5f9; margin-bottom: 0.6rem; }
-    .gtm-warning {
-      display: flex; align-items: flex-start; gap: 0.5rem;
-      background: rgba(245,158,11,0.08);
-      border: 1px solid rgba(245,158,11,0.3);
+    .gtm-warning, .extra-warning {
       border-radius: 8px;
-      padding: 0.6rem 0.8rem;
+      padding: 0.55rem 0.8rem;
       margin-top: 0.6rem;
       font-size: 0.75rem;
-      color: #f59e0b;
       line-height: 1.5;
+    }
+    .gtm-warning {
+      background: rgba(245,158,11,0.08);
+      border: 1px solid rgba(245,158,11,0.3);
+      color: #f59e0b;
+    }
+    .tracker-tag-info {
+      display: inline-block;
+      background: rgba(100,116,139,0.12);
+      color: #94a3b8;
+      border: 1px solid rgba(100,116,139,0.25);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.55rem;
+      margin: 0.15rem;
     }
     .tracker-tag {
       display: inline-block;
@@ -337,6 +348,7 @@
     const noTrackers = d.trackers.length === 0;
 
     // Grouped trackers by category
+    const infoCategories = d.infoCategories || ['video'];
     let trackerHtml = '';
     const cats = Object.keys(d.trackersByCategory || {});
     if (cats.length === 0) {
@@ -344,10 +356,13 @@
     } else {
       trackerHtml = cats.map(cat => {
         const label = (d.categoryLabels || {})[cat] || cat;
-        const icon = CAT_ICONS[cat] || '🔍';
-        const tags = d.trackersByCategory[cat].map(t => `<span class="tracker-tag">${t}</span>`).join('');
+        const catIcon = CAT_ICONS[cat] || '🔍';
+        const isInfo = infoCategories.includes(cat);
+        const tagClass = isInfo ? 'tracker-tag-info' : 'tracker-tag';
+        const infoNote = isInfo ? ' <span style="color:#475569;font-weight:400;font-size:0.7rem;">(информационно)</span>' : '';
+        const tags = d.trackersByCategory[cat].map(t => `<span class="${tagClass}">${t}</span>`).join('');
         return `<div class="tracker-group">
-          <div class="tracker-group-label">${icon} ${label}</div>
+          <div class="tracker-group-label">${catIcon} ${label}${infoNote}</div>
           <div>${tags}</div>
         </div>`;
       }).join('');
@@ -355,9 +370,9 @@
 
     // Extra checks
     const extraChecks = [
-      d.hasGoogleFonts ? `<div class="extra-warning">⚠️ <strong>Google Fonts</strong> — шрифтовете се зареждат от Google сървъри. Google получава IP адреса на всеки посетител.</div>` : '',
-      d.riskyForms ? `<div class="extra-warning">⚠️ <strong>Рискови форми</strong> — открити са форми, изпращащи данни по HTTP (некриптирано).</div>` : '',
-      d.hasGTM ? `<div class="gtm-warning">⚠️ <strong>Google Tag Manager</strong> — реалният брой тракери може да е по-висок. GTM зарежда допълнителни скриптове динамично.</div>` : '',
+      d.hasGoogleFonts ? `<div class="extra-warning">⚠️ Google Fonts — шрифтовете се зареждат от Google сървъри. Google получава IP адреса на всеки посетител.</div>` : '',
+      d.riskyForms ? `<div class="extra-warning">⚠️ Рискови форми — открити са форми, изпращащи данни по HTTP (некриптирано).</div>` : '',
+      d.hasGTM ? `<div class="gtm-warning">⚠️ Google Tag Manager е открит — реалният брой тракери може да е по-висок. GTM зарежда допълнителни скриптове динамично, невидими в HTML-а.</div>` : '',
     ].filter(Boolean).join('');
 
     const headersHtml = d.securityHeaders.map(h => `

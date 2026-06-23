@@ -161,10 +161,11 @@ export default async function handler(req, res) {
     present: h in responseHeaders,
   }));
 
-  // Score (0-100)
+  // Score (0-100) — video embeds are informational only, not penalised
+  const penalisedTrackers = foundTrackers.filter(t => t.category !== 'video');
   let score = 0;
   if (isHttps) score += 20;
-  if (hasConsent || foundTrackers.length === 0) score += 20;
+  if (hasConsent || penalisedTrackers.length === 0) score += 20;
   if (hasPrivacyLink) score += 20;
   if (!hasGoogleFonts) score += 10;
   if (!riskyForms) score += 10;
@@ -178,6 +179,7 @@ export default async function handler(req, res) {
     https: isHttps,
     trackers: foundTrackers.map(t => t.name),
     trackersByCategory,
+    infoCategories: ['video'],
     categoryLabels: CATEGORY_LABELS,
     hasGTM,
     hasGoogleFonts,
