@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GDPR проверка на сайт — GDPRcheck.bg</title>
+  <meta name="description" content="Безплатна автоматична GDPR проверка: тракери, cookie съгласие, политика за поверителност, сигурност. Без регистрация." />
+  <link rel="canonical" href="https://gdprcheck.bg/check" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d0f1a'/%3E%3Ctext x='5' y='23' font-family='Georgia,serif' font-size='22' font-weight='700' fill='white'%3EG%3C/text%3E%3Ccircle cx='26' cy='8' r='5' fill='%2322c55e'/%3E%3C/svg%3E" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #0d0f1a;
+      color: #e2e8f0;
+      min-height: 100vh;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 2rem;
+      border-bottom: 1px solid #1e2440;
+    }
+    .nav-logo {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      text-decoration: none;
+    }
+    .nav-logo span { color: #22c55e; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #e2e8f0; }
+
+    .hero {
+      max-width: 680px;
+      margin: 4rem auto 2.5rem;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+    h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-bottom: 0.8rem;
+    }
+    h1 em { font-style: normal; color: #22c55e; }
+    .hero-sub {
+      font-size: 0.95rem;
+      color: #64748b;
+      line-height: 1.7;
+    }
+
+    .checker {
+      max-width: 620px;
+      margin: 0 auto 3rem;
+      padding: 0 1.5rem;
+    }
+    .input-row {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 2rem;
+    }
+    .url-input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      background: #111827;
+      border: 1px solid #1e2d40;
+      border-radius: 10px;
+      color: #f1f5f9;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .url-input::placeholder { color: #475569; }
+    .url-input:focus { border-color: #22c55e; }
+    .check-btn {
+      padding: 0.75rem 1.4rem;
+      background: #22c55e;
+      color: #0d0f1a;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .check-btn:hover { background: #16a34a; }
+    .check-btn:disabled { background: #1e3a2a; color: #4ade80; cursor: default; }
+
+    /* Results */
+    #results { display: none; margin-top: 2rem; }
+
+    .score-card {
+      background: #111827;
+      border: 1px solid #1e2d40;
+      border-radius: 14px;
+      padding: 1.8rem;
+      margin-bottom: 1.2rem;
+      text-align: center;
+    }
+    .score-label { font-size: 0.8rem; color: #64748b; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .score-number {
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .score-number.high { color: #22c55e; }
+    .score-number.mid  { color: #f59e0b; }
+    .score-number.low  { color: #e63946; }
+    .score-url { font-size: 0.78rem; color: #475569; margin-top: 0.5rem; word-break: break-all; }
+
+    .checks-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+    .check-item {
+      background: #111827;
+      border: 1px solid #1e2d40;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+    }
+    .check-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.05rem; }
+    .check-title { font-size: 0.85rem; font-weight: 600; color: #f1f5f9; }
+    .check-detail { font-size: 0.75rem; color: #64748b; margin-top: 0.2rem; line-height: 1.4; }
+
+    .trackers-card {
+      background: #111827;
+      border: 1px solid #1e2d40;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+    .trackers-title { font-size: 0.85rem; font-weight: 600; color: #f1f5f9; margin-bottom: 0.6rem; }
+    .tracker-tag {
+      display: inline-block;
+      background: rgba(230,57,70,0.12);
+      color: #e63946;
+      border: 1px solid rgba(230,57,70,0.25);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.55rem;
+      margin: 0.15rem;
+    }
+    .no-trackers { font-size: 0.82rem; color: #22c55e; }
+
+    .headers-card {
+      background: #111827;
+      border: 1px solid #1e2d40;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+    .headers-title { font-size: 0.85rem; font-weight: 600; color: #f1f5f9; margin-bottom: 0.6rem; }
+    .header-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0;
+      font-size: 0.78rem;
+      border-bottom: 1px solid #1e2440;
+    }
+    .header-row:last-child { border-bottom: none; }
+    .header-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .dot-green { background: #22c55e; }
+    .dot-red   { background: #e63946; }
+    .header-name { color: #94a3b8; font-family: monospace; }
+    .header-status { margin-left: auto; }
+    .ok  { color: #22c55e; }
+    .bad { color: #e63946; }
+
+    .disclaimer {
+      font-size: 0.75rem;
+      color: #475569;
+      text-align: center;
+      line-height: 1.6;
+      margin-top: 0.5rem;
+    }
+
+    .error-msg {
+      background: rgba(230,57,70,0.1);
+      border: 1px solid rgba(230,57,70,0.25);
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      color: #e63946;
+      font-size: 0.88rem;
+      margin-top: 1.5rem;
+    }
+
+    footer {
+      border-top: 1px solid #1e2440;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: #475569;
+      margin-top: 3rem;
+    }
+    footer a { color: #475569; text-decoration: none; }
+    footer a:hover { color: #94a3b8; }
+
+    @media (max-width: 600px) {
+      .checks-grid { grid-template-columns: 1fr; }
+      nav { padding: 1rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/"><span>GDPR</span>check.bg</a>
+  <div class="nav-links">
+    <a href="/risk">Рискови поръчки</a>
+    <a href="/check">GDPR проверка</a>
+    <a href="mailto:freetvbg7@gmail.com">Контакт</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>GDPR проверка<br>на <em>сайт</em></h1>
+  <p class="hero-sub">Въведете URL и получете автоматичен анализ — тракери, cookie съгласие,<br>политика за поверителност и сигурност на заглавките.</p>
+</section>
+
+<div class="checker">
+  <div class="input-row">
+    <input
+      class="url-input"
+      id="urlInput"
+      type="text"
+      placeholder="example.com"
+      autocomplete="off"
+      spellcheck="false"
+    />
+    <button class="check-btn" id="checkBtn" onclick="runCheck()">Провери →</button>
+  </div>
+
+  <div id="error-box" class="error-msg" style="display:none;"></div>
+  <div id="results"></div>
+</div>
+
+<footer>
+  <a href="/">GDPRcheck.bg</a> &nbsp;·&nbsp;
+  <a href="/risk">Рискови обществени поръчки</a> &nbsp;·&nbsp;
+  Независим проект · България
+</footer>
+
+<script>
+  const input = document.getElementById('urlInput');
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') runCheck(); });
+
+  // Pre-fill from ?url= query param
+  const params = new URLSearchParams(location.search);
+  if (params.get('url')) input.value = params.get('url');
+
+  async function runCheck() {
+    const raw = input.value.trim();
+    if (!raw) return;
+
+    const btn = document.getElementById('checkBtn');
+    const errBox = document.getElementById('error-box');
+    const results = document.getElementById('results');
+
+    btn.disabled = true;
+    btn.textContent = 'Проверява…';
+    errBox.style.display = 'none';
+    results.style.display = 'none';
+
+    try {
+      const res = await fetch('/api/check?url=' + encodeURIComponent(raw));
+      const data = await res.json();
+
+      if (data.error) throw new Error(data.error);
+      render(data);
+    } catch (err) {
+      errBox.textContent = err.message || 'Неочаквана грешка';
+      errBox.style.display = 'block';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Провери →';
+    }
+  }
+
+  function icon(ok) { return ok ? '✅' : '❌'; }
+
+  function scoreClass(s) {
+    if (s >= 70) return 'high';
+    if (s >= 40) return 'mid';
+    return 'low';
+  }
+
+  function render(d) {
+    const results = document.getElementById('results');
+
+    const httpsOk = d.https;
+    const consentOk = d.hasConsentBanner;
+    const privacyOk = d.hasPrivacyPolicy;
+    const noTrackers = d.trackers.length === 0;
+
+    const trackerHtml = d.trackers.length
+      ? d.trackers.map(t => `<span class="tracker-tag">${t}</span>`).join('')
+      : `<span class="no-trackers">Не са открити познати тракери</span>`;
+
+    const headersHtml = d.securityHeaders.map(h => `
+      <div class="header-row">
+        <div class="header-dot ${h.present ? 'dot-green' : 'dot-red'}"></div>
+        <span class="header-name">${h.name}</span>
+        <span class="header-status ${h.present ? 'ok' : 'bad'}">${h.present ? 'Присъства' : 'Липсва'}</span>
+      </div>
+    `).join('');
+
+    results.innerHTML = `
+      <div class="score-card">
+        <div class="score-label">Общ резултат</div>
+        <div class="score-number ${scoreClass(d.score)}">${d.score}<span style="font-size:1.5rem;color:#475569">/100</span></div>
+        <div class="score-url">${d.url}</div>
+      </div>
+
+      <div class="checks-grid">
+        <div class="check-item">
+          <div class="check-icon">${icon(httpsOk)}</div>
+          <div>
+            <div class="check-title">HTTPS</div>
+            <div class="check-detail">${httpsOk ? 'Връзката е криптирана' : 'Сайтът не използва HTTPS'}</div>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">${icon(consentOk)}</div>
+          <div>
+            <div class="check-title">Cookie съгласие</div>
+            <div class="check-detail">${consentOk ? 'Открит е банер за съгласие' : 'Не е открит cookie банер'}</div>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">${icon(privacyOk)}</div>
+          <div>
+            <div class="check-title">Политика за поверителност</div>
+            <div class="check-detail">${privacyOk ? 'Открита е препратка' : 'Не е открита препратка'}</div>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">${icon(noTrackers)}</div>
+          <div>
+            <div class="check-title">Тракери</div>
+            <div class="check-detail">${noTrackers ? 'Не са открити известни тракери' : `Открити: ${d.trackers.length}`}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trackers-card">
+        <div class="trackers-title">Открити тракери</div>
+        ${trackerHtml}
+      </div>
+
+      <div class="headers-card">
+        <div class="headers-title">HTTP сигурностни заглавки</div>
+        ${headersHtml}
+      </div>
+
+      <p class="disclaimer">
+        Проверката е автоматична и технически ориентирана. Не представлява правна оценка за съответствие с GDPR.<br>
+        Резултатите зависят от публично достъпното съдържание на страницата.
+      </p>
+    `;
+
+    results.style.display = 'block';
+  }
+</script>
+</body>
+</html>
