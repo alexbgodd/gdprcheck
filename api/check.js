@@ -1,6 +1,8 @@
 // /api/check.js — Vercel Serverless Function
 // Fetches a URL and analyses it for GDPR/privacy signals
 
+const GTM_PATTERNS = ['googletagmanager.com/gtm.js', 'gtm.js', "gtm('js'", 'GTM-'];
+
 const TRACKERS = [
   { name: 'Google Analytics',   patterns: ['google-analytics.com', 'googletagmanager.com', 'gtag(', 'ga(\'send', 'ga("send'] },
   { name: 'Facebook Pixel',     patterns: ['connect.facebook.net', 'fbq(', 'fbevents.js'] },
@@ -91,6 +93,9 @@ export default async function handler(req, res) {
 
   const htmlLower = html.toLowerCase();
 
+  // GTM detection
+  const hasGTM = GTM_PATTERNS.some(p => htmlLower.includes(p.toLowerCase()));
+
   // Trackers
   const foundTrackers = TRACKERS.filter(t =>
     t.patterns.some(p => htmlLower.includes(p.toLowerCase()))
@@ -122,6 +127,7 @@ export default async function handler(req, res) {
     fetchError,
     https: isHttps,
     trackers: foundTrackers,
+    hasGTM,
     hasConsentBanner: hasConsent,
     hasPrivacyPolicy: hasPrivacyLink,
     securityHeaders: secHeaders,
