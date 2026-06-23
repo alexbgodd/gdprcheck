@@ -5,10 +5,9 @@ const GTM_PATTERNS = [
   'googletagmanager.com/gtm.js',
   'googletagmanager.com/ns.html',
   "gtm('js'",
-  'GTM-',
-  'data-gtm-',
+  'src="https://www.googletagmanager',
+  "src='https://www.googletagmanager",
   'window.dataLayer',
-  'datalayer',
 ];
 
 const TRACKERS = [
