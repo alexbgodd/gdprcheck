@@ -1,7 +1,17 @@
 // /api/check.js — Vercel Serverless Function
 // Fetches a URL and analyses it for GDPR/privacy signals
 
-const GTM_PATTERNS = ['googletagmanager.com/gtm.js', 'gtm.js', "gtm('js'", 'GTM-'];
+const GTM_PATTERNS = [
+  'googletagmanager.com/gtm.js',
+  'googletagmanager.com/ns.html',
+  'gtm.js',
+  "gtm('js'",
+  'GTM-',
+  'gtm-',
+  'data-gtm',
+  'window.dataLayer',
+  'datalayer',
+];
 
 const TRACKERS = [
   { name: 'Google Analytics',   patterns: ['google-analytics.com', 'googletagmanager.com', 'gtag(', 'ga(\'send', 'ga("send'] },
