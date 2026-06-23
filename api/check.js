@@ -74,6 +74,7 @@ const PRIVACY_KEYWORDS = [
   'защита на личните данни', 'обработване на данни', 'декларация за поверителност',
   'декларация за защита', 'правила за поверителност',
   'privacy statement', 'privacy notice', 'data protection', 'cookie policy',
+  'privacy-statement', 'privacy-policies', '/privacy"', "/privacy'",
 ];
 
 const SECURITY_HEADERS = [
