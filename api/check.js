@@ -137,7 +137,10 @@ export default async function handler(req, res) {
       : `Грешка при зареждане: ${err.message}`;
   }
 
-  const htmlLower = html.toLowerCase();
+  // Strip inline script content but keep <script src="..."> tags
+  // This prevents false positives from script code that mentions tracker names
+  const htmlStripped = html.replace(/<script(?![^>]*\bsrc\b)[^>]*>[\s\S]*?<\/script>/gi, '');
+  const htmlLower = htmlStripped.toLowerCase();
 
   // Detect bot-blocking (suspiciously small or script-less response)
   const botBlocked = !fetchError && html.length < 5000 && !htmlLower.includes('<script');
