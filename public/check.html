@@ -167,6 +167,20 @@
       margin: 0.15rem;
     }
     .no-trackers { font-size: 0.82rem; color: #22c55e; }
+    .tracker-group { margin-bottom: 0.7rem; }
+    .tracker-group:last-child { margin-bottom: 0; }
+    .tracker-group-label { font-size: 0.75rem; color: #64748b; margin-bottom: 0.3rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+    .extra-warning {
+      display: flex; align-items: flex-start; gap: 0.5rem;
+      background: rgba(245,158,11,0.08);
+      border: 1px solid rgba(245,158,11,0.3);
+      border-radius: 8px;
+      padding: 0.6rem 0.8rem;
+      margin-top: 0.6rem;
+      font-size: 0.75rem;
+      color: #f59e0b;
+      line-height: 1.5;
+    }
 
     .headers-card {
       background: #111827;
@@ -312,6 +326,8 @@
     return 'low';
   }
 
+  const CAT_ICONS = { analytics: '📊', advertising: '📢', social: '👥', video: '🎬', chat: '💬' };
+
   function render(d) {
     const results = document.getElementById('results');
 
@@ -320,9 +336,29 @@
     const privacyOk = d.hasPrivacyPolicy;
     const noTrackers = d.trackers.length === 0;
 
-    const trackerHtml = d.trackers.length
-      ? d.trackers.map(t => `<span class="tracker-tag">${t}</span>`).join('')
-      : `<span class="no-trackers">Не са открити познати тракери</span>`;
+    // Grouped trackers by category
+    let trackerHtml = '';
+    const cats = Object.keys(d.trackersByCategory || {});
+    if (cats.length === 0) {
+      trackerHtml = `<span class="no-trackers">Не са открити познати тракери</span>`;
+    } else {
+      trackerHtml = cats.map(cat => {
+        const label = (d.categoryLabels || {})[cat] || cat;
+        const icon = CAT_ICONS[cat] || '🔍';
+        const tags = d.trackersByCategory[cat].map(t => `<span class="tracker-tag">${t}</span>`).join('');
+        return `<div class="tracker-group">
+          <div class="tracker-group-label">${icon} ${label}</div>
+          <div>${tags}</div>
+        </div>`;
+      }).join('');
+    }
+
+    // Extra checks
+    const extraChecks = [
+      d.hasGoogleFonts ? `<div class="extra-warning">⚠️ <strong>Google Fonts</strong> — шрифтовете се зареждат от Google сървъри. Google получава IP адреса на всеки посетител.</div>` : '',
+      d.riskyForms ? `<div class="extra-warning">⚠️ <strong>Рискови форми</strong> — открити са форми, изпращащи данни по HTTP (некриптирано).</div>` : '',
+      d.hasGTM ? `<div class="gtm-warning">⚠️ <strong>Google Tag Manager</strong> — реалният брой тракери може да е по-висок. GTM зарежда допълнителни скриптове динамично.</div>` : '',
+    ].filter(Boolean).join('');
 
     const headersHtml = d.securityHeaders.map(h => `
       <div class="header-row">
@@ -368,12 +404,26 @@
             <div class="check-detail">${noTrackers ? 'Не са открити известни тракери' : `Открити: ${d.trackers.length}`}</div>
           </div>
         </div>
+        <div class="check-item">
+          <div class="check-icon">${icon(!d.hasGoogleFonts)}</div>
+          <div>
+            <div class="check-title">Google Fonts</div>
+            <div class="check-detail">${d.hasGoogleFonts ? 'Открено — споделя IP с Google' : 'Не е открито'}</div>
+          </div>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">${icon(!d.riskyForms)}</div>
+          <div>
+            <div class="check-title">Сигурност на форми</div>
+            <div class="check-detail">${d.riskyForms ? 'Открени форми по HTTP' : 'Всички форми са защитени'}</div>
+          </div>
+        </div>
       </div>
 
       <div class="trackers-card">
         <div class="trackers-title">Открити тракери</div>
         ${trackerHtml}
-        ${d.hasGTM ? `<div class="gtm-warning">⚠️ Открит е Google Tag Manager — реалният брой тракери може да е по-висок. GTM зарежда допълнителни скриптове динамично, които не се виждат в HTML-а.</div>` : ''}
+        ${extraChecks}
       </div>
 
       <div class="headers-card">
