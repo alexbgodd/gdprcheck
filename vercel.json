@@ -42,10 +42,6 @@
     {
       "source": "/check",
       "destination": "/check.html"
-    },
-    {
-      "source": "/tools",
-      "destination": "/tools.html"
     }
   ]
 }
