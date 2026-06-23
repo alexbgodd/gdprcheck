@@ -13,6 +13,32 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Segoe UI', sans-serif; background: #f4f6f9; color: #1a1a2e; }
+    /* NAV */
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      background: #0d0f1a; padding: 0.9rem 2rem;
+      border-bottom: 1px solid #1e2440;
+    }
+    .site-nav a.nav-logo {
+      font-size: 0.95rem; font-weight: 700; color: #e2e8f0;
+      text-decoration: none; letter-spacing: 0.02em;
+    }
+    .site-nav a.nav-logo span { color: #22c55e; }
+    .nav-links { display: flex; gap: 1.4rem; align-items: center; }
+    .nav-links a {
+      font-size: 0.82rem; color: #94a3b8;
+      text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #e2e8f0; }
+    .nav-links .nav-check {
+      background: #22c55e; color: #0d0f1a !important;
+      padding: 0.35rem 0.85rem; border-radius: 6px; font-weight: 600;
+    }
+    .nav-links .nav-check:hover { background: #16a34a; }
+    @media (max-width: 600px) {
+      .site-nav { padding: 0.8rem 1rem; }
+      .nav-links { gap: 0.8rem; }
+    }
     header { background: #1a1a2e; color: white; padding: 2rem; text-align: center; }
     header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
     header p { color: #aab; font-size: 0.95rem; }
@@ -215,6 +241,16 @@
   </style>
 </head>
 <body>
+
+<nav class="site-nav">
+  <a class="nav-logo" href="/"><span>GDPR</span>check.bg</a>
+  <div class="nav-links">
+    <a href="/risk">Рискови поръчки</a>
+    <a href="/check" class="nav-check">Провери сайт →</a>
+    <a href="mailto:freetvbg7@gmail.com">Контакт</a>
+  </div>
+</nav>
+
 <header>
   <button id="refresh-btn" title="Обнови страницата">
     <span id="refresh-icon">🔄</span> Рискови обществени поръчки <span class="badge">Създадено с AI</span>
@@ -297,8 +333,11 @@
     <a href="https://www.aip-bg.org/publicaccess/" target="_blank" rel="noopener">Заявка по ЗДОИ (ПДИ)</a>
   </div>
   Данните се базират на официалната <a href="https://op.government.bg" target="_blank" rel="noopener">open-data емисия на ЦАИС ЕОП</a>.
-  Скорът е автоматичен и не представлява обвинение в нарушение.<br>
-  <a href="https://gdprcheck.bg" target="_blank" rel="noopener">GDPRcheck.bg</a>
+  Скорът е автоматичен и не представлява обвинение в нарушение.<br><br>
+  <a href="/">GDPRcheck.bg</a> &nbsp;·&nbsp;
+  <a href="/check">GDPR проверка на сайт</a> &nbsp;·&nbsp;
+  <a href="mailto:freetvbg7@gmail.com">Контакт</a> &nbsp;·&nbsp;
+  Независим проект · България
 </footer>
 
 <script>
