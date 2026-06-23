@@ -20,7 +20,6 @@
     nav {
       display: flex;
       align-items: center;
-      justify-content: space-between;
       padding: 1.2rem 2rem;
       border-bottom: 1px solid #1e2440;
     }
@@ -113,19 +112,12 @@
     .tool-list li:first-child { border-top: none; padding-top: 0; }
     .tool-list a {
       display: flex; align-items: baseline;
-      justify-content: space-between;
       text-decoration: none;
-      gap: 0.5rem;
-    }
+      }
     .tool-list a:hover .tool-name { color: #22c55e; }
     .tool-name {
       font-size: 0.88rem; font-weight: 600;
       color: #e2e8f0; transition: color 0.15s;
-    }
-    .tool-desc {
-      font-size: 0.76rem; color: #64748b;
-      text-align: right; flex-shrink: 0;
-      max-width: 55%;
     }
 
     /* TAG */
@@ -167,7 +159,6 @@
       nav { padding: 1rem; }
       .nav-links { gap: 1rem; }
       .grid { grid-template-columns: 1fr; }
-      .tool-desc { display: none; }
     }
   </style>
 </head>
@@ -205,23 +196,18 @@
     <ul class="tool-list">
       <li><a href="https://gdprcheck.bg/risk" target="_blank" rel="noopener">
         <span class="tool-name">GDPRcheck.bg/risk <span class="tag-bg">БГ</span></span>
-        <span class="tool-desc">Риск-скор на 76 000+ договора</span>
       </a></li>
       <li><a href="https://app.eop.bg" target="_blank" rel="noopener">
         <span class="tool-name">ЦАИС ЕОП <span class="tag-bg">БГ</span></span>
-        <span class="tool-desc">Официална система за поръчки</span>
       </a></li>
       <li><a href="https://www.aop.bg" target="_blank" rel="noopener">
         <span class="tool-name">АОП <span class="tag-bg">БГ</span></span>
-        <span class="tool-desc">Агенция по обществени поръчки</span>
       </a></li>
       <li><a href="https://ted.europa.eu" target="_blank" rel="noopener">
         <span class="tool-name">TED Europa <span class="tag-eu">ЕС</span></span>
-        <span class="tool-desc">Европейски тръжни обявления</span>
       </a></li>
       <li><a href="https://www.bulnao.government.bg" target="_blank" rel="noopener">
         <span class="tool-name">Сметна палата <span class="tag-bg">БГ</span></span>
-        <span class="tool-desc">Одитни доклади</span>
       </a></li>
     </ul>
   </div>
@@ -238,23 +224,18 @@
     <ul class="tool-list">
       <li><a href="https://portal.registryagency.bg" target="_blank" rel="noopener">
         <span class="tool-name">Търговски регистър <span class="tag-bg">БГ</span></span>
-        <span class="tool-desc">Фирми, собственици, финанси</span>
       </a></li>
       <li><a href="https://www.konpi.bg" target="_blank" rel="noopener">
         <span class="tool-name">КПКОНПИ <span class="tag-bg">БГ</span></span>
-        <span class="tool-desc">Декларации за имущество</span>
       </a></li>
       <li><a href="https://opencorporates.com" target="_blank" rel="noopener">
         <span class="tool-name">OpenCorporates</span>
-        <span class="tool-desc">200M+ фирми в 140 държави</span>
       </a></li>
       <li><a href="https://aleph.occrp.org" target="_blank" rel="noopener">
         <span class="tool-name">OCCRP Aleph</span>
-        <span class="tool-desc">Изтекли досиета и регистри</span>
       </a></li>
       <li><a href="https://www.opensanctions.org" target="_blank" rel="noopener">
         <span class="tool-name">OpenSanctions</span>
-        <span class="tool-desc">Санкционирани лица и фирми</span>
       </a></li>
     </ul>
   </div>
@@ -271,19 +252,15 @@
     <ul class="tool-list">
       <li><a href="https://kohesio.ec.europa.eu" target="_blank" rel="noopener">
         <span class="tool-name">Kohesio <span class="tag-eu">ЕС</span></span>
-        <span class="tool-desc">Кохезионни проекти и бенефициенти</span>
       </a></li>
       <li><a href="https://farmsubsidy.org" target="_blank" rel="noopener">
         <span class="tool-name">Farm Subsidy <span class="tag-eu">ЕС</span></span>
-        <span class="tool-desc">Земеделски субсидии по държави</span>
       </a></li>
       <li><a href="https://www.followthemoney.eu" target="_blank" rel="noopener">
         <span class="tool-name">FollowTheMoney <span class="tag-eu">ЕС</span></span>
-        <span class="tool-desc">ЕС разходи и бенефициенти</span>
       </a></li>
       <li><a href="https://transparency.eu/recipient" target="_blank" rel="noopener">
         <span class="tool-name">EU Funding & Tenders <span class="tag-eu">ЕС</span></span>
-        <span class="tool-desc">Директно финансирани проекти</span>
       </a></li>
     </ul>
   </div>
@@ -300,19 +277,15 @@
     <ul class="tool-list">
       <li><a href="https://offshoreleaks.icij.org" target="_blank" rel="noopener">
         <span class="tool-name">ICIJ Offshore Leaks</span>
-        <span class="tool-desc">Panama, Pandora, Paradise Papers</span>
       </a></li>
       <li><a href="https://www.occrp.org/en/investigations" target="_blank" rel="noopener">
         <span class="tool-name">OCCRP Investigations</span>
-        <span class="tool-desc">Разследвания с български връзки</span>
       </a></li>
       <li><a href="https://fincen.gov/financial-crimes" target="_blank" rel="noopener">
         <span class="tool-name">FinCEN Files</span>
-        <span class="tool-desc">Подозрителни банкови транзакции</span>
       </a></li>
       <li><a href="https://www.reportingproject.net" target="_blank" rel="noopener">
         <span class="tool-name">Reporting Project</span>
-        <span class="tool-desc">Разследвания в Югоизточна Европа</span>
       </a></li>
     </ul>
   </div>
@@ -329,19 +302,15 @@
     <ul class="tool-list">
       <li><a href="https://web.archive.org" target="_blank" rel="noopener">
         <span class="tool-name">Wayback Machine</span>
-        <span class="tool-desc">Архив на уеб от 1996 г.</span>
       </a></li>
       <li><a href="https://www.documentcloud.org" target="_blank" rel="noopener">
         <span class="tool-name">DocumentCloud</span>
-        <span class="tool-desc">Публикуване и анализ на документи</span>
       </a></li>
       <li><a href="https://www.aip-bg.org/publicaccess/" target="_blank" rel="noopener">
         <span class="tool-name">ПДИ — заявка по ЗДОИ <span class="tag-bg">БГ</span></span>
-        <span class="tool-desc">Искане на официална информация</span>
       </a></li>
       <li><a href="https://data.egov.bg" target="_blank" rel="noopener">
         <span class="tool-name">Отворени данни БГ <span class="tag-bg">БГ</span></span>
-        <span class="tool-desc">Официален портал за open data</span>
       </a></li>
     </ul>
   </div>
@@ -358,19 +327,15 @@
     <ul class="tool-list">
       <li><a href="https://gdprcheck.bg/check" target="_blank" rel="noopener">
         <span class="tool-name">GDPRcheck.bg/check <span class="tag-bg">БГ</span></span>
-        <span class="tool-desc">Тракери, consent, сигурност</span>
       </a></li>
       <li><a href="https://who.is" target="_blank" rel="noopener">
         <span class="tool-name">Who.is</span>
-        <span class="tool-desc">WHOIS — собственик на домейн</span>
       </a></li>
       <li><a href="https://www.shodan.io" target="_blank" rel="noopener">
         <span class="tool-name">Shodan</span>
-        <span class="tool-desc">Публично достъпни сървъри и устройства</span>
       </a></li>
       <li><a href="https://securityheaders.com" target="_blank" rel="noopener">
         <span class="tool-name">Security Headers</span>
-        <span class="tool-desc">Проверка на HTTP хедъри</span>
       </a></li>
     </ul>
   </div>
