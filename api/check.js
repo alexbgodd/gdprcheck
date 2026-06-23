@@ -57,7 +57,8 @@ const TRACKERS = [
 
 const CONSENT_KEYWORDS = [
   // Platforms (script src / class names)
-  'cookiebot', 'onetrust', 'otbannersdk', 'optanon', 'cdn.cookiepro.com',
+  'cookiebot', 'onetrust', 'otbannersdk', 'otsdkstub', 'cdn.cookielaw.org',
+  'cookielaw.org', 'optanon', 'cdn.cookiepro.com',
   'tarteaucitron', 'cookiepro', 'cookieconsent', 'cookie-consent',
   'gdpr-consent', 'cookie_notice', 'axeptio', 'quantcast', 'trustarc',
   'usercentrics', 'didomi', 'complianz', 'cookie-law-info',
