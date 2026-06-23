@@ -56,15 +56,22 @@ const TRACKERS = [
 ];
 
 const CONSENT_KEYWORDS = [
-  'cookiebot', 'onetrust', 'tarteaucitron', 'cookiepro', 'cookieconsent',
-  'cookie-consent', 'gdpr-consent', 'cookie_notice', 'cookie notice',
-  'бисквит', 'приемам бисквит', 'cookie съгласие', 'consent',
-  'we use cookies', 'използваме бисквитки',
+  // Platforms (script src / class names)
+  'cookiebot', 'onetrust', 'otbannersdk', 'optanon', 'cdn.cookiepro.com',
+  'tarteaucitron', 'cookiepro', 'cookieconsent', 'cookie-consent',
+  'gdpr-consent', 'cookie_notice', 'axeptio', 'quantcast', 'trustarc',
+  'usercentrics', 'didomi', 'complianz', 'cookie-law-info',
+  // Natural language (BG + EN)
+  'cookie notice', 'бисквит', 'приемам бисквит', 'бисквитки',
+  'cookie съгласие', 'we use cookies', 'използваме бисквитки',
+  'приемане на всички', 'отхвърляне на всички',
 ];
 
 const PRIVACY_KEYWORDS = [
   'privacy policy', 'политика за поверителност', 'лични данни',
   'поверителност', 'privacy-policy', 'gdpr', 'защита на данни',
+  'защита на личните данни', 'обработване на данни', 'декларация за поверителност',
+  'декларация за защита', 'правила за поверителност',
 ];
 
 const SECURITY_HEADERS = [
