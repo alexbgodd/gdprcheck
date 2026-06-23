@@ -4,11 +4,9 @@
 const GTM_PATTERNS = [
   'googletagmanager.com/gtm.js',
   'googletagmanager.com/ns.html',
-  'gtm.js',
   "gtm('js'",
   'GTM-',
-  'gtm-',
-  'data-gtm',
+  'data-gtm-',
   'window.dataLayer',
   'datalayer',
 ];
