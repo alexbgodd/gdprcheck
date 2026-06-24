@@ -79,12 +79,19 @@ const CONSENT_KEYWORDS = [
 ];
 
 const PRIVACY_KEYWORDS = [
-  'privacy policy', 'политика за поверителност', 'лични данни',
-  'поверителност', 'privacy-policy', 'защита на данни',
-  'защита на личните данни', 'обработване на данни', 'декларация за поверителност',
-  'декларация за защита', 'правила за поверителност',
-  'privacy statement', 'privacy notice', 'data protection', 'cookie policy',
-  'privacy-statement', 'privacy-policies', '/privacy"', "/privacy'",
+  // English
+  'privacy policy', 'privacy-policy', 'privacy statement', 'privacy notice',
+  'data protection', 'cookie policy', 'privacy-statement', 'privacy-policies',
+  '/privacy"', "/privacy'",
+  // Bulgarian standard
+  'политика за поверителност', 'лични данни', 'поверителност',
+  'защита на данни', 'защита на личните данни', 'обработване на данни',
+  'декларация за поверителност', 'декларация за защита', 'правила за поверителност',
+  // Bulgarian cookie-specific (actualno.com style)
+  'правила за бисквитките', 'политика за бисквитки', 'политика бисквитки',
+  'бисквитките', '/cookies"', "/cookies'",
+  // URL patterns
+  '/privacy', '/poверителност', '/lични-данни',
 ];
 
 const SECURITY_HEADERS = [
