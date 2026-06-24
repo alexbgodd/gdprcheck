@@ -16,6 +16,7 @@ score_contracts.py
 
 import json
 import statistics
+from datetime import date
 from pathlib import Path
 from collections import defaultdict
 
@@ -295,7 +296,7 @@ def main():
             pass
 
     output = {
-        "generatedAt":       raw.get("lastDay"),
+        "generatedAt":       date.today().isoformat(),
         "periodFrom":        raw.get("firstDay"),
         "periodTo":          raw.get("lastDay"),
         "contractsAnalyzed": raw.get("recordCount", len(contracts)),
