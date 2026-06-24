@@ -136,6 +136,7 @@
     .check-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.05rem; }
     .check-title { font-size: 0.85rem; font-weight: 600; color: #f1f5f9; }
     .check-detail { font-size: 0.75rem; color: #64748b; margin-top: 0.2rem; line-height: 1.4; }
+    .check-note { font-size: 0.7rem; color: #475569; margin-top: 0.3rem; font-style: italic; }
 
     .trackers-card {
       background: #111827;
@@ -409,6 +410,7 @@
           <div>
             <div class="check-title">Cookie съгласие</div>
             <div class="check-detail">${consentOk ? 'Открит е банер за съгласие' : 'Не е открит cookie банер'}</div>
+            ${!consentOk ? '<div class="check-note">Банерите, заредени динамично чрез JavaScript, не се засичат от статичния анализ.</div>' : ''}
           </div>
         </div>
         <div class="check-item">
