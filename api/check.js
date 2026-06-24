@@ -53,12 +53,29 @@ const TRACKERS = [
 ];
 
 const CONSENT_KEYWORDS = [
-  // Platforms (script src / class names)
+  // Major platforms
   'cookiebot', 'onetrust', 'otbannersdk', 'otsdkstub', 'cdn.cookielaw.org',
   'cookielaw.org', 'optanon', 'cdn.cookiepro.com',
   'tarteaucitron', 'cookiepro', 'cookieconsent', 'cookie-consent',
   'gdpr-consent', 'cookie_notice', 'axeptio', 'quantcast', 'trustarc',
   'usercentrics', 'didomi', 'complianz', 'cookie-law-info',
+  // WordPress plugins (HTML fingerprints in static source)
+  'cmplz',              // Complianz — id="cmplz-cookiebanner-container"
+  'borlabs-cookie',     // Borlabs Cookie — id="BorlabsCookie"
+  'borlabs',
+  'cookieyes',          // CookieYes — script src / data-cky
+  'cky-consent',        // CookieYes HTML attribute
+  'gdpr-cookie-consent',// WebToffee GDPR Cookie Consent
+  'wt-cli',             // WebToffee Cookie Law Info
+  'moove_gdpr',         // GDPR Cookie Compliance by Moove
+  'iubenda',            // Iubenda
+  'termly',             // Termly
+  'real-cookie-banner', // Real Cookie Banner
+  'wpcc',               // WP Cookie Consent
+  'cookie-law',         // generic WP cookie law classes
+  'wp-consent',         // WP Consent API
+  'ct_ultimate_gdpr',   // Ultimate GDPR & CCPA
+  'pprivacy',           // Privacy Policy Generator plugins
 ];
 
 const PRIVACY_KEYWORDS = [
