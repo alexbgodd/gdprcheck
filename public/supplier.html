@@ -242,7 +242,9 @@ async function init() {
   // Тренд по години
   const byYear = {};
   contracts.forEach(c => {
-    const y = (c.contractDate || c.publicationDate || '').slice(0, 4);
+    const rawDate = c.contractDate || c.publicationDate || '';
+    // ISO: 2023-11-27 → slice(0,4); BG: 27.11.2023 → last 4 chars
+    const y = rawDate.match(/^\d{4}-/) ? rawDate.slice(0, 4) : (rawDate.match(/(\d{4})$/) || [])[1] || '';
     if (y && y > '2018') {
       if (!byYear[y]) byYear[y] = 0;
       byYear[y]++;
