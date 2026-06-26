@@ -50,6 +50,20 @@ const TRACKERS = [
   { name: 'Tawk.to',           category: 'chat', patterns: ['embed.tawk.to', 'tawk.to'] },
   { name: 'Freshchat',         category: 'chat', patterns: ['wchat.freshchat.com', 'freshchat.com'] },
   { name: 'Crisp Chat',        category: 'chat', patterns: ['crisp.chat', '$crisp'] },
+
+  // --- CRM / Marketing ---
+  { name: 'HubSpot',            category: 'analytics',   patterns: ['js.hs-scripts.com', 'hsforms.net', '_hsq.push'] },
+  { name: 'Klaviyo',            category: 'advertising', patterns: ['static.klaviyo.com', 'klaviyo.identify'] },
+  { name: 'Mailchimp',          category: 'advertising', patterns: ['chimpstatic.com', 'list-manage.com'] },
+  { name: 'ActiveCampaign',     category: 'advertising', patterns: ['trackcmp.net', 'activehosted.com'] },
+
+  // --- Error tracking ---
+  { name: 'Sentry',             category: 'analytics',   patterns: ['browser.sentry-cdn.com', 'sentry.io/api', 'Sentry.init'] },
+
+  // --- Advertising (extra) ---
+  { name: 'Microsoft Advertising', category: 'advertising', patterns: ['bat.bing.com/actionp', 'msclkid'] },
+  { name: 'Cloudflare Zaraz',   category: 'analytics',   patterns: ['cloudflareinsights.com', '/cdn-cgi/zaraz/'] },
+  { name: 'Matomo',             category: 'analytics',   patterns: ['matomo.js', 'piwik.js', '_paq.push'] },
 ];
 
 const CONSENT_KEYWORDS = [
@@ -92,6 +106,9 @@ const PRIVACY_KEYWORDS = [
   'бисквитките', '/cookies"', "/cookies'",
   // URL patterns
   '/privacy', '/poверителност', '/lични-данни',
+  // DPO & Bulgarian supervisory authority
+  'длъжностно лице по защита', 'dpo@', 'data protection officer',
+  'кзлд', 'cpdp.bg', 'комисия за защита на личните данни',
 ];
 
 const SECURITY_HEADERS = [
@@ -188,6 +205,13 @@ export default async function handler(req, res) {
   const hasConsent = CONSENT_KEYWORDS.some(k => htmlLower.includes(k.toLowerCase()));
   const hasPrivacyLink = PRIVACY_KEYWORDS.some(k => htmlLower.includes(k.toLowerCase()));
 
+  // Tracking cookies set by server
+  const setCookieRaw = responseHeaders['set-cookie'] || '';
+  const TRACKING_COOKIES = ['_ga', '_gid', '_gat', '_fbp', '_fbc', '_gcl', 'IDE', 'NID', '__utma', 'MUID'];
+  const trackingCookiesFound = TRACKING_COOKIES.filter(c =>
+    setCookieRaw.toLowerCase().includes(c.toLowerCase() + '=')
+  );
+
   // Security headers
   const secHeaders = SECURITY_HEADERS.map(h => ({
     name: h,
@@ -220,6 +244,7 @@ export default async function handler(req, res) {
     riskyForms,
     hasConsentBanner: hasConsent,
     hasPrivacyPolicy: hasPrivacyLink,
+    trackingCookies: trackingCookiesFound,
     securityHeaders: secHeaders,
     score,
   });
