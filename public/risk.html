@@ -37,7 +37,8 @@
     .nav-links .nav-check:hover { background: #16a34a; }
     @media (max-width: 600px) {
       .site-nav { padding: 0.8rem 1rem; }
-      .nav-links { gap: 0.8rem; }
+      .nav-links a:not(.nav-check) { display: none; }
+      .nav-links .nav-check { font-size: 0.78rem; padding: 0.4rem 0.8rem; }
     }
     header {
       background: #1a1a2e;
