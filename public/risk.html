@@ -361,9 +361,12 @@
   });
 
   const DATA_URL = 'data/top20.json';
+  const PAGE_SIZE = 50;
   let allContracts = [];
   let currentFilterType = 'all';
   let currentFilterValue = 'all';
+  let visibleCount = PAGE_SIZE;
+  let scrollObserver = null;
 
   function formatMoney(value, currency) {
     const n = Number(value) || 0;
@@ -408,62 +411,94 @@
     return list;
   }
 
-  function renderCards() {
-    const filtered = getFiltered();
-    const cardsEl = document.getElementById('cards');
-
-    cardsEl.innerHTML = filtered.map((c, i) => {
-      const category = c.supplierCategory || 'normal';
-      const flagsHtml = (c.flags || []).map(f => {
-        const isWarning = f.indexOf('⚠️') !== -1;
-        const parts     = f.split('|');
-        const label     = parts[0];
-        const flagType  = parts[1] || '';
-        const hasModal  = ['SINGLE_OFFER','VALUE_HIGH','CONCENTRATION','ANNEX'].includes(flagType);
-        const dataAttr  = parts.slice(1).map((p,i) => `data-p${i}="${escapeHtml(p)}"`).join(' ');
-        return `<button class="flag${isWarning ? ' warning' : ''}${hasModal ? '' : ' no-modal'}" ${dataAttr} data-contract-idx="${i}">${escapeHtml(label)}</button>`;
-      }).join('');
-
-      const eaopLink = c.contractNumber
-        ? `<a class="link" href="https://app.eop.bg/today/contracts/${escapeHtml(c.contractNumber)}" target="_blank" rel="noopener">Договор в ЦАИС →</a>`
-        : '';
-      const linkHtml = c.linkToOjEu
-        ? `<a class="link" href="${escapeHtml(c.linkToOjEu)}" target="_blank" rel="noopener">Обявление в TED →</a>`
-        : '';
-      const supplierNewsLink = c.supplierName
-        ? `<a class="link" href="https://www.google.com/search?q=${encodeURIComponent(c.supplierName)}" target="_blank" rel="noopener" title="Търси фирмата в Google">Изпълнител (Google) →</a>`
-        : '';
-
-      // Дата и процедура
-      const dateStr = c.contractDate ? c.contractDate.slice(0,10) : '';
-      const isPряко = (c.procedureType || '').toLowerCase().includes('пряко') ||
-                      (c.procedureType || '').toLowerCase().includes('negoti');
-      const procHtml = c.procedureType
-        ? `<span class="proc${isPряко ? ' proc-direct' : ''}" title="Вид процедура">${escapeHtml(c.procedureType)}</span>`
-        : '';
-
-      return `
-        <div class="card ${category}">
-          <div class="card-header">
-            <div class="rank">#${i + 1}</div>
-            <div class="score-badge">${c.score}/100</div>
-          </div>
-          <div class="buyer"><span class="filter-name" data-filter-field="buyerName" data-filter-value="${escapeHtml(c.buyerName || '')}" title="Филтрирай по възложител">${escapeHtml(c.buyerName || '—')}</span></div>
-          <div class="supplier">Изпълнител: <span class="filter-name" data-filter-field="supplierName" data-filter-value="${escapeHtml(c.supplierName || '')}" title="Филтрирай по изпълнител">${escapeHtml(c.supplierName || '—')}</span></div>
-          <div class="value">${formatMoney(c.contractValue, c.contractCurrency)}</div>
-          <div class="supplier">${escapeHtml(c.tenderName || '')}</div>
-          <div class="card-meta">${procHtml}${dateStr ? `<span class="date">${dateStr}</span>` : ''}</div>
-          <div class="flags">${flagsHtml}</div>
-          <div class="links">${eaopLink}${linkHtml}${supplierNewsLink}</div>
-          <div class="card-disclaimer">Скорът е автоматичен на база официални данни от ЦАИС ЕОП. Не представлява правно становище.</div>
-        </div>
-      `;
+  function buildCard(c, i) {
+    const category = c.supplierCategory || 'normal';
+    const flagsHtml = (c.flags || []).map(f => {
+      const isWarning = f.indexOf('⚠️') !== -1;
+      const parts     = f.split('|');
+      const label     = parts[0];
+      const flagType  = parts[1] || '';
+      const hasModal  = ['SINGLE_OFFER','VALUE_HIGH','CONCENTRATION','ANNEX'].includes(flagType);
+      const dataAttr  = parts.slice(1).map((p,j) => `data-p${j}="${escapeHtml(p)}"`).join(' ');
+      return `<button class="flag${isWarning ? ' warning' : ''}${hasModal ? '' : ' no-modal'}" ${dataAttr} data-contract-idx="${i}">${escapeHtml(label)}</button>`;
     }).join('');
 
-    cardsEl.classList.remove('hidden');
+    const eaopLink = c.contractNumber
+      ? `<a class="link" href="https://app.eop.bg/today/contracts/${escapeHtml(c.contractNumber)}" target="_blank" rel="noopener">Договор в ЦАИС →</a>`
+      : '';
+    const linkHtml = c.linkToOjEu
+      ? `<a class="link" href="${escapeHtml(c.linkToOjEu)}" target="_blank" rel="noopener">Обявление в TED →</a>`
+      : '';
+    const supplierNewsLink = c.supplierName
+      ? `<a class="link" href="https://www.google.com/search?q=${encodeURIComponent(c.supplierName)}" target="_blank" rel="noopener" title="Търси фирмата в Google">Изпълнител (Google) →</a>`
+      : '';
 
+    const dateStr = c.contractDate ? c.contractDate.slice(0,10) : '';
+    const isPряко = (c.procedureType || '').toLowerCase().includes('пряко') ||
+                    (c.procedureType || '').toLowerCase().includes('negoti');
+    const procHtml = c.procedureType
+      ? `<span class="proc${isPряко ? ' proc-direct' : ''}" title="Вид процедура">${escapeHtml(c.procedureType)}</span>`
+      : '';
+
+    return `
+      <div class="card ${category}">
+        <div class="card-header">
+          <div class="rank">#${i + 1}</div>
+          <div class="score-badge">${c.score}/100</div>
+        </div>
+        <div class="buyer"><span class="filter-name" data-filter-field="buyerName" data-filter-value="${escapeHtml(c.buyerName || '')}" title="Филтрирай по възложител">${escapeHtml(c.buyerName || '—')}</span></div>
+        <div class="supplier">Изпълнител: <span class="filter-name" data-filter-field="supplierName" data-filter-value="${escapeHtml(c.supplierName || '')}" title="Филтрирай по изпълнител">${escapeHtml(c.supplierName || '—')}</span></div>
+        <div class="value">${formatMoney(c.contractValue, c.contractCurrency)}</div>
+        <div class="supplier">${escapeHtml(c.tenderName || '')}</div>
+        <div class="card-meta">${procHtml}${dateStr ? `<span class="date">${dateStr}</span>` : ''}</div>
+        <div class="flags">${flagsHtml}</div>
+        <div class="links">${eaopLink}${linkHtml}${supplierNewsLink}</div>
+        <div class="card-disclaimer">Скорът е автоматичен на база официални данни от ЦАИС ЕОП. Не представлява правно становище.</div>
+      </div>
+    `;
+  }
+
+  function updateMeta(filtered) {
+    const shown = Math.min(visibleCount, filtered.length);
     const metaEl = document.getElementById('meta');
-    metaEl.innerHTML = `Показани <span class="count">${filtered.length}</span> от общо ${allContracts.length} поръчки &nbsp;·&nbsp; <button id="csv-btn" style="background:none;border:none;color:#2563eb;cursor:pointer;font-size:0.85rem;padding:0;font-family:inherit;">⬇ Свали като CSV</button>`;
+    metaEl.innerHTML = `Показани <span class="count">${shown}</span> от <span class="count">${filtered.length}</span> поръчки${shown < filtered.length ? ' · <em style="color:#94a3b8;font-style:normal">скролирай за още</em>' : ''} &nbsp;·&nbsp; <button id="csv-btn" style="background:none;border:none;color:#2563eb;cursor:pointer;font-size:0.85rem;padding:0;font-family:inherit;">⬇ Свали като CSV</button>`;
+  }
+
+  function setupSentinel(filtered) {
+    const old = document.getElementById('scroll-sentinel');
+    if (old) old.remove();
+    if (scrollObserver) { scrollObserver.disconnect(); scrollObserver = null; }
+    if (visibleCount >= filtered.length) return;
+
+    const sentinel = document.createElement('div');
+    sentinel.id = 'scroll-sentinel';
+    sentinel.style.height = '1px';
+    document.getElementById('cards').appendChild(sentinel);
+
+    scrollObserver = new IntersectionObserver((entries) => {
+      if (!entries[0].isIntersecting) return;
+      scrollObserver.disconnect();
+      scrollObserver = null;
+      const f = getFiltered();
+      const from = visibleCount;
+      visibleCount = Math.min(visibleCount + PAGE_SIZE, f.length);
+      const newHtml = f.slice(from, visibleCount).map((c, j) => buildCard(c, from + j)).join('');
+      sentinel.insertAdjacentHTML('beforebegin', newHtml);
+      updateMeta(f);
+      setupSentinel(f);
+    }, { rootMargin: '400px' });
+
+    scrollObserver.observe(sentinel);
+  }
+
+  function renderCards() {
+    const filtered = getFiltered();
+    visibleCount = PAGE_SIZE;
+    const cardsEl = document.getElementById('cards');
+    cardsEl.innerHTML = filtered.slice(0, visibleCount).map((c, i) => buildCard(c, i)).join('');
+    cardsEl.classList.remove('hidden');
+    updateMeta(filtered);
+    setupSentinel(filtered);
   }
 
   function escapeHtml(str) {
