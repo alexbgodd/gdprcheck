@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Профил на доставчик — GDPRcheck.bg</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%231a1a2e'/%3E%3Ccircle cx='13' cy='13' r='6' fill='none' stroke='white' stroke-width='2.5'/%3E%3Cline x1='17.5' y1='17.5' x2='23' y2='23' stroke='white' stroke-width='2.5' stroke-linecap='round'/%3E%3Ccircle cx='22' cy='9' r='4' fill='%23e63946'/%3E%3C/svg%3E" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f4f6f9; color: #1a1a2e; }
+
+    /* NAV */
+    .site-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      background: #0d0f1a; padding: 0.9rem 2rem;
+      border-bottom: 1px solid #1e2440;
+    }
+    .site-nav a.nav-logo {
+      font-size: 0.95rem; font-weight: 700; color: #e2e8f0;
+      text-decoration: none; letter-spacing: 0.02em;
+    }
+    .site-nav a.nav-logo span { color: #22c55e; }
+    .nav-links { display: flex; gap: 1.4rem; align-items: center; }
+    .nav-links a { font-size: 0.82rem; color: #94a3b8; text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: #e2e8f0; }
+    .nav-links .nav-check {
+      background: #22c55e; color: #0d0f1a !important;
+      padding: 0.35rem 0.85rem; border-radius: 6px; font-weight: 600;
+    }
+    @media (max-width: 600px) {
+      .site-nav { padding: 0.8rem 1rem; }
+      .nav-links a:not(.nav-check) { display: none; }
+      .nav-links .nav-check { font-size: 0.78rem; padding: 0.4rem 0.8rem; }
+    }
+
+    /* LAYOUT */
+    .page { max-width: 960px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+
+    /* BACK */
+    .back-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.82rem; color: #64748b; text-decoration: none;
+      margin-bottom: 1.25rem;
+    }
+    .back-link:hover { color: #1a1a2e; }
+
+    /* HEADER CARD */
+    .profile-header {
+      background: #fff; border: 1px solid #e2e8f0; border-radius: 12px;
+      padding: 1.5rem; margin-bottom: 1rem;
+      display: flex; align-items: flex-start; gap: 1rem;
+    }
+    .avatar {
+      width: 52px; height: 52px; border-radius: 10px;
+      background: #1a1a2e; color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; font-weight: 700; flex-shrink: 0;
+    }
+    .supplier-name { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .supplier-meta { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+    .badge {
+      display: inline-block; font-size: 0.72rem; font-weight: 600;
+      padding: 0.2rem 0.65rem; border-radius: 999px;
+    }
+    .badge-red { background: #fee2e2; color: #991b1b; }
+    .badge-blue { background: #dbeafe; color: #1e40af; }
+    .badge-gray { background: #f1f5f9; color: #475569; }
+    .score-big {
+      margin-left: auto; text-align: right; flex-shrink: 0;
+    }
+    .score-big .label { font-size: 0.72rem; color: #64748b; margin-bottom: 2px; }
+    .score-big .num { font-size: 2rem; font-weight: 700; color: #e63946; }
+
+    /* STATS */
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    @media (max-width: 600px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+    .stat-box {
+      background: #fff; border: 1px solid #e2e8f0; border-radius: 10px;
+      padding: 0.9rem 1rem;
+    }
+    .stat-box .stat-label { font-size: 0.72rem; color: #64748b; margin-bottom: 4px; }
+    .stat-box .stat-val { font-size: 1.4rem; font-weight: 700; }
+    .stat-box .stat-val.warn { color: #d97706; }
+    .stat-box .stat-val.danger { color: #e63946; }
+
+    /* SECTIONS */
+    .section { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem; }
+    .section-title { font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.9rem; }
+
+    /* FLAGS */
+    .flag-row { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.65rem 0; border-bottom: 1px solid #f1f5f9; font-size: 0.85rem; }
+    .flag-row:last-child { border-bottom: none; }
+    .flag-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+    .flag-text { flex: 1; }
+    .flag-text strong { display: block; margin-bottom: 2px; }
+    .flag-text small { color: #64748b; }
+    .flag-score { font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.55rem; border-radius: 999px; flex-shrink: 0; margin-top: 2px; }
+    .flag-score.red { background: #fee2e2; color: #991b1b; }
+    .flag-score.amber { background: #fef3c7; color: #92400e; }
+    .flag-score.blue { background: #dbeafe; color: #1e40af; }
+
+    /* TWO COL */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+
+    /* BUYER ROWS */
+    .buyer-row { display: flex; justify-content: space-between; align-items: center; padding: 0.55rem 0; border-bottom: 1px solid #f1f5f9; font-size: 0.83rem; }
+    .buyer-row:last-child { border-bottom: none; }
+    .buyer-row .buyer-name { flex: 1; margin-right: 0.5rem; }
+    .buyer-row .buyer-meta { font-size: 0.72rem; color: #64748b; }
+
+    /* CONTRACTS TABLE */
+    .contract-row { padding: 0.65rem 0; border-bottom: 1px solid #f1f5f9; font-size: 0.82rem; }
+    .contract-row:last-child { border-bottom: none; }
+    .contract-row .c-name { font-weight: 600; margin-bottom: 2px; }
+    .contract-row .c-meta { color: #64748b; display: flex; gap: 1rem; flex-wrap: wrap; }
+    .contract-row a { color: #2563eb; text-decoration: none; font-size: 0.78rem; }
+    .contract-row a:hover { text-decoration: underline; }
+
+    /* DISCLAIMER */
+    .disclaimer { font-size: 0.75rem; color: #94a3b8; text-align: center; margin-top: 2rem; line-height: 1.6; }
+
+    /* LOADING / ERROR */
+    .state-msg { text-align: center; padding: 4rem 1rem; color: #64748b; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="/" class="nav-logo">GDPR<span>check</span>.bg</a>
+  <div class="nav-links">
+    <a href="/risk">Рискови поръчки</a>
+    <a href="/check" class="nav-check">Провери сайт →</a>
+  </div>
+</nav>
+
+<div class="page">
+  <a href="/risk" class="back-link">← Обратно към рисковите поръчки</a>
+
+  <div id="content">
+    <div class="state-msg">Зареждане...</div>
+  </div>
+
+  <p class="disclaimer">
+    Данните са от официалната <a href="https://op.government.bg" target="_blank" rel="noopener">open-data емисия на ЦАИС ЕОП</a>.<br>
+    Скорът е автоматичен — не е обвинение и не представлява правно становище.
+  </p>
+</div>
+
+<script>
+const DATA_URL = '/data/top20.json';
+
+function escHtml(s) {
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function fmtVal(val, currency) {
+  if (!val) return '—';
+  const n = parseFloat(val);
+  if (isNaN(n)) return '—';
+  return n.toLocaleString('bg-BG', { maximumFractionDigits: 0 }) + ' ' + (currency || 'BGN');
+}
+
+function initials(name) {
+  if (!name) return '?';
+  const words = name.trim().split(/\s+/);
+  if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+  return (words[0][0] + words[1][0]).toUpperCase();
+}
+
+function flagLabel(flag) {
+  const type = (flag.split('|')[1] || '').trim();
+  const text = flag.split('|')[0].trim();
+  if (type === 'SINGLE_OFFER')  return { icon: '📋', label: 'Единствена оферта', detail: 'Нито един друг участник не е подал оферта', score: '+40', cls: 'red' };
+  if (type === 'DIRECT_AWARD')  return { icon: '🤝', label: 'Директно договаряне', detail: flag.split('|')[2] || '', score: '+40', cls: 'red' };
+  if (type === 'EU_SINGLE')     return { icon: '🇪🇺', label: 'EU финансиране + единствена оферта', detail: 'Европейски средства без реална конкуренция', score: '+20', cls: 'amber' };
+  if (type === 'VALUE_HIGH')    return { icon: '💰', label: 'Необичайно висока стойност', detail: 'Над 90-ти перцентил за вида договор', score: '+30', cls: 'amber' };
+  if (type === 'CONCENTRATION') return { icon: '🔁', label: text, detail: 'Системна концентрация при един възложител', score: '+15/+30', cls: 'amber' };
+  if (type === 'ANNEX')         return { icon: '📈', label: text, detail: 'Стойността е нараснала чрез анекс', score: '+30', cls: 'amber' };
+  return { icon: '⚠️', label: text, detail: '', score: '', cls: 'blue' };
+}
+
+function getEik() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('eik') || params.get('id') || '';
+}
+
+async function init() {
+  const eik = getEik();
+  if (!eik) {
+    document.getElementById('content').innerHTML = '<div class="state-msg">Липсва ЕИК в адреса.</div>';
+    return;
+  }
+
+  let data;
+  try {
+    const res = await fetch(DATA_URL);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    data = await res.json();
+  } catch(e) {
+    document.getElementById('content').innerHTML = '<div class="state-msg">Грешка при зареждане на данните.</div>';
+    return;
+  }
+
+  const contracts = (data.contracts || []).filter(c => c.supplierRegisterNumber === eik);
+
+  if (!contracts.length) {
+    document.getElementById('content').innerHTML = `<div class="state-msg">Няма намерени рискови поръчки за ЕИК ${escHtml(eik)}.</div>`;
+    return;
+  }
+
+  // --- Изчисли метрики ---
+  const supplierName = contracts[0].supplierName || eik;
+  const maxScore = Math.max(...contracts.map(c => c.score));
+  const totalValue = contracts.reduce((s, c) => s + (c.contractValueBgn || 0), 0);
+  const singleOffer = contracts.filter(c => c.flags && c.flags.some(f => f.includes('SINGLE_OFFER'))).length;
+
+  // Уникални възложители
+  const buyerMap = {};
+  contracts.forEach(c => {
+    const k = c.buyerRegistryNumber || c.buyerName || '?';
+    if (!buyerMap[k]) buyerMap[k] = { name: c.buyerName || k, count: 0, value: 0 };
+    buyerMap[k].count++;
+    buyerMap[k].value += c.contractValueBgn || 0;
+  });
+  const buyers = Object.values(buyerMap).sort((a, b) => b.count - a.count);
+
+  // Уникални флагове (типове)
+  const flagTypes = {};
+  contracts.forEach(c => {
+    (c.flags || []).forEach(f => {
+      const type = f.split('|')[1] || f.split('|')[0];
+      if (!flagTypes[type]) flagTypes[type] = { flag: f, count: 0 };
+      flagTypes[type].count++;
+    });
+  });
+
+  // Тренд по години
+  const byYear = {};
+  contracts.forEach(c => {
+    const y = (c.contractDate || c.publicationDate || '').slice(0, 4);
+    if (y && y > '2018') {
+      if (!byYear[y]) byYear[y] = 0;
+      byYear[y]++;
+    }
+  });
+  const years = Object.keys(byYear).sort();
+  const maxYearCount = Math.max(...Object.values(byYear), 1);
+
+  // Категория (най-честа)
+  const catCount = {};
+  contracts.forEach(c => { const cat = c.cpvCategory || 'Друго'; catCount[cat] = (catCount[cat] || 0) + 1; });
+  const topCat = Object.entries(catCount).sort((a,b) => b[1]-a[1])[0]?.[0] || 'Друго';
+
+  // --- Рендерирай ---
+  document.title = escHtml(supplierName) + ' — GDPRcheck.bg';
+
+  document.getElementById('content').innerHTML = `
+
+    <div class="profile-header">
+      <div class="avatar">${escHtml(initials(supplierName))}</div>
+      <div style="flex:1">
+        <div class="supplier-name">${escHtml(supplierName)}</div>
+        <div class="supplier-meta">
+          <span class="badge badge-red">Висок риск</span>
+          <span class="badge badge-blue">${escHtml(topCat)}</span>
+          <span class="badge badge-gray">ЕИК ${escHtml(eik)}</span>
+        </div>
+      </div>
+      <div class="score-big">
+        <div class="label">макс. скор</div>
+        <div class="num">${maxScore}</div>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-label">Рискови договора</div>
+        <div class="stat-val warn">${contracts.length}</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Обща стойност</div>
+        <div class="stat-val" style="font-size:1.1rem">${(totalValue/1000000).toFixed(1)}M лв.</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Единствена оферта</div>
+        <div class="stat-val danger">${singleOffer}</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Възложители</div>
+        <div class="stat-val">${buyers.length}</div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="section">
+        <div class="section-title">Открити рискови сигнали</div>
+        ${Object.entries(flagTypes).filter(([t]) => !t.includes('Публично') && !t.includes('Монополен')).slice(0, 6).map(([type, info]) => {
+          const fl = flagLabel(info.flag);
+          return `<div class="flag-row">
+            <span class="flag-icon">${fl.icon}</span>
+            <div class="flag-text">
+              <strong>${escHtml(fl.label)}</strong>
+              <small>${escHtml(fl.detail)} · ${info.count} ${info.count === 1 ? 'договор' : 'договора'}</small>
+            </div>
+            ${fl.score ? `<span class="flag-score ${fl.cls}">${fl.score}</span>` : ''}
+          </div>`;
+        }).join('')}
+      </div>
+
+      <div class="section">
+        <div class="section-title">Топ възложители</div>
+        ${buyers.slice(0, 6).map(b => `
+          <div class="buyer-row">
+            <div class="buyer-name">${escHtml(b.name)}</div>
+            <div class="buyer-meta">${b.count} бр. · ${(b.value/1000).toFixed(0)}к лв.</div>
+          </div>`).join('')}
+      </div>
+    </div>
+
+    ${years.length > 1 ? `
+    <div class="section" style="margin-bottom:1rem">
+      <div class="section-title">Активност по години</div>
+      <div style="display:flex;gap:8px;align-items:flex-end;height:60px;margin-bottom:6px">
+        ${years.map(y => `
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
+            <div style="width:100%;border-radius:3px 3px 0 0;background:#e63946;opacity:0.7;height:${Math.round(byYear[y]/maxYearCount*52)+8}px"></div>
+            <div style="font-size:0.7rem;color:#64748b">${y}</div>
+          </div>`).join('')}
+      </div>
+    </div>` : ''}
+
+    <div class="section">
+      <div class="section-title">Рискови договори (${contracts.length})</div>
+      ${contracts.slice(0, 20).map(c => `
+        <div class="contract-row">
+          <div class="c-name">${escHtml(c.tenderName || '(без наименование)')}</div>
+          <div class="c-meta">
+            <span>${escHtml(c.buyerName || '—')}</span>
+            <span>${fmtVal(c.contractValue, c.contractCurrency)}</span>
+            <span>${(c.contractDate || '').slice(0, 10)}</span>
+            <span style="color:#e63946;font-weight:600">скор ${c.score}</span>
+            ${c.contractNumber ? `<a href="https://app.eop.bg/today/contracts/${escHtml(c.contractNumber)}" target="_blank" rel="noopener">ЦАИС →</a>` : ''}
+          </div>
+        </div>`).join('')}
+      ${contracts.length > 20 ? `<p style="font-size:0.78rem;color:#64748b;margin-top:0.75rem">Показани 20 от ${contracts.length} договора.</p>` : ''}
+    </div>
+
+    <div style="margin-top:0.5rem;font-size:0.8rem;color:#64748b;display:flex;gap:1.5rem;flex-wrap:wrap">
+      <a href="https://portal.registryagency.bg/CR/reports/ActivitiesReport?uic=${escHtml(eik)}" target="_blank" rel="noopener" style="color:#2563eb;text-decoration:none">↗ Търговски регистър</a>
+      <a href="https://app.eop.bg" target="_blank" rel="noopener" style="color:#2563eb;text-decoration:none">↗ ЦАИС ЕОП</a>
+    </div>
+  `;
+}
+
+init();
+</script>
+</body>
+</html>

@@ -42,6 +42,10 @@
     {
       "source": "/check",
       "destination": "/check.html"
+    },
+    {
+      "source": "/supplier",
+      "destination": "/supplier.html"
     }
   ]
 }

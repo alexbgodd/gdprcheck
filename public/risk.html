@@ -443,15 +443,18 @@
     const procHtml = c.procedureType
       ? `<span class="proc${isPряко ? ' proc-direct' : ''}" title="Вид процедура">${escapeHtml(c.procedureType)}</span>`
       : '';
+    const supplierProfileUrl = c.supplierRegisterNumber
+      ? `/supplier?eik=${encodeURIComponent(c.supplierRegisterNumber)}`
+      : '';
 
     return `
       <div class="card ${category}">
         <div class="card-header">
           <div class="rank">#${i + 1}</div>
-          <div class="score-badge">${c.score}/100</div>
+          <div class="score-badge">${c.score}</div>
         </div>
         <div class="buyer"><span class="filter-name" data-filter-field="buyerName" data-filter-value="${escapeHtml(c.buyerName || '')}" title="Филтрирай по възложител">${escapeHtml(c.buyerName || '—')}</span></div>
-        <div class="supplier">Изпълнител: <span class="filter-name" data-filter-field="supplierName" data-filter-value="${escapeHtml(c.supplierName || '')}" title="Филтрирай по изпълнител">${escapeHtml(c.supplierName || '—')}</span></div>
+        <div class="supplier">Изпълнител: <span class="filter-name" data-filter-field="supplierName" data-filter-value="${escapeHtml(c.supplierName || '')}" title="Филтрирай по изпълнител">${escapeHtml(c.supplierName || '—')}</span>${supplierProfileUrl ? ' <a href="' + supplierProfileUrl + '" style="font-size:0.75rem;color:#2563eb;text-decoration:none;margin-left:0.4rem">профил →</a>' : ''}</div>
         <div class="value">${formatMoney(c.contractValue, c.contractCurrency)}</div>
         <div class="supplier">${escapeHtml(c.tenderName || '')}</div>
         <div class="card-meta">${procHtml}${dateStr ? `<span class="date">${dateStr}</span>` : ''}</div>
