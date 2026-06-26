@@ -788,5 +788,64 @@
   });
 
 </script>
+
+<!-- FAQ секция — видима за Google, минимален визуален отпечатък -->
+<section style="max-width:860px;margin:0 auto 3rem;padding:0 1.5rem;">
+  <h2 style="font-size:1.1rem;font-weight:700;color:#f1f5f9;margin-bottom:1.2rem;">Често задавани въпроси</h2>
+  <details style="border:1px solid #1e2d40;border-radius:10px;margin-bottom:0.6rem;background:#111827;">
+    <summary style="padding:0.9rem 1.2rem;cursor:pointer;color:#e2e8f0;font-size:0.88rem;font-weight:600;">Какво е рисков скор на обществена поръчка?</summary>
+    <p style="padding:0 1.2rem 0.9rem;color:#94a3b8;font-size:0.85rem;line-height:1.7;">Рисковият скор е автоматично изчислено число (0–130), което показва колко нетипична е дадена поръчка спрямо останалите в базата. Висок скор означава "заслужава внимание", не непременно нарушение. Алгоритъмът анализира четири сигнала: единствена оферта, необичайно висока стойност, концентрация при един възложител и раздуване чрез анекс.</p>
+  </details>
+  <details style="border:1px solid #1e2d40;border-radius:10px;margin-bottom:0.6rem;background:#111827;">
+    <summary style="padding:0.9rem 1.2rem;cursor:pointer;color:#e2e8f0;font-size:0.88rem;font-weight:600;">Какво означава "единствена оферта" в обществена поръчка?</summary>
+    <p style="padding:0 1.2rem 0.9rem;color:#94a3b8;font-size:0.85rem;line-height:1.7;">Единствена оферта означава, че само един участник е подал предложение за поръчката. Липсата на конкуренция е основен индикатор за риск — при нормални условия за всяка поръчка трябва да се явят поне двама кандидати. Когато има само един участник, цената не е пазарно проверена.</p>
+  </details>
+  <details style="border:1px solid #1e2d40;border-radius:10px;margin-bottom:0.6rem;background:#111827;">
+    <summary style="padding:0.9rem 1.2rem;cursor:pointer;color:#e2e8f0;font-size:0.88rem;font-weight:600;">Откъде идват данните за обществените поръчки?</summary>
+    <p style="padding:0 1.2rem 0.9rem;color:#94a3b8;font-size:0.85rem;line-height:1.7;">Данните идват директно от официалната open-data емисия на ЦАИС ЕОП — Централизираната автоматизирана информационна система за електронно обществено поръчване на Република България. Базата обхваща над 199 000 договора от 2022 г. до момента.</p>
+  </details>
+  <details style="border:1px solid #1e2d40;border-radius:10px;margin-bottom:0.6rem;background:#111827;">
+    <summary style="padding:0.9rem 1.2rem;cursor:pointer;color:#e2e8f0;font-size:0.88rem;font-weight:600;">Как да проверя конкретна фирма или община?</summary>
+    <p style="padding:0 1.2rem 0.9rem;color:#94a3b8;font-size:0.85rem;line-height:1.7;">Използвайте полето за търсене над списъка — въведете името на фирмата, общината или ключова дума от поръчката. Резултатите се филтрират веднага. Можете също да кликнете върху всеки възложител или изпълнител в картите, за да видите само техните поръчки.</p>
+  </details>
+  <details style="border:1px solid #1e2d40;border-radius:10px;margin-bottom:0.6rem;background:#111827;">
+    <summary style="padding:0.9rem 1.2rem;cursor:pointer;color:#e2e8f0;font-size:0.88rem;font-weight:600;">Може ли да свалям данните?</summary>
+    <p style="padding:0 1.2rem 0.9rem;color:#94a3b8;font-size:0.85rem;line-height:1.7;">Да — използвайте бутона "⬇ Свали като CSV" над списъка с поръчки. Файлът съдържа всички видими резултати (след прилагане на филтри и търсене) и може да се отвори в Excel или Google Sheets за по-детайлен анализ.</p>
+  </details>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Какво е рисков скор на обществена поръчка?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Рисковият скор е автоматично изчислено число (0–130), което показва колко нетипична е дадена поръчка. Алгоритъмът анализира четири сигнала: единствена оферта, необичайно висока стойност, концентрация при един възложител и раздуване чрез анекс." }
+    },
+    {
+      "@type": "Question",
+      "name": "Какво означава единствена оферта в обществена поръчка?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Единствена оферта означава, че само един участник е подал предложение. Липсата на конкуренция е основен индикатор за риск — цената не е пазарно проверена." }
+    },
+    {
+      "@type": "Question",
+      "name": "Откъде идват данните за обществените поръчки?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Данните идват от официалната open-data емисия на ЦАИС ЕОП. Базата обхваща над 199 000 договора от 2022 г. до момента." }
+    },
+    {
+      "@type": "Question",
+      "name": "Как да проверя конкретна фирма или община?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Използвайте полето за търсене — въведете името на фирмата, общината или ключова дума. Можете и да кликнете върху възложител или изпълнител в картите за филтриране." }
+    },
+    {
+      "@type": "Question",
+      "name": "Може ли да свалям данните?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Да — използвайте бутона 'Свали като CSV' над списъка. Файлът може да се отвори в Excel или Google Sheets." }
+    }
+  ]
+}
+</script>
 </body>
 </html>
