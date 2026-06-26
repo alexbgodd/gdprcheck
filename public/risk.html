@@ -93,6 +93,9 @@
       transition: border-color 0.2s;
     }
     #search:focus { border-color: #e63946; }
+    #search.has-results { border-color: #22c55e; box-shadow: 0 0 0 2px rgba(34,197,94,0.15); }
+    #search.no-results  { border-color: #f59e0b; box-shadow: 0 0 0 2px rgba(245,158,11,0.15); }
+    #search-hint { font-size: 0.78rem; margin-top: 0.4rem; padding-left: 0.5rem; min-height: 1.2em; transition: color 0.2s; }
     .filter-btn {
       padding: 0.4rem 1rem;
       border-radius: 999px;
@@ -302,7 +305,7 @@
 </div>
 <div class="search-wrap">
   <input type="search" id="search" placeholder="Търси по възложител, изпълнител или поръчка…" />
-  <p style="font-size:0.78rem;color:#888;margin-top:0.4rem;padding-left:0.5rem;">Пишете директно — резултатите се филтрират веднага. Например: име на фирма, община или ключова дума от поръчката.</p>
+  <p id="search-hint" style="color:#888;">Пишете директно — резултатите се филтрират веднага. Например: име на фирма, община или ключова дума от поръчката.</p>
 </div>
 <main>
   <div class="legend">
@@ -524,6 +527,26 @@
   document.getElementById('search').addEventListener('input', function() {
     searchQuery = this.value.trim();
     renderCards();
+    const hint  = document.getElementById('search-hint');
+    const input = this;
+    if (!searchQuery) {
+      input.classList.remove('has-results', 'no-results');
+      hint.style.color = '#888';
+      hint.textContent = 'Пишете директно — резултатите се филтрират веднага. Например: име на фирма, община или ключова дума от поръчката.';
+    } else {
+      const n = getFiltered().length;
+      if (n > 0) {
+        input.classList.add('has-results');
+        input.classList.remove('no-results');
+        hint.style.color = '#22c55e';
+        hint.textContent = `✓ Намерени ${n} поръчки`;
+      } else {
+        input.classList.add('no-results');
+        input.classList.remove('has-results');
+        hint.style.color = '#f59e0b';
+        hint.textContent = 'Няма намерени резултати';
+      }
+    }
   });
 
   document.getElementById('meta').addEventListener('click', function(e) {
