@@ -345,7 +345,7 @@ async function init() {
             <span>${fmtVal(c.contractValue, c.contractCurrency)}</span>
             <span>${(c.contractDate || '').slice(0, 10)}</span>
             <span style="color:#e63946;font-weight:600">скор ${c.score}</span>
-            ${c.contractNumber ? `<a href="https://app.eop.bg/today/contracts/${escHtml(c.contractNumber)}" target="_blank" rel="noopener">ЦАИС →</a>` : ''}
+            ${c.linkToOjEu ? `<a href="${escHtml(c.linkToOjEu)}" target="_blank" rel="noopener">ТЕД →</a>` : ''}
           </div>
         </div>`).join('')}
       ${contracts.length > 20 ? `<p style="font-size:0.78rem;color:#64748b;margin-top:0.75rem">Показани 20 от ${contracts.length} договора.</p>` : ''}
